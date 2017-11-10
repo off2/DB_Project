@@ -8,26 +8,34 @@ DROP TABLE GROUP_MEMBERSHIP CASCADE CONSTRAINTS;
 DROP TABLE PENDING_GROUPMEMBERS CASCADE CONSTRAINTS;
 
 CREATE TABLE PROFILE(
-	userID			varchar2(20),
-	name			varchar2(50),
-	password		varchar2(50),
+	userID			varchar2(20) not NULL,
+	name			varchar2(50) not NULL,
+	password		varchar2(50) not NULL,
 	date_of_birth	date,
-	lastlogin		timestamp
+	lastlogin		timestamp,
+	CONSTRAINT PROFILE_PK PRIMARY KEY(userID)
+		
+		
 	
 );
 
 CREATE TABLE FRIENDS(
-	userID1			varchar2(20),
+	userID1			varchar2(20) NOT NULL,
 	userID2			varchar2(20),
 	JDate			date,
-	message			varchar2(200)
+	message			varchar2(200),
+	CONSTRAINT FRIENDSHIP UNIQUE (userID1,userID2),
+	CONSTRAINT FRIENDS_FK1 FOREIGN KEY(userID1) REFERENCES PROFILE(userID),
+	CONSTRAINT FRIENDS_FK2 FOREIGN KEY(userID2) REFERENCES PROFILE(userID)
 	
 );
 
 CREATE TABLE PENDING_FRIENDS(
 	fromID			varchar2(20),
 	toID			varchar2(20),
-	message			varchar2(200)
+	message			varchar2(200) not Null,
+	CONSTRAINT PENDING_FK1 FOREIGN KEY(fromID) REFERENCES PROFILE(userID),
+	CONSTRAINT PENDING_FK1 FOREIGN KEY(toID) REFERENCES PROFILE(userID)
 	
 );
 
@@ -37,33 +45,46 @@ CREATE TABLE MESSAGES(
 	message			varchar2(200),
 	toUserID		varchar2(20) default NULL,
 	toGroupID		varchar2(20) default NULL,
-	dateSent		date
+	dateSent		date,
+	CONSTRAINT MESSAGE_PK PRIMARY KEY(msgID),
+	CONSTRAINT MESSAGE_FK2 FOREIGN KEY(fromID) REFERENCES PROFILE(userID)
+	--figure out how to set foreignn key to userID or groupID as appropriate 
+
 
 );
 
 CREATE TABLE MESSAGE_RECIPIENT(
 	msgID			varchar2(20),
-	userID			varchar2(20)
+	userID			varchar2(20),
+	CONSTRAINT MESSAGE_RECIPIENT_FK1 FOREIGN KEY(msgID) REFERENCES MESSAGES(msgID),
+	CONSTRAINT MESSAGE_RECIPIENT_FK2 FOREIGN KEY(userID) REFERENCES PROFILE(userID)
 
 );
 
 CREATE TABLE GROUPS(
 	gID				varchar2(20),
 	name			varchar2(50),
-	description		varchar2(200)
+	description		varchar2(200),
+	CONSTRAINT GROUPS_PK PRIMARY KEY(gID)
+	
 
 );
 
 CREATE TABLE GROUP_MEMBERSHIP(
 	gID				varchar2(20),
 	userID			varchar2(20),
-	role			varchar2(20)
+	role			varchar2(20) not NULL,
+	CONSTRAINT GROUP_MEMBERSHIP_FK1 FOREIGN KEY(gID) REFERENCES GROUPS(gID),
+	CONSTRAINT GROUP_MEMBERSHIP_FK2 FOREIGN KEY(userID) REFERENCES PROFILE(userID)
 
 );
 
 CREATE TABLE PENDING_GROUPMEMBERS(
 	gID				varchar2(20),
 	userID			varchar2(20),
-	message			varchar2(200)
+	message			varchar2(200),
+	CONSTRAINT PENDING_GROUPMEMBERS_FK1 FOREIGN KEY(gID) REFERENCES GROUPS(gID),
+	CONSTRAINT PENDING_GROUPMEMBERS_FK2 FOREIGN KEY(userID) REFERENCES PROFILE(userID)
+ 
 
 );
