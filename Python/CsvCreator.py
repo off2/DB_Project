@@ -38,7 +38,7 @@ for index in range(0, 100):
     else:
         Profiles.append(Profile(index, last[index], first[index]))
 
-with open('../Java/Data/profiles.csv', 'w') as f:
+with open('../Data/profiles.csv', 'w') as f:
     for profile in Profiles: f.write(str(profile))
     f.close()
 
@@ -73,7 +73,7 @@ for friend in Profiles + Profiles + Profiles:
 
     if len(Friends) >= 200: break
 
-with open('../Java/Data/friends.csv', 'w') as f:
+with open('../Data/friends.csv', 'w') as f:
     for friend in Friends: f.write(str(friend))
     f.close()
 
@@ -113,11 +113,11 @@ for idx, tuple in enumerate(descriptions):
     members = Profiles[0:random.randint(3, 15)]
     Groups.append(Group(idx + 1, tuple[0], tuple[1], members))
 
-with open('../Java/Data/groups.csv', 'w') as f:
+with open('../Data/groups.csv', 'w') as f:
     for group in Groups: f.write(str(group))
     f.close()
 
-with open('../Java/Data/members.csv', 'w') as f:
+with open('../Data/members.csv', 'w') as f:
     for group in Groups: f.write(group.memberships())
     f.close()
 
@@ -166,10 +166,10 @@ for idx, friend in enumerate(Profiles + Profiles + Profiles):
 
     if len(Combinations) >= 300: break
 
-with open('../Java/Data/messages.csv', 'w') as f:
+with open('../Data/messages.csv', 'w') as f:
     for message in Messages: f.write(str(message))
     f.close()
 
-with open('../Java/Data/recipients.csv', 'w') as f:
+with open('../Data/recipients.csv', 'w') as f:
     for message in Messages: f.write(str(message.getRecipients()))
     f.close()
