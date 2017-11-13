@@ -15,6 +15,10 @@ public class User {
         this.name = name;
         this.email = email;
         this.dob = dob;
+        // TODO
+        // Save to database here
+        // Load userID from queryset???
+        //this.userID = qs.get('userID');
     }
 
     public static User login(String userID, String password) {
@@ -36,6 +40,7 @@ public class User {
     }
 
     public boolean confirmFriendship() {
+        // TODO
         // Get formatted, numbered list
         // Friend requests + message
         // Group requests + message
@@ -46,6 +51,7 @@ public class User {
     }
 
     public boolean displayFriends() {
+        // TODO
         // Get this users
         // Friends + UserID's
         // Friends of Friends

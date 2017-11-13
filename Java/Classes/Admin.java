@@ -5,7 +5,7 @@ import java.sql.Date;
 public class Admin {
 
     public static User createUser(String name, String email, Date dob) {
-
+        User user = new User(name, email, dob);
     }
 
     public static User searchForUser(String searchCriteria) {

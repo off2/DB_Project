@@ -5,6 +5,11 @@
 --@indexes/sampleIndex.sql
 
 -- ------------------------------------
+-- Data
+-- ------------------------------------
+@data/DeployFakeFriends.sql
+
+-- ------------------------------------
 -- Functions
 -- ------------------------------------
 @functions/sampleFunction.sql
