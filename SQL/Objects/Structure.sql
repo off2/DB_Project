@@ -11,7 +11,7 @@ Once we've written them, we then need to seperate them into
  - views.sql
 */
 
-
+--assume dob isnt required 
 DROP TABLE PROFILE CASCADE CONSTRAINTS;
 CREATE TABLE PROFILE (
   userID        VARCHAR2(20) NOT NULL,
@@ -28,7 +28,8 @@ CREATE TABLE PROFILE (
   (date_of_birth IS NULL OR date_of_birth < add_months(current_date, -12*13))
 );
 
-
+--assume can only befriend someone once
+--assume cannot be friends with yourself
 DROP TABLE FRIENDS CASCADE CONSTRAINTS;
 CREATE TABLE FRIENDS (
   userID1 VARCHAR2(20)  NOT NULL,
@@ -43,12 +44,14 @@ CREATE TABLE FRIENDS (
   CONSTRAINT no_self_friend CHECK (userID1 != userID2)
 );
 
-
+--assume cant send multiple friend requests to same person
+--assume cant friend self
+--message defaults to let's be friends 
 DROP TABLE PENDING_FRIENDS CASCADE CONSTRAINTS;
 CREATE TABLE PENDING_FRIENDS (
   fromID  VARCHAR2(20) NOT NULL,
   toID    VARCHAR2(20) NOT NULL,
-  message VARCHAR2(200) DEFAULT 'Let''s be friends',
+  message VARCHAR2(200) NOT NULL DEFAULT 'Let\'s be friends',
 
   CONSTRAINT PENDING_UN UNIQUE (fromID, toID),
   CONSTRAINT PENDING_FK1 FOREIGN KEY (fromID) REFERENCES PROFILE (userID),
@@ -57,7 +60,8 @@ CREATE TABLE PENDING_FRIENDS (
   CONSTRAINT no_profile_repeats CHECK (fromID != toID)
 );
 
-
+--assume can message yourself
+--assume cannot send empty message 
 DROP TABLE MESSAGES CASCADE CONSTRAINTS;
 CREATE TABLE MESSAGES (
   msgID     VARCHAR2(20)  NOT NULL,
@@ -74,6 +78,8 @@ CREATE TABLE MESSAGES (
   (dateSent IS NULL OR dateSent < CURRENT_DATE),
   CONSTRAINT valid_sent_to CHECK
   (toUserID IS NULL OR toGroupID IS NULL)
+  	--figure out how to set foreign key to userID or groupID as appropriate 
+
 
 );
 
@@ -89,6 +95,8 @@ CREATE TABLE MESSAGE_RECIPIENT (
 );
 
 
+--assume group doesnt need description
+--assume different groups can have same name 
 DROP TABLE GROUPS CASCADE CONSTRAINTS;
 CREATE TABLE GROUPS (
   gID         VARCHAR2(20) NOT NULL,
@@ -96,10 +104,14 @@ CREATE TABLE GROUPS (
   description VARCHAR2(200),
 
   CONSTRAINT GROUPS_PK PRIMARY KEY (gID),
-  CONSTRAINT GROUPS_UN UNIQUE (name, description)
+  
+  --Is there a problem with having two differnt groups both named "Squad"
+  --with description "Squad Groupchat"?
+  --CONSTRAINT GROUPS_UN UNIQUE (name, description)
 );
 
 
+--assume role defaults to member. role is either member or admin 
 DROP TABLE GROUP_MEMBERSHIP CASCADE CONSTRAINTS;
 CREATE TABLE GROUP_MEMBERSHIP (
   gID    VARCHAR2(20) NOT NULL,
@@ -126,3 +138,28 @@ CREATE TABLE PENDING_GROUPMEMBERS (
   CONSTRAINT PENDING_GROUPMEMBERS_FK1 FOREIGN KEY (gID) REFERENCES GROUPS (gID),
   CONSTRAINT PENDING_GROUPMEMBERS_FK2 FOREIGN KEY (userID) REFERENCES PROFILE (userID)
 );
+
+
+--triggers
+
+
+--delete friend request when new friend is added 
+CREATE OR REPLACE TRIGGER NewFriend
+	AFTER INSERT on FRIENDS
+	REFERENCING NEW AS newFriend
+	BEGIN	
+		DELETE FROM PENDING_FRIENDS
+		WHERE (fromID == :newFriend.userID1 and toID == :newFriend.userID2)
+	END;
+		
+		
+--delete group request when member is addded to group
+--assume 
+CREATE OR REPLACE TRIGGER NewGroupMembership
+	AFTER INSERT on GROUP_MEMBERSHIP
+	REFERENCING NEW AS newGroup
+	BEGIN	
+		DELETE FROM PENDING_GROUPMEMBERS
+		WHERE (gID == :newGroup.gID and userID == :newGroup.userID)
+	END;
+	
