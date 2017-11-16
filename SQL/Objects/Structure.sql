@@ -16,6 +16,7 @@ DROP TABLE PROFILE CASCADE CONSTRAINTS;
 CREATE TABLE PROFILE (
   userID        VARCHAR2(20) NOT NULL,
   name          VARCHAR2(50) NOT NULL,
+  email			VARCHAR2(20) NOT NULL,
   password      VARCHAR2(50) NOT NULL,
   date_of_birth DATE,
   lastlogin     TIMESTAMP,
@@ -163,3 +164,7 @@ CREATE OR REPLACE TRIGGER NewGroupMembership
 		WHERE (gID == :newGroup.gID and userID == :newGroup.userID)
 	END;
 	
+
+	
+	
+--view pending friends and groups 
