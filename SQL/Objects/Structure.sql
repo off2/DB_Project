@@ -155,7 +155,6 @@ REFERENCING NEW AS newFriend
 --delete group request when member is addded to group
 --assume 
 CREATE OR REPLACE TRIGGER NewGroupMembership
-<<<<<<< HEAD
 	AFTER INSERT on GROUP_MEMBERSHIP
 	REFERENCING NEW AS newGroup
 	BEGIN	
@@ -167,7 +166,6 @@ CREATE OR REPLACE TRIGGER NewGroupMembership
 	
 	
 --view pending friends and groups 
-=======
 AFTER INSERT ON GROUP_MEMBERSHIP
 REFERENCING NEW AS newGroup
   BEGIN
@@ -175,4 +173,3 @@ REFERENCING NEW AS newGroup
     WHERE (gID = :newGroup.gID AND userID = :newGroup.userID);
   END;
 	
->>>>>>> origin/master
