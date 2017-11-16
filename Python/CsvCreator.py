@@ -20,9 +20,9 @@ class Profile:
             self.DOB = "NULL"
 
     def __str__(self):
-        return str("{},{},{}@pitt.edu,password,{},NULL\n".format(
+        return "{},{},{}@pitt.edu,password,{},NULL\n".format(
             self.userID, self.name, self.userID, self.DOB
-        ))
+        )
 
 
 with open('text/first.txt', 'r') as f: first = f.read().split()
@@ -38,7 +38,8 @@ for index in range(0, 100):
     else:
         Profiles.append(Profile(index, last[index], first[index]))
 
-with open('../Data/profiles.csv', 'w') as f:
+with open('../Data/PROFILE.csv', 'w') as f:
+    f.write('userID,name,email,password,date_of_birth\n')
     for profile in Profiles: f.write(str(profile))
     f.close()
 
@@ -73,7 +74,8 @@ for friend in Profiles + Profiles + Profiles:
 
     if len(Friends) >= 200: break
 
-with open('../Data/friends.csv', 'w') as f:
+with open('../Data/FRIENDS.csv', 'w') as f:
+    f.write('userID1,userID2,JDate,message\n');
     for friend in Friends: f.write(str(friend))
     f.close()
 
@@ -91,10 +93,10 @@ class Group:
 
     def memberships(self):
         ret = ""
-        admin = 'TRUE'
+        admin = 'Admin'
         for profile in self.members:
             ret += str('{},{},{}\n').format(self.gID, profile.userID, admin)
-            admin = 'NULL'
+            admin = 'Member'
         return ret
 
 
@@ -113,11 +115,13 @@ for idx, tuple in enumerate(descriptions):
     members = Profiles[0:random.randint(3, 15)]
     Groups.append(Group(idx + 1, tuple[0], tuple[1], members))
 
-with open('../Data/groups.csv', 'w') as f:
+with open('../Data/GROUPS.csv', 'w') as f:
+    f.write('gID,name,description\n')
     for group in Groups: f.write(str(group))
     f.close()
 
-with open('../Data/members.csv', 'w') as f:
+with open('../Data/GROUP_MEMBERSHIP.csv', 'w') as f:
+    f.write('gID,userID,role\n')
     for group in Groups: f.write(group.memberships())
     f.close()
 
@@ -166,10 +170,12 @@ for idx, friend in enumerate(Profiles + Profiles + Profiles):
 
     if len(Combinations) >= 300: break
 
-with open('../Data/messages.csv', 'w') as f:
+with open('../Data/MESSAGES.csv', 'w') as f:
+    f.write('msgID,fromID,message,toUserID,toGroupID,dateSent\n')
     for message in Messages: f.write(str(message))
     f.close()
 
-with open('../Data/recipients.csv', 'w') as f:
+with open('../Data/MESSAGE_RECIPIENT.csv', 'w') as f:
+    f.write('msgID,userID\n')
     for message in Messages: f.write(str(message.getRecipients()))
     f.close()
