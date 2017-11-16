@@ -1,0 +1,4 @@
+-- Confirm friendship
+
+-- Display friends
+
