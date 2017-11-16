@@ -15,9 +15,9 @@ BEFORE INSERT ON Messages
     ELSEIF (new.toUserID = NULL)
       THEN
 
-        FOR groupMember IN ( SELECT userID
-                             FROM Group_Membership
-                             WHERE gID = NEW.toGroupID)
+        FOR groupMember IN (SELECT userID
+                            FROM Group_Membership
+                            WHERE gID = new.toGroupID)
         LOOP
           INSERT INTO
             Message_Recipient (msgID, userID)
@@ -28,7 +28,6 @@ BEFORE INSERT ON Messages
     END IF;
 
   END sendMesage;
-
 /
 
 -- displayMessages
