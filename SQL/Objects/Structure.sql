@@ -142,28 +142,10 @@ CREATE TABLE PENDING_GROUPMEMBERS (
 --triggers
 
 
---delete friend request when new friend is added 
-CREATE OR REPLACE TRIGGER NewFriend
-AFTER INSERT ON FRIENDS
-  BEGIN
-    DELETE FROM PENDING_FRIENDS
-    WHERE (fromID = NEW.userID1 AND toID = NEW.userID2);
-  END;
-  
 
 
 
---delete group request when member is addded to group
---assume 
-CREATE OR REPLACE TRIGGER NewGroupMembership
-	AFTER INSERT on GROUP_MEMBERSHIP
-	BEGIN	
-		DELETE FROM PENDING_GROUPMEMBERS
-		WHERE (gID = NEW.gID and userID = NEW.userID)
-	END;
-	
 
-	
 	
 --view pending friends and groups 
 
