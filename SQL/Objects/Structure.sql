@@ -26,7 +26,7 @@ CREATE TABLE PROFILE (
   CONSTRAINT valid_last_login CHECK
   (lastlogin IS NULL OR lastlogin < CURRENT_TIMESTAMP),
   CONSTRAINT valid_birthday CHECK
-  (date_of_birth IS NULL OR date_of_birth < add_months(current_date, -12*13))
+  (date_of_birth IS NULL OR date_of_birth < add_months(current_date, -12 * 13))
 );
 
 --assume can only befriend someone once
@@ -52,7 +52,7 @@ DROP TABLE PENDING_FRIENDS CASCADE CONSTRAINTS;
 CREATE TABLE PENDING_FRIENDS (
   fromID  VARCHAR2(20) NOT NULL,
   toID    VARCHAR2(20) NOT NULL,
-  message VARCHAR2(200) NOT NULL DEFAULT 'Let\'s be friends',
+  message VARCHAR2(200) DEFAULT 'Let''s be friends',
 
   CONSTRAINT PENDING_UN UNIQUE (fromID, toID),
   CONSTRAINT PENDING_FK1 FOREIGN KEY (fromID) REFERENCES PROFILE (userID),
@@ -79,8 +79,8 @@ CREATE TABLE MESSAGES (
   (dateSent IS NULL OR dateSent < CURRENT_DATE),
   CONSTRAINT valid_sent_to CHECK
   (toUserID IS NULL OR toGroupID IS NULL)
-  	--figure out how to set foreign key to userID or groupID as appropriate 
-
+  --figure out how to set foreign key to userID or groupID as appropriate
+  -- @Roy this is fixed
 
 );
 
@@ -95,7 +95,6 @@ CREATE TABLE MESSAGE_RECIPIENT (
 
 );
 
-
 --assume group doesnt need description
 --assume different groups can have same name 
 DROP TABLE GROUPS CASCADE CONSTRAINTS;
@@ -104,15 +103,15 @@ CREATE TABLE GROUPS (
   name        VARCHAR2(50) NOT NULL,
   description VARCHAR2(200),
 
-  CONSTRAINT GROUPS_PK PRIMARY KEY (gID),
-  
+  CONSTRAINT GROUPS_PK PRIMARY KEY (gID) -- , @roy don't forget the comma
+
   --Is there a problem with having two differnt groups both named "Squad"
   --with description "Squad Groupchat"?
   --CONSTRAINT GROUPS_UN UNIQUE (name, description)
+  -- @roy idt you can do that on real facebook
 );
 
-
---assume role defaults to member. role is either member or admin 
+--assume role defaults to member. role is either member or admin
 DROP TABLE GROUP_MEMBERSHIP CASCADE CONSTRAINTS;
 CREATE TABLE GROUP_MEMBERSHIP (
   gID    VARCHAR2(20) NOT NULL,
@@ -140,23 +139,23 @@ CREATE TABLE PENDING_GROUPMEMBERS (
   CONSTRAINT PENDING_GROUPMEMBERS_FK2 FOREIGN KEY (userID) REFERENCES PROFILE (userID)
 );
 
-
 --triggers
 
 
 --delete friend request when new friend is added 
 CREATE OR REPLACE TRIGGER NewFriend
-	AFTER INSERT on FRIENDS
-	REFERENCING NEW AS newFriend
-	BEGIN	
-		DELETE FROM PENDING_FRIENDS
-		WHERE (fromID == :newFriend.userID1 and toID == :newFriend.userID2)
-	END;
-		
-		
+AFTER INSERT ON FRIENDS
+REFERENCING NEW AS newFriend
+  BEGIN
+    DELETE FROM PENDING_FRIENDS
+    WHERE (fromID = :newFriend.userID1 AND toID = :newFriend.userID2);
+  END;
+
+
 --delete group request when member is addded to group
 --assume 
 CREATE OR REPLACE TRIGGER NewGroupMembership
+<<<<<<< HEAD
 	AFTER INSERT on GROUP_MEMBERSHIP
 	REFERENCING NEW AS newGroup
 	BEGIN	
@@ -168,3 +167,12 @@ CREATE OR REPLACE TRIGGER NewGroupMembership
 	
 	
 --view pending friends and groups 
+=======
+AFTER INSERT ON GROUP_MEMBERSHIP
+REFERENCING NEW AS newGroup
+  BEGIN
+    DELETE FROM PENDING_GROUPMEMBERS
+    WHERE (gID = :newGroup.gID AND userID = :newGroup.userID);
+  END;
+	
+>>>>>>> origin/master
