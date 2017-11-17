@@ -1,15 +1,4 @@
-/*
-NOTE FROM ROY
-We need to write all the functions/procedures/views
- - Procedures: take arguments, no return
- - Functions: take arguments, return one value
- - Views: take arguments, return SELECT statement
 
-Once we've written them, we then need to seperate them into
- - procedures.sql
- - functions.sql
- - views.sql
-*/
 
 --assume dob isn't required
 DROP TABLE PROFILE CASCADE CONSTRAINTS;
@@ -20,6 +9,10 @@ CREATE TABLE PROFILE (
   password      VARCHAR2(50) NOT NULL,
   date_of_birth DATE,
   lastlogin     TIMESTAMP,
+  --CONSTRAINT valid_last_login CHECK
+  --(lastlogin IS NULL OR lastlogin < CURRENT_TIMESTAMP),
+  --CONSTRAINT valid_birthday CHECK
+  --(date_of_birth IS NULL OR date_of_birth < add_months(current_date, -12 * 13))
   CONSTRAINT PROFILE_PK PRIMARY KEY (userID)
   --make trigger to check time
 );
