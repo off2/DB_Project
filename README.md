@@ -5,6 +5,8 @@ operate Social@Panther, a Social Networking System for the University of Pittsbu
 of such a system is a database system. The secondary goal is to learn how to work as a member of
 a team which designs and develops a relatively large, real database application.
 
+MILESTONE 1 IS IN ```DB_Project/SQL/Structure.sql```
+
 ## Getting Started
 
 You must implement your application program using Java, Oracle, and JDBC. The assignment
