@@ -16,16 +16,16 @@ DROP TABLE PROFILE CASCADE CONSTRAINTS;
 CREATE TABLE PROFILE (
   userID        VARCHAR2(20) NOT NULL,
   name          VARCHAR2(50) NOT NULL,
-  email			VARCHAR2(20) NOT NULL,
+  email         VARCHAR2(20) NOT NULL,
   password      VARCHAR2(50) NOT NULL,
   date_of_birth DATE,
   lastlogin     TIMESTAMP,
-  CONSTRAINT PROFILE_PK PRIMARY KEY (userID),
+  CONSTRAINT PROFILE_PK PRIMARY KEY (userID)--,
   --make trigger to check time 
-  CONSTRAINT valid_last_login CHECK
-  (lastlogin IS NULL OR lastlogin < CURRENT_TIMESTAMP),
-  CONSTRAINT valid_birthday CHECK
-  (date_of_birth IS NULL OR date_of_birth < add_months(current_date, -12 * 13))
+  --CONSTRAINT valid_last_login CHECK
+  --(lastlogin IS NULL OR lastlogin < CURRENT_TIMESTAMP),
+  --CONSTRAINT valid_birthday CHECK
+  --(date_of_birth IS NULL OR date_of_birth < add_months(current_date, -12 * 13))
 );
 
 --assume can only befriend someone once
@@ -126,11 +126,6 @@ CREATE TABLE PENDING_GROUPMEMBERS (
 --triggers
 
 
-
-
-
-
-	
---view pending friends and groups 
+--view pending friends and groups
 
 	
