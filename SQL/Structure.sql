@@ -1,15 +1,4 @@
-/*
-NOTE FROM ROY
-We need to write all the functions/procedures/views
- - Procedures: take arguments, no return
- - Functions: take arguments, return one value
- - Views: take arguments, return SELECT statement
 
-Once we've written them, we then need to seperate them into
- - procedures.sql
- - functions.sql
- - views.sql
-*/
 
 --assume dob isn't required
 DROP TABLE PROFILE CASCADE CONSTRAINTS;
