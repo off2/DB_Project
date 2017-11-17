@@ -20,7 +20,6 @@ CREATE TABLE PROFILE (
   password      VARCHAR2(50) NOT NULL,
   date_of_birth DATE,
   lastlogin     TIMESTAMP,
-<<<<<<< HEAD:SQL/Objects/Structure.sql
   --CONSTRAINT valid_last_login CHECK
   --(lastlogin IS NULL OR lastlogin < CURRENT_TIMESTAMP),
   --CONSTRAINT valid_birthday CHECK
@@ -28,7 +27,6 @@ CREATE TABLE PROFILE (
 =======
   CONSTRAINT PROFILE_PK PRIMARY KEY (userID)
   --make trigger to check time
->>>>>>> origin/master:SQL/Structure.sql
 );
 
 -- Assume internet user must be at least 13
