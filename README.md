@@ -6,6 +6,8 @@ of such a system is a database system. The secondary goal is to learn how to wor
 a team which designs and develops a relatively large, real database application.
 
 MILESTONE 1 IS IN ```DB_Project/SQL/Structure.sql```
+Sample data is in ```DB_Project/Data```
+Sample data will be added via a Java method that parses csv
 
 ## Getting Started
 

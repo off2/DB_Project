@@ -57,7 +57,7 @@ class Friend:
         self.message = message
 
     def __str__(self):
-        return str("{},{},{},{}\n".format(
+        return str("{},{},{},\'{}\'\n".format(
             self.userID1, self.userID2, self.JDate, self.message
         ))
 
@@ -89,7 +89,7 @@ class Group:
         self.members = members
 
     def __str__(self):
-        return str('{},{},{}\n').format(self.gID, self.name, self.description)
+        return str('{},{},\'{}\'\n').format(self.gID, self.name, self.description)
 
     def memberships(self):
         ret = ""
@@ -149,7 +149,7 @@ class Message:
         ).strftime("%Y-%m-%d")
 
     def __str__(self):
-        return "{},{},{},{},{}\n".format(self.msgID, self.fromID, self.message, self.toUserID, self.toGroupID,
+        return "{},{},\'{}\',{},{}\n".format(self.msgID, self.fromID, self.message, self.toUserID, self.toGroupID,
                                          self.dateSent)
 
     def getRecipients(self):
