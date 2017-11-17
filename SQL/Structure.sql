@@ -24,7 +24,6 @@ CREATE TABLE PROFILE (
   --(lastlogin IS NULL OR lastlogin < CURRENT_TIMESTAMP),
   --CONSTRAINT valid_birthday CHECK
   --(date_of_birth IS NULL OR date_of_birth < add_months(current_date, -12 * 13))
-=======
   CONSTRAINT PROFILE_PK PRIMARY KEY (userID)
   --make trigger to check time
 );
