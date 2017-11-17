@@ -11,22 +11,43 @@ Once we've written them, we then need to seperate them into
  - views.sql
 */
 
---assume dob isnt required 
+--assume dob isn't required
 DROP TABLE PROFILE CASCADE CONSTRAINTS;
 CREATE TABLE PROFILE (
   userID        VARCHAR2(20) NOT NULL,
   name          VARCHAR2(50) NOT NULL,
-  email			VARCHAR2(20) NOT NULL,
+  email         VARCHAR2(20) NOT NULL,
   password      VARCHAR2(50) NOT NULL,
   date_of_birth DATE,
   lastlogin     TIMESTAMP,
-  CONSTRAINT PROFILE_PK PRIMARY KEY (userID),
-  --make trigger to check time 
-  CONSTRAINT valid_last_login CHECK
-  (lastlogin IS NULL OR lastlogin < CURRENT_TIMESTAMP),
-  CONSTRAINT valid_birthday CHECK
-  (date_of_birth IS NULL OR date_of_birth < add_months(current_date, -12 * 13))
+  CONSTRAINT PROFILE_PK PRIMARY KEY (userID)
+  --make trigger to check time
 );
+
+-- Assume internet user must be at least 13
+-- Assume we do not allow fourth dimensional users
+CREATE TRIGGER profile_valid_dates
+AFTER INSERT ON Profile
+  BEGIN
+    IF EXISTS(SELECT *
+              FROM Profile
+              WHERE new.date_of_birth > add_months(current_date, -12 * 12))
+    THEN
+      BEGIN
+        RAISE_APPLICATION_ERROR(-20001, 'User must be at least 13');
+        ROLLBACK;
+      END;
+    ELSEIF EXISTS(SELECT *
+                  FROM Profile
+                  WHERE new.lastlogin > current_timestamp())
+      THEN
+        BEGIN
+          RAISE_APPLICATION_ERROR(-20001, 'Login cannot be in the future');
+          ROLLBACK;
+        END;
+    END IF;
+  END profile_valid_dates;
+/
 
 --assume can only befriend someone once
 --assume cannot be friends with yourself
@@ -92,11 +113,8 @@ CREATE TABLE GROUPS (
   gID         VARCHAR2(20) NOT NULL,
   name        VARCHAR2(50) NOT NULL,
   description VARCHAR2(200),
-  CONSTRAINT GROUPS_PK PRIMARY KEY (gID) -- , @roy don't forget the comma
-  --Is there a problem with having two differnt groups both named "Squad"
-  --with description "Squad Groupchat"?
-  --CONSTRAINT GROUPS_UN UNIQUE (name, description)
-  -- @roy idt you can do that on real facebook
+  CONSTRAINT GROUPS_PK PRIMARY KEY (gID),
+  CONSTRAINT GROUPS_UN UNIQUE (name, description)
 );
 
 --assume role defaults to member. role is either member or admin
@@ -126,11 +144,6 @@ CREATE TABLE PENDING_GROUPMEMBERS (
 --triggers
 
 
-
-
-
-
-	
---view pending friends and groups 
+--view pending friends and groups
 
 	

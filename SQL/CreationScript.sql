@@ -2,23 +2,23 @@
 -- Structure
 -- ------------------------------------
 
-@Objects/Structure.sql
+-- @/Objects/Structure.sql
 
 -- ------------------------------------
--- Functions
+-- User views/triggers/functions/procedures
 -- ------------------------------------
 
-@Objects/Functions.sql
+-- @/Objects/Users.sql
 
 -- ------------------------------------
--- Views
+-- Messages
 -- ------------------------------------
 
-@Objects/Views.sql
+-- @/Objects/Messges.sql
 
 -- ------------------------------------
 -- Procedures
 -- ------------------------------------
 
-@Objects/Procedures.sql
+-- @Objects/Procedures.sql
 
