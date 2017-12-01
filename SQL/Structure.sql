@@ -85,8 +85,8 @@ CREATE TABLE MESSAGES (
   CONSTRAINT MESSAGE_PK PRIMARY KEY (msgID),
   CONSTRAINT MESSAGE_FK2 FOREIGN KEY (fromID) REFERENCES PROFILE (userID),
    --date wrongly specified 
-  CONSTRAINT valid_send_date CHECK
-  (dateSent < CURRENT_DATE),
+  --CONSTRAINT valid_send_date CHECK
+  --(dateSent < CURRENT_DATE),
   CONSTRAINT valid_sent_to CHECK
   (toUserID IS NULL OR toGroupID IS NULL)
   --figure out how to set foreign key to userID or groupID as appropriate
