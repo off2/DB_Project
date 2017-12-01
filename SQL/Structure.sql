@@ -11,7 +11,7 @@ CREATE TABLE PROFILE (
   lastlogin     TIMESTAMP,
   CONSTRAINT PROFILE_PK PRIMARY KEY (userID)
 )
-ORGANIZATION EXTERNAL (
+/*ORGANIZATION EXTERNAL (
 TYPE ORACLE_LOADER
 DEFAULT DIRECTORY csvDir
 ACCESS PARAMETERS (
@@ -33,7 +33,7 @@ ACCESS PARAMETERS (
     )
 )
 LOCATION ('profile.csv')
-);
+)*/;
 
 -- Assume internet user must be at least 13
 -- Assume we do not allow fourth dimensional users
@@ -70,7 +70,7 @@ CREATE TABLE FRIENDS (
   CONSTRAINT FRIENDS_FK2 FOREIGN KEY (userID2) REFERENCES PROFILE (userID),
   CONSTRAINT no_self_friend CHECK (userID1 != userID2)
 )
-ORGANIZATION EXTERNAL (
+/*ORGANIZATION EXTERNAL (
 TYPE ORACLE_LOADER
 DEFAULT DIRECTORY csvDir
 ACCESS PARAMETERS (
@@ -88,7 +88,7 @@ ACCESS PARAMETERS (
     )
 )
 LOCATION ('friends.csv')
-);
+)*/;
 
 --assume cant send multiple friend requests to same person
 --assume cant friend self
@@ -126,7 +126,7 @@ CREATE TABLE MESSAGE (
   --figure out how to set foreign key to userID or groupID as appropriate
   -- @Roy this is fixed
 )
-ORGANIZATION EXTERNAL (
+/*ORGANIZATION EXTERNAL (
 TYPE ORACLE_LOADER
 DEFAULT DIRECTORY csvDir
 ACCESS PARAMETERS (
@@ -148,7 +148,7 @@ ACCESS PARAMETERS (
     )
 )
 LOCATION ('message.csv')
-);
+)*/;
 
 
 DROP TABLE MESSAGE_RECIPIENT CASCADE CONSTRAINTS;
@@ -158,7 +158,7 @@ CREATE TABLE MESSAGE_RECIPIENT (
   CONSTRAINT MESSAGE_RECIPIENT_FK1 FOREIGN KEY (msgID) REFERENCES MESSAGE (msgID),
   CONSTRAINT MESSAGE_RECIPIENT_FK2 FOREIGN KEY (userID) REFERENCES PROFILE (userID)
 )
-ORGANIZATION EXTERNAL (
+/*ORGANIZATION EXTERNAL (
 TYPE ORACLE_LOADER
 DEFAULT DIRECTORY csvDir
 ACCESS PARAMETERS (
@@ -172,7 +172,7 @@ ACCESS PARAMETERS (
     )
 )
 LOCATION ('message_recipient.csv')
-);
+)*/;
 
 --assume group doesnt need description
 --assume different groups can have same name 
@@ -184,7 +184,7 @@ CREATE TABLE GROUPS (
   CONSTRAINT GROUPS_PK PRIMARY KEY (gID),
   CONSTRAINT GROUPS_UN UNIQUE (name, description)
 )
-ORGANIZATION EXTERNAL (
+/*ORGANIZATION EXTERNAL (
 TYPE ORACLE_LOADER
 DEFAULT DIRECTORY csvDir
 ACCESS PARAMETERS (
@@ -200,7 +200,7 @@ ACCESS PARAMETERS (
     )
 )
 LOCATION ('groups.csv')
-);
+)*/;
 
 --assume role defaults to member. role is either member or admin
 DROP TABLE GROUP_MEMBERSHIP CASCADE CONSTRAINTS;
@@ -214,7 +214,7 @@ CREATE TABLE GROUP_MEMBERSHIP (
   CONSTRAINT member_or_admin
   CHECK (role = 'Member' OR role = 'Admin')
 )
-ORGANIZATION EXTERNAL (
+/*ORGANIZATION EXTERNAL (
 TYPE ORACLE_LOADER
 DEFAULT DIRECTORY csvDir
 ACCESS PARAMETERS (
@@ -230,7 +230,7 @@ ACCESS PARAMETERS (
     )
 )
 LOCATION ('group_membership.csv')
-);
+)*/;
 
 
 DROP TABLE PENDING_GROUPMEMBERS CASCADE CONSTRAINTS;
