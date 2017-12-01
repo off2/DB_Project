@@ -9,7 +9,7 @@ public class FaceSpace {
         try {
             FaceBase = new Database(
                     new File("SQL/CreationScript.sql"),
-                    new File("../Data")
+                    new File("SQL/Data")
             );
         } catch (SQLException e) {
             e.printStackTrace();

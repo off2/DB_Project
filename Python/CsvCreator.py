@@ -38,8 +38,8 @@ for index in range(0, 100):
     else:
         Profiles.append(Profile(index, last[index], first[index]))
 
-with open('../Data/profile.csv', 'w') as f:
-    f.write('userID,name,email,password,date_of_birth\n')
+with open('../SQL/Data/profile.csv', 'w') as f:
+    # f.write('userID,name,email,password,date_of_birth\n')
     for profile in Profiles: f.write(str(profile))
     f.close()
 
@@ -74,8 +74,8 @@ for friend in Profiles + Profiles + Profiles:
 
     if len(Friends) >= 200: break
 
-with open('../Data/friends.csv', 'w') as f:
-    f.write('userID1,userID2,JDate,message\n');
+with open('../SQL/Data/friends.csv', 'w') as f:
+    # f.write('userID1,userID2,JDate,message\n');
     for friend in Friends: f.write(str(friend))
     f.close()
 
@@ -115,13 +115,13 @@ for idx, tuple in enumerate(descriptions):
     members = Profiles[0:random.randint(3, 15)]
     Groups.append(Group(idx + 1, tuple[0], tuple[1], members))
 
-with open('../Data/groups.csv', 'w') as f:
-    f.write('gID,name,description\n')
+with open('../SQL/Data/groups.csv', 'w') as f:
+    # f.write('gID,name,description\n')
     for group in Groups: f.write(str(group))
     f.close()
 
-with open('../Data/group_membership.csv', 'w') as f:
-    f.write('gID,userID,role\n')
+with open('../SQL/Data/group_membership.csv', 'w') as f:
+    # f.write('gID,userID,role\n')
     for group in Groups: f.write(group.memberships())
     f.close()
 
@@ -150,7 +150,7 @@ class Message:
 
     def __str__(self):
         return "{},{},\'{}\',{},{}\n".format(self.msgID, self.fromID, self.message, self.toUserID, self.toGroupID,
-                                         self.dateSent)
+                                             self.dateSent)
 
     def getRecipients(self):
         ret = ""
@@ -159,7 +159,7 @@ class Message:
         return ret
 
 
-with open('text/messages.txt') as f: messages = f.read().split('\n')
+with open('text/message.txt') as f: messages = f.read().split('\n')
 
 Messages = []
 for idx, friend in enumerate(Profiles + Profiles + Profiles):
@@ -170,12 +170,12 @@ for idx, friend in enumerate(Profiles + Profiles + Profiles):
 
     if len(Combinations) >= 300: break
 
-with open('../Data/message.csv', 'w') as f:
-    f.write('msgID,fromID,message,toUserID,toGroupID,dateSent\n')
+with open('../SQL/Data/message.csv', 'w') as f:
+    # f.write('msgID,fromID,message,toUserID,toGroupID,dateSent\n')
     for message in Messages: f.write(str(message))
     f.close()
 
-with open('../Data/message_recipient.csv', 'w') as f:
-    f.write('msgID,userID\n')
+with open('../SQL/Data/message_recipient.csv', 'w') as f:
+    # f.write('msgID,userID\n')
     for message in Messages: f.write(str(message.getRecipients()))
     f.close()
