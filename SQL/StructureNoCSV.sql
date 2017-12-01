@@ -35,27 +35,7 @@ ACCESS PARAMETERS (
 LOCATION ('profile.csv')
 )*/;
 
--- Assume internet user must be at least 13
--- Assume we do not allow fourth dimensional users
-CREATE TRIGGER profile_valid_dates
-  BEFORE INSERT
-  ON Profile
-  BEGIN
-    IF (new.date_of_birth > add_months(current_date, -144))
-    THEN
-      BEGIN
-        RAISE_APPLICATION_ERROR(-20001, 'User must be at least 13');
-        ROLLBACK;
-      END;
-    ELSEIF (new.lastlogin > current_timestamp)
-      THEN
-        BEGIN
-          RAISE_APPLICATION_ERROR(-20001, 'Login cannot be in the future');
-          ROLLBACK;
-        END;
-    END IF;
-  END profile_valid_dates;
-/
+
 
 --assume can only befriend someone once
 --assume cannot be friends with yourself
