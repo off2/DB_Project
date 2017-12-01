@@ -24,7 +24,7 @@ AFTER INSERT ON Profile
   BEGIN
     IF EXISTS(SELECT *
               FROM Profile
-              WHERE new.date_of_birth > add_months(current_date, -12 * 12))
+              WHERE new.date_of_birth > add_months(current_date, -144))
     THEN
       BEGIN
         RAISE_APPLICATION_ERROR(-20001, 'User must be at least 13');
@@ -32,7 +32,7 @@ AFTER INSERT ON Profile
       END;
     ELSEIF EXISTS(SELECT *
                   FROM Profile
-                  WHERE new.lastlogin > current_timestamp())
+                  WHERE new.lastlogin > current_timestamp)
       THEN
         BEGIN
           RAISE_APPLICATION_ERROR(-20001, 'Login cannot be in the future');
@@ -59,6 +59,7 @@ CREATE TABLE FRIENDS (
 --assume cant send multiple friend requests to same person
 --assume cant friend self
 --message defaults to let's be friends 
+--problem with creation
 DROP TABLE PENDING_FRIENDS CASCADE CONSTRAINTS;
 CREATE TABLE PENDING_FRIENDS (
   fromID  VARCHAR2(20) NOT NULL,
@@ -66,12 +67,13 @@ CREATE TABLE PENDING_FRIENDS (
   message VARCHAR2(200) DEFAULT 'Let''s be friends',
   CONSTRAINT PENDING_UN UNIQUE (fromID, toID),
   CONSTRAINT PENDING_FK1 FOREIGN KEY (fromID) REFERENCES PROFILE (userID),
-  CONSTRAINT PENDING_FK1 FOREIGN KEY (toID) REFERENCES PROFILE (userID),
+  CONSTRAINT PENDING_FK2 FOREIGN KEY (toID) REFERENCES PROFILE (userID),
   CONSTRAINT no_profile_repeats CHECK (fromID != toID)
 );
 
 --assume can message yourself
 --assume cannot send empty message 
+--table or view does not exist
 DROP TABLE MESSAGES CASCADE CONSTRAINTS;
 CREATE TABLE MESSAGES (
   msgID     VARCHAR2(20)  NOT NULL,
@@ -82,8 +84,9 @@ CREATE TABLE MESSAGES (
   dateSent  DATE          NOT NULL,
   CONSTRAINT MESSAGE_PK PRIMARY KEY (msgID),
   CONSTRAINT MESSAGE_FK2 FOREIGN KEY (fromID) REFERENCES PROFILE (userID),
+   --date wrongly specified 
   CONSTRAINT valid_send_date CHECK
-  (dateSent IS NULL OR dateSent < CURRENT_DATE),
+  (dateSent < CURRENT_DATE),
   CONSTRAINT valid_sent_to CHECK
   (toUserID IS NULL OR toGroupID IS NULL)
   --figure out how to set foreign key to userID or groupID as appropriate
