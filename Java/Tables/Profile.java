@@ -75,13 +75,13 @@ public class Profile {
         created.name = name;
         created.email = email;
         created.date_of_birth = date_of_birth;
-
+		//TO_DATE('2003-11-14','YYYY-MM/DD')
         stmt.execute("INSERT INTO Friends (userID, name, email, date_of_birth) " +
-                "VALUES (" +
-                created.userID + ", " +
-                created.name + ", " +
-                created.email + ", " +
-                created.date_of_birth +
+                "VALUES ('" +
+                created.userID + "','" +
+                created.name + "','" +
+                created.email + "','" +"TO_DATE('2003-11-14','"+
+                created.date_of_birth +"','YYYY-MM/DD')"
                 ")"
         );
 
@@ -121,21 +121,59 @@ public class Profile {
     }
 
     // TODO fix
-    public void logout() throws SQLException {
+    public void logout() {
 
 
-        Timestamp ts = new Timestamp(System.currentTimeMillis());
-        lastlogin = ts;
-        Statement stmt = conn.createStatement();
-        stmt.executeUpdate(
-                "UPDATE PROFILE SET lastlogin = " + ts + " WHERE userID = " + userID
+		Timestamp ts = new Timestamp(System.currentTimeMillis());
+		lastlogin = ts;
+		Statement stmt = conn.createStatement();
+		stmt.executeUpdate(
+                    "UPDATE PROFILE SET lastlogin = " + ts + " WHERE userID = " + userID
         );
+		
+		System.exit(0);
 
     }
 
-    public void sendMessage(Profile to, String message) {
+    public void sendMessageToUser(Profile to, String message, Connection conn) {
 
         // TODO Create new Message
+		
+		Statement stmt = conn.createStatement();
+        ResultSet rs = stmt.executeQuery("SELECT COUNT(*) FROM message");
+        rs.next();
+        String mID = String.format("%d", rs.getInt(1) + 1);
+		
+		stmt.execute("INSERT INTO MESSAGE (msgID, fromID, message, toUserID, dateSent) " +
+                "VALUES ('" +
+                mID + "','" +
+                userID + "','" +
+                message + "','" +
+                to.userID + "',NULL,'SYSDATE')"
+        );
+		
+		
+
+    }
+	
+	public void sendMessageToGroup(String groupID, String message, Connection conn) {
+
+        // TODO Create new Message
+		
+		Statement stmt = conn.createStatement();
+        ResultSet rs = stmt.executeQuery("SELECT COUNT(*) FROM message");
+        rs.next();
+        String mID = String.format("%d", rs.getInt(1) + 1);
+		
+		stmt.execute("INSERT INTO MESSAGE (msgID, fromID, message, toUserID, dateSent) " +
+                "VALUES ('" +
+                mID + "','" +
+                userID + "','" +
+                message + "',NULL,'" +
+                groupID + "','SYSDATE')"
+        );
+		
+		
 
     }
 
