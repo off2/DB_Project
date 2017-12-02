@@ -1,4 +1,4 @@
-CREATE DIRECTORY csvDir AS '/../Data/';
+CREATE DIRECTORY csvDir AS '/Data/';
 
 -- Assume dob isn't required
 DROP TABLE PROFILE CASCADE CONSTRAINTS;
