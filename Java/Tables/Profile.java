@@ -149,7 +149,28 @@ public class Profile {
                 mID + "','" +
                 userID + "','" +
                 message + "','" +
-                to.userID + "',NULL,'SYSDATE)"
+                to.userID + "',NULL,'SYSDATE')"
+        );
+		
+		
+
+    }
+	
+	public void sendMessageToGroup(String groupID, String message) {
+
+        // TODO Create new Message
+		
+		Statement stmt = conn.createStatement();
+        ResultSet rs = stmt.executeQuery("SELECT COUNT(*) FROM message");
+        rs.next();
+        String mID = String.format("%d", rs.getInt(1) + 1);
+		
+		stmt.execute("INSERT INTO MESSAGE (msgID, fromID, message, toUserID, dateSent) " +
+                "VALUES ('" +
+                mID + "','" +
+                userID + "','" +
+                message + "',NULL,'" +
+                groupID + "','SYSDATE')"
         );
 		
 		
