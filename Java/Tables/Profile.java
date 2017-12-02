@@ -121,6 +121,8 @@ public class Profile {
     // TODO fix
     public void logout() {
 
+		Timestamp ts = new Timestamp(System.currentTimeMillis());
+		lastlogin = ts;
 		
 	
     }
