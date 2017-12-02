@@ -19,8 +19,49 @@ public class Profile {
 
         if (full) {
             // get all fields
+			/*
+			Statement stmt = conn.createStatement();
+			ResultSet rs = stmt.executeQuery("SELECT");
+			stmt.executeUpdate("UPDATE/DELETE");
+			stmt.execute();
+			
+			PreparedStatement ps = conn.createPreparedStatement("SELECT fromID FROM messages WHERE toID = ?");
+			*/
+			
+			Statement stmt = conn.createStatement();
+			ResultSet rs = stmt.executeQuery("SELECT userID,name,email, date_of_birth, lastlogin"+
+												"FROM PROFILE" +
+												"WHERE userID = " + userID);
+												
+			Profile temp = new Profile();
+			temp.userID = rs.getString(1);
+			temp.name = rs.getString(2);
+			temp.email = rs.getString(3);
+			temp.date_of_birth = rs.getString(4);
+			temp.lastlogin = rs.getString(5);
+			
+			return temp;
+			
+			
+			
+			
+
+			
+			
         } else {
             // just get name, userID
+			
+			Statement stmt = conn.createStatement();
+			ResultSet rs = stmt.executeQuery("SELECT userID,name"+
+												"FROM PROFILE" +
+												"WHERE userID = " + userID);
+												
+			Profile temp = new Profile();
+			temp.userID = rs.getString(1);
+			temp.name = rs.getString(2);
+			
+			return temp;
+												
         }
     }
 
