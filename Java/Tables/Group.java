@@ -54,7 +54,13 @@ public class Group {
 
         created.memberLimit = memberLimit;
 
-        stmt.execute("INSERT INTO Groups ")
+        stmt.execute("INSERT INTO Groups (GID, NAME, DESCRIPTION) " +
+                "VALUES (" +
+                created.gID + ", " +
+                created.name + ", " +
+                created.description +
+                ")"
+        );
 
         return created;
     }
