@@ -3,8 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="b20357d1-2871-48ef-9065-071a93e1cdea" name="Default" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change beforePath="$PROJECT_DIR$/Java/FaceSpace.java" afterPath="$PROJECT_DIR$/Java/FaceSpace.java" />
-      <change beforePath="$PROJECT_DIR$/Java/Tables/Message.java" afterPath="$PROJECT_DIR$/Java/Tables/Message.java" />
     </list>
     <ignored path="$PROJECT_DIR$/.idea/" />
     <ignored path="$PROJECT_DIR$/Classes/" />
@@ -558,7 +556,7 @@
       <workItem from="1512163132708" duration="398000" />
       <workItem from="1512164131059" duration="2224000" />
       <workItem from="1512166403552" duration="23667000" />
-      <workItem from="1512190410132" duration="342000" />
+      <workItem from="1512190410132" duration="363000" />
     </task>
     <task id="LOCAL-00001" summary="Wrote csv loading for Structure">
       <created>1512165036182</created>
@@ -693,11 +691,18 @@
       <option name="project" value="LOCAL" />
       <updated>1512189777681</updated>
     </task>
-    <option name="localTasksCounter" value="20" />
+    <task id="LOCAL-00020" summary="Fixed structure">
+      <created>1512190760020</created>
+      <option name="number" value="00020" />
+      <option name="presentableId" value="LOCAL-00020" />
+      <option name="project" value="LOCAL" />
+      <updated>1512190760020</updated>
+    </task>
+    <option name="localTasksCounter" value="21" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="29675000" />
+    <option name="totallyTimeSpent" value="29696000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="0" width="976" height="1038" extended-state="0" />
