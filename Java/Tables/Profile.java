@@ -166,7 +166,6 @@ public class Profile {
                 "')"
         );
 
-
     }
 
     public void sendMessageToGroup(String groupID, String message, Connection conn)
