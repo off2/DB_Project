@@ -235,6 +235,16 @@ public class FaceSpace {
                 case 8:
 					
 					//user message
+					//to who
+					System.out.println("ID of rescipient? ->");
+					String toID = sc.nextLine();
+					
+					Profile toProfile = new Profile();
+					toProfile = toProfile.get(conn, toID, true);
+					System.out.println("What do you want to send to " + toProfile.name+"?\n");
+					
+					//display name 
+					//enter message
 					
 				
 

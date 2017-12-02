@@ -144,13 +144,17 @@ public class Profile {
         rs.next();
         String mID = String.format("%d", rs.getInt(1) + 1);
 		
-		stmt.execute("INSERT INTO MESSAGE (msgID, fromID, message, toUserID, dateSent) " +
+		if(stmt.execute("INSERT INTO MESSAGE (msgID, fromID, message, toUserID, dateSent) " +
                 "VALUES ('" +
                 mID + "','" +
                 userID + "','" +
                 message + "','" +
                 to.userID + "',NULL,'SYSDATE')"
-        );
+			){
+				System.out.println("Message sent");
+			}
+			
+		);
 		
 		
 
