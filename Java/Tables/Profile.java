@@ -126,10 +126,16 @@ public class Profile {
 
 		Timestamp ts = new Timestamp(System.currentTimeMillis());
 		lastlogin = ts;
+		Statement stmt = conn.createStatement();
+		stmt.executeUpdate(
+                    "UPDATE PROFILE SET lastlogin = " + ts + " WHERE userID = " + userID
+        );
+		
+		System.exit(0);
 
     }
 
-    public void sendMessage(Profile to, String message) {
+    public void sendMessageToGroup(Profile to, String message) {
 
         // TODO Create new Message
 
