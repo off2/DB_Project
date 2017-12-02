@@ -20,13 +20,13 @@ class Profile:
             self.DOB = "NULL"
 
     def __str__(self):
-        return "{},{},{}@pitt.edu,password,{},NULL\n".format(
+        return "\'{}\',\'{}\',\'{}@pitt.edu\',\'password\',{},NULL\n".format(
             self.userID, self.name, self.userID, self.DOB
         )
 
 
-with open('text/first.txt', 'r') as f: first = f.read().split()
-with open('text/last.txt', 'r') as g: last = g.read().split()
+with open('text/first.txt', 'r+') as f: first = f.read().split()
+with open('text/last.txt', 'r+') as g: last = g.read().split()
 
 random.shuffle(first)
 random.shuffle(last)
@@ -38,7 +38,7 @@ for index in range(0, 100):
     else:
         Profiles.append(Profile(index, last[index], first[index]))
 
-with open('../Data/profile.csv', 'w') as f:
+with open('profile.txt', 'w') as f:
     # f.write('userID,name,email,password,date_of_birth\n')
     for profile in Profiles: f.write(str(profile))
     f.close()
@@ -57,7 +57,7 @@ class Friend:
         self.message = message
 
     def __str__(self):
-        return str("{},{},{},'{}'\n".format(
+        return str("\'{}\',\'{}\',{},\'{}\'\n".format(
             self.userID1, self.userID2, self.JDate, self.message
         ))
 
@@ -74,7 +74,7 @@ for friend in Profiles + Profiles + Profiles:
 
     if len(Friends) >= 200: break
 
-with open('../Data/friends.csv', 'w') as f:
+with open('friends.txt', 'w') as f:
     # f.write('userID1,userID2,JDate,message\n');
     for friend in Friends: f.write(str(friend))
     f.close()
@@ -89,19 +89,19 @@ class Group:
         self.members = members
 
     def __str__(self):
-        return str('{},{},\'{}\'\n').format(self.gID, self.name, self.description)
+        return str("\'{}\',\'{}\',\'{}\'\n'".format(self.gID, self.name, self.description))
 
     def memberships(self):
         ret = ""
         admin = 'Admin'
         for profile in self.members:
-            ret += str('{},{},{}\n').format(self.gID, profile.userID, admin)
+            ret += str("{},\'{}\',\'{}\'\n").format(self.gID, profile.userID, admin)
             admin = 'Member'
         return ret
 
 
 descriptions = []
-with open('text/groups.txt', 'r') as f:
+with open('text/groups.txt', 'r+') as f:
     desc = f.read().split('\n')
     random.shuffle(desc)
     for line in desc:
@@ -115,12 +115,12 @@ for idx, tuple in enumerate(descriptions):
     members = Profiles[0:random.randint(3, 15)]
     Groups.append(Group(idx + 1, tuple[0], tuple[1], members))
 
-with open('../Data/groups.csv', 'w') as f:
+with open('groups.txt', 'w') as f:
     # f.write('gID,name,description\n')
     for group in Groups: f.write(str(group))
     f.close()
 
-with open('../Data/group_membership.csv', 'w') as f:
+with open('group_membership.txt', 'w') as f:
     # f.write('gID,userID,role\n')
     for group in Groups: f.write(group.memberships())
     f.close()
@@ -149,13 +149,13 @@ class Message:
         ).strftime("%Y-%m-%d")
 
     def __str__(self):
-        return "{},{},\'{}\',{},{},{}\n".format(self.msgID, self.fromID, self.message, self.toUserID, self.toGroupID,
+        return "\'{}\',\'{}\',\'{}\',\'{}\',{},{}\n".format(self.msgID, self.fromID, self.message, self.toUserID, self.toGroupID,
                                              self.dateSent)
 
     def getRecipients(self):
         ret = ""
         for recipient in self.recipients:
-            ret += "{},{}\n".format(self.msgID, recipient.userID)
+            ret += "\'{}\',\'{}\'\n".format(self.msgID, recipient.userID)
         return ret
 
 
@@ -170,12 +170,12 @@ for idx, friend in enumerate(Profiles + Profiles + Profiles):
 
     if len(Combinations) >= 300: break
 
-with open('../Data/message.csv', 'w') as f:
+with open('message.txt', 'w') as f:
     # f.write('msgID,fromID,message,toUserID,toGroupID,dateSent\n')
     for message in Messages: f.write(str(message))
     f.close()
 
-with open('../Data/message_recipient.csv', 'w') as f:
+with open('message_recipient.txt', 'w') as f:
     # f.write('msgID,userID\n')
     for message in Messages: f.write(str(message.getRecipients()))
     f.close()
