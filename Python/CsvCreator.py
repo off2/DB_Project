@@ -57,7 +57,7 @@ class Friend:
         self.message = message
 
     def __str__(self):
-        return str("{},{},{},\'{}\'\n".format(
+        return str("{},{},{},'{}'\n".format(
             self.userID1, self.userID2, self.JDate, self.message
         ))
 

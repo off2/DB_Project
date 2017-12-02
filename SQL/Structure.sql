@@ -1,4 +1,4 @@
-CREATE DIRECTORY csvDir AS '/../Data/';
+CREATE DIRECTORY csvDir AS '/Data/';
 
 -- Assume dob isn't required
 DROP TABLE PROFILE CASCADE CONSTRAINTS;
@@ -35,8 +35,6 @@ ACCESS PARAMETERS (
 )
 LOCATION ('profile.csv')
 );
-
-
 
 --assume can only befriend someone once
 --assume cannot be friends with yourself

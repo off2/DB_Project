@@ -1,6 +1,6 @@
 -- Takes first part of email, name, and DOB. Creates a new account
 CREATE OR REPLACE FUNCTION addUser
-  (pittID IN VARCHAR2, name IN VARCHAR2, birthday IN DATE)
+  ("ID" IN VARCHAR2, name IN VARCHAR2, email IN VARCHAR2, birthday IN DATE)
   RETURN VARCHAR2
 IS
 DECLARE
@@ -8,9 +8,9 @@ DECLARE
 
   BEGIN
     INSERT INTO
-      Profile (userID, name, email, date_of_birth, password)
+      Profile (userID, "name", email, date_of_birth, "password")
     VALUES
-      (pittID, name, concat(pittID, '@pitt.edu'), birthday, pw);
+      ("ID", name, email, birthday, pw);
 
     RETURN pw;
 
@@ -19,7 +19,7 @@ DECLARE
 
 -- For logins
 CREATE OR REPLACE FUNCTION login
-  (pittID IN VARCHAR2, pw IN VARCHAR2(20))
+  ("ID" IN VARCHAR2, pw IN VARCHAR2(20))
   RETURN BOOLEAN
 IS
 DECLARE
@@ -29,7 +29,7 @@ DECLARE
     SELECT COUNT(*)
     INTO matches
     FROM Profile
-    WHERE userID = pittID AND password = pw;
+    WHERE userID = "ID" AND "password" = pw;
 
     RETURN (matches > 0);
 
