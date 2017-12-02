@@ -2,7 +2,6 @@ package Tables;
 
 import java.sql.*;
 import java.util.ArrayList;
-import java.util.HashMap;
 
 public class Profile {
 
@@ -24,7 +23,7 @@ public class Profile {
             ResultSet rs = stmt.executeQuery(
                     "SELECT userID,name,email, date_of_birth, lastlogin" +
                             " FROM PROFILE" +
-                            " WHERE userID = " + userID
+                            " WHERE userID = '" + userID + "'"
             );
 
             Profile temp = new Profile();
@@ -43,7 +42,7 @@ public class Profile {
             ResultSet rs = stmt.executeQuery(
                     "SELECT userID,name" +
                             " FROM PROFILE" +
-                            " WHERE userID = " + userID
+                            " WHERE userID = '" + userID + "'"
             );
 
             rs.next();
@@ -75,14 +74,14 @@ public class Profile {
         created.name = name;
         created.email = email;
         created.date_of_birth = date_of_birth;
-		//TO_DATE('2003-11-14','YYYY-MM/DD')
+
         stmt.execute("INSERT INTO Friends (userID, name, email, date_of_birth) " +
                 "VALUES ('" +
                 created.userID + "','" +
                 created.name + "','" +
-                created.email + "','" +"TO_DATE('2003-11-14','"+
-                created.date_of_birth +"','YYYY-MM/DD')"
-                ")"
+                created.email + "','" +
+                created.date_of_birth +
+                "')"
         );
 
         return created;
@@ -95,9 +94,12 @@ public class Profile {
         String function = "login";
 
         Statement stmt = conn.createStatement();
-        ResultSet rs = stmt.executeQuery("SELECT userID,name,email, date_of_birth, lastlogin " +
-                "FROM PROFILE " +
-                "WHERE userID = " + userID + " AND password = " + password);
+        ResultSet rs = stmt.executeQuery(
+                "SELECT userID,name,email, date_of_birth, lastlogin " +
+                        "FROM PROFILE " +
+                        "WHERE userID = '" + userID +
+                        "' AND password = '" + password + "'"
+        );
 
         //if no matches
 
@@ -120,60 +122,64 @@ public class Profile {
 
     }
 
-    // TODO fix
-    public void logout() {
+    public void logout() throws SQLException {
 
-
-		Timestamp ts = new Timestamp(System.currentTimeMillis());
-		lastlogin = ts;
-		Statement stmt = conn.createStatement();
-		stmt.executeUpdate(
-                    "UPDATE PROFILE SET lastlogin = " + ts + " WHERE userID = " + userID
+        Timestamp ts = new Timestamp(System.currentTimeMillis());
+        lastlogin = ts;
+        Statement stmt = conn.createStatement();
+        stmt.executeUpdate(
+                "UPDATE PROFILE " +
+                        "SET lastlogin = '" + ts +
+                        "' WHERE userID = '" + userID + "'"
         );
-		
-		System.exit(0);
+
+        System.exit(0);
 
     }
 
-    public void sendMessageToUser(Profile to, String message, Connection conn) {
+    public void sendMessageToUser(Profile to, String message, Connection conn)
+            throws SQLException {
 
         // TODO Create new Message
-		
-		Statement stmt = conn.createStatement();
+
+        Statement stmt = conn.createStatement();
         ResultSet rs = stmt.executeQuery("SELECT COUNT(*) FROM message");
         rs.next();
         String mID = String.format("%d", rs.getInt(1) + 1);
-		
-		stmt.execute("INSERT INTO MESSAGE (msgID, fromID, message, toUserID, dateSent) " +
+
+        stmt.execute("INSERT INTO MESSAGE (msgID, fromID, message, toUserID, toGroupID, dateSent) " +
                 "VALUES ('" +
                 mID + "','" +
                 userID + "','" +
                 message + "','" +
-                to.userID + "',NULL,'SYSDATE')"
+                userID + "', NULL,'" +
+                new Date(System.currentTimeMillis()) +
+                "')"
         );
-		
-		
+
 
     }
-	
-	public void sendMessageToGroup(String groupID, String message, Connection conn) {
+
+    public void sendMessageToGroup(String groupID, String message, Connection conn)
+            throws SQLException {
 
         // TODO Create new Message
-		
-		Statement stmt = conn.createStatement();
+
+        Statement stmt = conn.createStatement();
         ResultSet rs = stmt.executeQuery("SELECT COUNT(*) FROM message");
         rs.next();
         String mID = String.format("%d", rs.getInt(1) + 1);
-		
-		stmt.execute("INSERT INTO MESSAGE (msgID, fromID, message, toUserID, dateSent) " +
-                "VALUES ('" +
-                mID + "','" +
-                userID + "','" +
-                message + "',NULL,'" +
-                groupID + "','SYSDATE')"
+
+        stmt.execute(
+                "INSERT INTO MESSAGE (msgID, fromID, message, toUserID, toGroupID, dateSent) " +
+                        "VALUES ('" +
+                        mID + "','" +
+                        userID + "','" +
+                        message + "',NULL,'" +
+                        groupID + "','" +
+                        new Date(System.currentTimeMillis()) +
+                        "')"
         );
-		
-		
 
     }
 
@@ -192,7 +198,7 @@ public class Profile {
         ResultSet rs = stmt.executeQuery(
                 "SELECT fromID, toID, message" +
                         "FROM Pending_Friends " +
-                        "WHERE toID = " + userID
+                        "WHERE toID = '" + userID + "'"
         );
 
         // Populate our list
@@ -226,6 +232,48 @@ public class Profile {
         return pending;
     }
 
+    public ArrayList<GroupMembership> displayPendingGroups(int startFrom)
+            throws SQLException {
+
+        // Get list
+        Statement stmt = conn.createStatement();
+        ResultSet rs = stmt.executeQuery(
+                "SELECT gID, message" +
+                        "FROM Pending_Groupmembers " +
+                        "WHERE toID = " + userID
+        );
+
+        // Populate our list
+        ArrayList<GroupMembership> pending = new ArrayList<GroupMembership>();
+        StringBuilder output = new StringBuilder();
+
+        while (rs.next()) {
+
+            GroupMembership temp = new GroupMembership(
+                    conn,
+                    true,
+                    Group.get(conn, rs.getString(1)),
+                    this,
+                    rs.getString(2)
+            );
+
+            pending.add(temp);
+
+            // TODO possible off by one
+            output
+                    .append(pending.size() + startFrom)
+                    .append(". ")
+                    .append(temp.getGroup().getName())
+                    .append("\t")
+                    .append(temp.getMessage())
+                    .append("\n");
+        }
+
+        System.out.println(output);
+
+        return pending;
+    }
+
     public ArrayList<Profile> displayFriends()
             throws SQLException {
 
@@ -234,7 +282,7 @@ public class Profile {
         ResultSet rs = stmt.executeQuery(
                 "SELECT userID1, userID2, JDate, message" +
                         "FROM Friends" +
-                        "WHERE userID1 = " + userID + " OR userID2 = " + userID
+                        "WHERE userID1 = '" + userID + "' OR userID2 = '" + userID + "'"
         );
 
 
@@ -245,9 +293,9 @@ public class Profile {
         while (rs.next()) {
 
             Profile temp;
-            if (rs.getString(1) == userID) {
+            if (rs.getString(1).equals(userID)) {
                 temp = get(conn, rs.getString(2), false);
-            } else if (rs.getString(2) == userID) {
+            } else if (rs.getString(2).equals(userID)) {
                 temp = get(conn, rs.getString(1), false);
             } else {
                 throw new SQLException("Unknown error when retrieving friends list");
@@ -265,6 +313,7 @@ public class Profile {
 
         return friends;
     }
+
 
     public String getUserID() {
         return userID;
