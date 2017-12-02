@@ -248,6 +248,26 @@ public class FaceSpace {
                 case 8:
 					
 					//user message
+					//to who
+					System.out.println("ID of rescipient? ->");
+					String toID = sc.nextLine();
+					
+					Profile toProfile = new Profile();
+					try{
+					toProfile = toProfile.get(conn, toID, true);
+					
+					System.out.println("What do you want to send to " + toProfile.getName()+"?\n");
+					
+					String message = sc.nextLine();
+					
+					loggedIn.sendMessageToUser(toProfile,message,conn);
+					
+					}
+					catch(Exception e){
+						
+					}
+					//display name 
+					//enter message
 					
 				
 
@@ -265,7 +285,9 @@ public class FaceSpace {
 
                 case 16:
                     assert loggedIn != null;
-                    loggedIn.logout();
+					try{ loggedIn.logout(); }
+					catch(Exception e){};
+                   
             }
         }
     }

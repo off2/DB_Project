@@ -133,7 +133,6 @@ public class Profile {
                         "' WHERE userID = '" + userID + "'"
         );
 
-        System.exit(0);
 
     }
 
@@ -146,16 +145,28 @@ public class Profile {
         ResultSet rs = stmt.executeQuery("SELECT COUNT(*) FROM message");
         rs.next();
         String mID = String.format("%d", rs.getInt(1) + 1);
-
-        stmt.execute("INSERT INTO MESSAGE (msgID, fromID, message, toUserID, toGroupID, dateSent) " +
+		
+		if(stmt.execute("INSERT INTO MESSAGE (msgID, fromID, message, toUserID, dateSent) " +
                 "VALUES ('" +
                 mID + "','" +
                 userID + "','" +
                 message + "','" +
-                userID + "', NULL,'" +
+				userID + "', NULL,'" +
                 new Date(System.currentTimeMillis()) +
                 "')"
-        );
+				
+				
+				
+			))
+			{
+				System.out.println("Message sent");
+			}
+			
+		
+		
+	
+                
+        
 
     }
 
