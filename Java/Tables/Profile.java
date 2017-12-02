@@ -135,7 +135,7 @@ public class Profile {
 
     }
 
-    public void sendMessageToUser(Profile to, String message) {
+    public void sendMessageToUser(Profile to, String message, Connection conn) {
 
         // TODO Create new Message
 		
@@ -156,7 +156,7 @@ public class Profile {
 
     }
 	
-	public void sendMessageToGroup(String groupID, String message) {
+	public void sendMessageToGroup(String groupID, String message, Connection conn) {
 
         // TODO Create new Message
 		
