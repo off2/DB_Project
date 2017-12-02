@@ -254,7 +254,7 @@ public class FaceSpace {
 					
 					Profile toProfile = new Profile();
 					toProfile = toProfile.get(conn, toID, true);
-					System.out.println("What do you want to send to " + toProfile.name+"?\n");
+					System.out.println("What do you want to send to " + toProfile.getName()+"?\n");
 					
 					//display name 
 					//enter message

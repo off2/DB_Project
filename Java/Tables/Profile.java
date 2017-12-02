@@ -133,7 +133,6 @@ public class Profile {
                         "' WHERE userID = '" + userID + "'"
         );
 
-        System.exit(0);
 
     }
 
@@ -152,19 +151,22 @@ public class Profile {
                 mID + "','" +
                 userID + "','" +
                 message + "','" +
-
-                to.userID + "',NULL,'SYSDATE')"
-			){
+				userID + "', NULL,'" +
+                new Date(System.currentTimeMillis()) +
+                "')"
+				
+				
+				
+			))
+			{
 				System.out.println("Message sent");
 			}
 			
-		);
+		
 		
 	
-                userID + "', NULL,'" +
-                new Date(System.currentTimeMillis()) +
-                "')"
-        );
+                
+        
 
     }
 
