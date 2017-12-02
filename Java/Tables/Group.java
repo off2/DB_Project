@@ -1,9 +1,6 @@
 package Tables;
 
-import java.sql.Connection;
-import java.sql.ResultSet;
-import java.sql.SQLException;
-import java.sql.Statement;
+import java.sql.*;
 import java.util.ArrayList;
 
 public class Group {
@@ -19,8 +16,24 @@ public class Group {
     private ArrayList<Profile> members;
     private Integer memberLimit;
 
-    public static Group get(Connection conn, String gID) {
+    public static Group get(Connection conn, String gID)
+            throws SQLException {
 
+        Statement stmt = conn.createStatement();
+        ResultSet rs = stmt.executeQuery(
+                "SELECT gID, name, description" +
+                        "FROM Groups" +
+                        "WHERE gID = " + gID
+        );
+
+        Group temp = new Group();
+        temp.gID = rs.getString(1);
+        temp.name = rs.getString(2);
+        temp.description = rs.getString(3);
+
+        // TODO get admin;
+
+        return temp;
     }
 
     public static Group create(Connection conn, Profile admin, String name, String description, int memberLimit)
@@ -41,17 +54,34 @@ public class Group {
 
         created.memberLimit = memberLimit;
 
-        // save
+        stmt.execute("INSERT INTO Groups ")
 
         return created;
     }
 
-    public static Group initiateAddUser() {
+    public void initiateAddUser(Profile to, String message)
+            throws SQLException {
 
+        Statement stmt = conn.createStatement();
+        stmt.execute("INSERT INTO Pending_Groupmembers (gID, userID, message)" +
+                "VALUES (" +
+                gID + ", " +
+                to.getUserID() + ", " +
+                message +
+                ")"
+        );
     }
 
     @Override
     public String toString() {
+
+        if (admin == null) {
+            return "GroupID: " + gID +
+                    "\nName: " + name +
+                    "\nDescription: " + description +
+                    "\nMax members: " + memberLimit + "\n";
+        }
+
         return "GroupID: " + gID +
                 "\nName: " + name +
                 "\nDescription: " + description +

@@ -111,8 +111,7 @@ public class Profile {
 
     public void initiateFriendship(Profile other, String message) {
 
-        Friends created = new Friends(conn, true, this, other);
-
+        Friends.addPending(conn, this, other, message);
     }
 
     // TODO Queries pending friends, mapping by ID? Name?
@@ -137,7 +136,8 @@ public class Profile {
                     conn,
                     true,
                     Profile.get(conn, rs.getString(1), false),
-                    Profile.get(conn, rs.getString(2), false)
+                    Profile.get(conn, rs.getString(2), false),
+                    rs.getString(3)
             );
 
             pending.add(temp);

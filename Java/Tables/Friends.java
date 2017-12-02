@@ -1,6 +1,8 @@
 package Tables;
 
 import java.sql.Connection;
+import java.sql.Date;
+import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.Arrays;
 
@@ -16,39 +18,78 @@ public class Friends {
     /**
      * Creates a new friend object, doesn't necessarily persist
      *
+     * @param conn    the database
      * @param pending if the friendship is pending
-     * @param friend1 first friend (adding friend?)
-     * @param friend2 second friend (confirming friend?)
+     * @param friend1 from
+     * @param friend2 to
+     * @throws SQLException on failure
      */
-    public Friends(Connection conn, boolean pending, Profile friend1, Profile friend2) {
+    Friends(Connection conn, boolean pending, Profile friend1, Profile friend2, String message) {
 
         this.pending = pending;
         this.friends = new Profile[]{friend1, friend2};
+        this.message = message;
 
     }
 
-    public static void addPending(Connection conn, Profile friend1, Profile friend2) {
+    /**
+     * Inserts new row to Pending_Friends
+     *
+     * @param conn    the database
+     * @param friend1 from
+     * @param friend2 to
+     * @param message accompanied
+     * @throws SQLException on failure
+     */
+    public static void addPending(Connection conn, Profile friend1, Profile friend2, String message)
+            throws SQLException {
 
-        Friends pending = new Friends(true, friend1, friend2);
-
-        Statement stmt = conn.prepareStatement();
-
-        pending.conn = conn;
-        pending.friends f
+        Statement stmt = conn.createStatement();
+        stmt.executeUpdate(
+                "INSERT INTO Pending_Friends (fromID, toID, message) " +
+                        "VALUES (" +
+                        friend1.getUserID() + ", " +
+                        friend2.getUserID() + ", " +
+                        message +
+                        ")"
+        );
 
     }
 
-    public boolean confirm() {
+    public boolean confirm() throws SQLException {
 
         if (!pending) return false;
 
-        // Move from pending to friends
-        // Stored procedure?
+        delete();
+        conn.createStatement().executeUpdate(
+                "INSERT INTO Friends (userID1, userID2, JDate, message) " +
+                        "VALUES (" +
+                        friends[0].getUserID() + ", " +
+                        friends[1].getUserID() + ", " +
+                        new Date(System.currentTimeMillis()) + ", " +
+                        message +
+                        ")"
+        );
 
         return true;
     }
 
-    public void delete() {
+    public void delete() throws SQLException {
+        Statement stmt = conn.createStatement();
+
+        if (pending) {
+            stmt.executeUpdate(
+                    "DELETE FROM Pending_Friends " +
+                            "WHERE fromID = " + friends[0] +
+                            " AND toID = " + friends[1]
+            );
+        } else {
+            stmt.executeUpdate(
+              "DELETE FROM Friends " +
+                      "WHERE userID1 = " + friends[0] +
+                      " AND userID2 = " + friends[1]
+            );
+        }
 
     }
 
@@ -69,9 +110,6 @@ public class Friends {
     }
 
     public String getMessage() {
-
-        if (pending) return message;
-        else return null;
-
+        return message;
     }
 }

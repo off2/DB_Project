@@ -1,12 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="b20357d1-2871-48ef-9065-071a93e1cdea" name="Default" comment="">
-      <change beforePath="" afterPath="$PROJECT_DIR$/Java/Tables/Group.java" />
+    <list default="true" id="b20357d1-2871-48ef-9065-071a93e1cdea" name="Default" comment="Updated group functions">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change beforePath="$PROJECT_DIR$/Java/FaceSpace.java" afterPath="$PROJECT_DIR$/Java/FaceSpace.java" />
       <change beforePath="$PROJECT_DIR$/Java/Tables/Friends.java" afterPath="$PROJECT_DIR$/Java/Tables/Friends.java" />
-      <change beforePath="$PROJECT_DIR$/Java/Tables/Groups.java" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/Java/Tables/Group.java" afterPath="$PROJECT_DIR$/Java/Tables/Group.java" />
       <change beforePath="$PROJECT_DIR$/Java/Tables/Profile.java" afterPath="$PROJECT_DIR$/Java/Tables/Profile.java" />
     </list>
     <ignored path="$PROJECT_DIR$/.idea/" />
@@ -55,11 +53,23 @@
           <file leaf-file-name="Group.java" pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/Java/Tables/Group.java">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="63">
-                  <caret line="21" column="51" lean-forward="false" selection-start-line="21" selection-start-column="51" selection-end-line="21" selection-end-column="51" />
+                <state relative-caret-position="598">
+                  <caret line="56" column="41" lean-forward="false" selection-start-line="56" selection-start-column="41" selection-end-line="56" selection-end-column="41" />
                   <folding>
                     <element signature="imports" expanded="true" />
-                    <marker date="1512183598769" expanded="true" signature="738:765" ph="SELECT COUNT... Groups" />
+                    <marker date="1512185630885" expanded="true" signature="501:530" ph="SELECT gID, " />
+                    <marker date="1512185630885" expanded="true" signature="501:570" ph="SELECT gID, " />
+                    <marker date="1512185630885" expanded="true" signature="501:574" ph="SELECT gID, " />
+                    <marker date="1512185630885" expanded="true" signature="501:610" ph="SELECT gID, " />
+                    <marker date="1512185630885" expanded="true" signature="501:611" ph="SELECT gID, " />
+                    <marker date="1512185630885" expanded="true" signature="1116:1143" ph="SELECT COUNT... Groups" />
+                    <marker date="1512185630885" expanded="true" signature="1428:1446" ph="INSERT INTO Groups... " />
+                    <marker date="1512185630885" expanded="true" signature="1648:1680" ph="INSERT INTO Pending_Groupmembers... " />
+                    <marker date="1512185630885" expanded="true" signature="1648:1703" ph="INSERT INTO Pending_Groupmembers... " />
+                    <marker date="1512185630885" expanded="true" signature="1648:1732" ph="INSERT INTO Pending_Groupmembers... " />
+                    <marker date="1512185630885" expanded="true" signature="1648:1800" ph="INSERT INTO Pending_Groupmembers... " />
+                    <marker date="1512185630885" expanded="true" signature="1648:1801" ph="INSERT INTO Pending_Groupmembers... " />
+                    <marker date="1512185630885" expanded="true" signature="1648:1849" ph="INSERT INTO Pending_Groupmembers... " />
                   </folding>
                 </state>
               </provider>
@@ -68,18 +78,34 @@
           <file leaf-file-name="Friends.java" pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/Java/Tables/Friends.java">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="532">
-                  <caret line="31" column="51" lean-forward="true" selection-start-line="31" selection-start-column="51" selection-end-line="31" selection-end-column="51" />
+                <state relative-caret-position="615">
+                  <caret line="64" column="51" lean-forward="false" selection-start-line="64" selection-start-column="51" selection-end-line="64" selection-end-column="51" />
                   <folding>
                     <element signature="imports" expanded="true" />
-                    <element signature="e#1174#1175#0" expanded="true" />
-                    <element signature="e#1204#1205#0" expanded="true" />
-                    <element signature="e#1241#1242#0" expanded="true" />
-                    <element signature="e#1271#1272#0" expanded="true" />
-                    <element signature="e#1303#1304#0" expanded="true" />
-                    <element signature="e#1336#1337#0" expanded="true" />
-                    <element signature="e#1366#1367#0" expanded="true" />
-                    <element signature="e#1399#1400#0" expanded="true" />
+                    <element signature="e#2668#2669#0" expanded="true" />
+                    <element signature="e#2698#2699#0" expanded="true" />
+                    <element signature="e#2735#2736#0" expanded="true" />
+                    <element signature="e#2765#2766#0" expanded="true" />
+                    <element signature="e#2797#2798#0" expanded="true" />
+                    <element signature="e#2830#2831#0" expanded="true" />
+                    <element signature="e#2860#2861#0" expanded="true" />
+                    <element signature="e#2893#2894#0" expanded="true" />
+                    <element signature="e#2927#2928#0" expanded="true" />
+                    <element signature="e#2957#2958#0" expanded="true" />
+                    <marker date="1512185025624" expanded="true" signature="1240:1267" ph="INSERT INTO Pending_Friends... " />
+                    <marker date="1512185025624" expanded="true" signature="1240:1291" ph="INSERT INTO Pending_Friends... " />
+                    <marker date="1512185025624" expanded="true" signature="1240:1327" ph="INSERT INTO Pending_Friends... " />
+                    <marker date="1512185025624" expanded="true" signature="1240:1329" ph="INSERT INTO Pending_Friends... " />
+                    <marker date="1512185025624" expanded="true" signature="1240:1381" ph="INSERT INTO Pending_Friends... " />
+                    <marker date="1512185025624" expanded="true" signature="1240:1382" ph="INSERT INTO Pending_Friends... " />
+                    <marker date="1512185025624" expanded="true" signature="1240:1434" ph="INSERT INTO Pending_Friends... " />
+                    <marker date="1512185025624" expanded="true" signature="1240:1435" ph="INSERT INTO Pending_Friends... " />
+                    <marker date="1512185025624" expanded="true" signature="1240:1499" ph="INSERT INTO Pending_Friends... " />
+                    <marker date="1512185025624" expanded="true" signature="1690:2028" ph="INSERT INTO Pending_Friends... " />
+                    <marker date="1512185025624" expanded="true" signature="2243:2377" ph="DELETE FROM Pending_Friends... " />
+                    <marker date="1512185025624" expanded="true" signature="2471:2490" ph="DELETE FROM Friends... " />
+                    <marker date="1512185025624" expanded="true" signature="2471:2524" ph="DELETE FROM Friends... " />
+                    <marker date="1512185025624" expanded="true" signature="2471:2589" ph="DELETE FROM Friends... " />
                   </folding>
                 </state>
               </provider>
@@ -122,35 +148,38 @@
           <file leaf-file-name="Profile.java" pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/Java/Tables/Profile.java">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="2154">
-                  <caret line="105" column="40" lean-forward="true" selection-start-line="105" selection-start-column="40" selection-end-line="105" selection-end-column="40" />
+                <state relative-caret-position="1596">
+                  <caret line="139" column="35" lean-forward="true" selection-start-line="139" selection-start-column="35" selection-end-line="139" selection-end-column="35" />
                   <folding>
                     <element signature="imports" expanded="true" />
-                    <element signature="e#2173#2182#0" expanded="true" />
-                    <element signature="e#3362#3379#0" expanded="true" />
-                    <element signature="e#4116#4117#0" expanded="true" />
-                    <element signature="e#4145#4146#0" expanded="true" />
-                    <element signature="e#4189#4190#0" expanded="true" />
-                    <element signature="e#4225#4226#0" expanded="true" />
-                    <element signature="e#4256#4257#0" expanded="true" />
-                    <element signature="e#4283#4284#0" expanded="true" />
-                    <element signature="e#4323#4324#0" expanded="true" />
-                    <element signature="e#4355#4356#0" expanded="true" />
-                    <element signature="e#4387#4388#0" expanded="true" />
-                    <element signature="e#4415#4416#0" expanded="true" />
-                    <element signature="e#4457#4458#0" expanded="true" />
-                    <element signature="e#4491#4492#0" expanded="true" />
-                    <element signature="e#4529#4530#0" expanded="true" />
-                    <element signature="e#4565#4566#0" expanded="true" />
-                    <element signature="e#4621#4622#0" expanded="true" />
-                    <element signature="e#4671#4672#0" expanded="true" />
-                    <element signature="e#4710#4711#0" expanded="true" />
-                    <element signature="e#4742#4743#0" expanded="true" />
-                    <element signature="e#4795#4796#0" expanded="true" />
-                    <element signature="e#4837#4838#0" expanded="true" />
-                    <marker date="1512183598756" expanded="true" signature="935:963" ph="SELECT COUNT... Profile" />
-                    <marker date="1512183598756" expanded="true" signature="1976:2080" ph="SELECT fromI... " />
-                    <marker date="1512183598756" expanded="true" signature="3127:3264" ph="SELECT userI... " />
+                    <element signature="e#3453#3462#0" expanded="true" />
+                    <element signature="e#4721#4738#0" expanded="true" />
+                    <element signature="e#5475#5476#0" expanded="true" />
+                    <element signature="e#5504#5505#0" expanded="true" />
+                    <element signature="e#5548#5549#0" expanded="true" />
+                    <element signature="e#5584#5585#0" expanded="true" />
+                    <element signature="e#5615#5616#0" expanded="true" />
+                    <element signature="e#5642#5643#0" expanded="true" />
+                    <element signature="e#5682#5683#0" expanded="true" />
+                    <element signature="e#5714#5715#0" expanded="true" />
+                    <element signature="e#5746#5747#0" expanded="true" />
+                    <element signature="e#5774#5775#0" expanded="true" />
+                    <element signature="e#5816#5817#0" expanded="true" />
+                    <element signature="e#5850#5851#0" expanded="true" />
+                    <element signature="e#5888#5889#0" expanded="true" />
+                    <element signature="e#5924#5925#0" expanded="true" />
+                    <element signature="e#5980#5981#0" expanded="true" />
+                    <element signature="e#6030#6031#0" expanded="true" />
+                    <element signature="e#6069#6070#0" expanded="true" />
+                    <element signature="e#6101#6102#0" expanded="true" />
+                    <element signature="e#6154#6155#0" expanded="true" />
+                    <element signature="e#6196#6197#0" expanded="true" />
+                    <marker date="1512185216312" expanded="true" signature="571:714" ph="SELECT userI... " />
+                    <marker date="1512185216312" expanded="true" signature="1208:1319" ph="SELECT userI... " />
+                    <marker date="1512185216312" expanded="true" signature="1930:1958" ph="SELECT COUNT... Profile" />
+                    <marker date="1512185216312" expanded="true" signature="2499:2637" ph="SELECT userI... " />
+                    <marker date="1512185216312" expanded="true" signature="3231:3351" ph="SELECT fromI... " />
+                    <marker date="1512185216312" expanded="true" signature="4461:4614" ph="SELECT userI... " />
                   </folding>
                 </state>
               </provider>
@@ -159,8 +188,8 @@
           <file leaf-file-name="Structure.sql" pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/SQL/Structure.sql">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="-1571">
-                  <caret line="76" column="19" lean-forward="false" selection-start-line="76" selection-start-column="19" selection-end-line="76" selection-end-column="19" />
+                <state relative-caret-position="21">
+                  <caret line="196" column="35" lean-forward="false" selection-start-line="196" selection-start-column="35" selection-end-line="196" selection-end-column="35" />
                   <folding />
                 </state>
               </provider>
@@ -191,6 +220,8 @@
       <find>&quot; +</find>
       <find>continue</find>
       <find>sc.next</find>
+      <find>initiateF</find>
+      <find>pending</find>
     </findStrings>
     <replaceStrings>
       <replace>../SQL/Data/</replace>
@@ -217,9 +248,9 @@
         <option value="$PROJECT_DIR$/SQL/Structure.sql" />
         <option value="$PROJECT_DIR$/SQL/Objects/Users.sql" />
         <option value="$PROJECT_DIR$/Java/Tables/Groups.java" />
+        <option value="$PROJECT_DIR$/Java/FaceSpace.java" />
         <option value="$PROJECT_DIR$/Java/Tables/Friends.java" />
         <option value="$PROJECT_DIR$/Java/Tables/Profile.java" />
-        <option value="$PROJECT_DIR$/Java/FaceSpace.java" />
         <option value="$PROJECT_DIR$/Java/Tables/Group.java" />
       </list>
     </option>
@@ -314,6 +345,7 @@
     <property name="project.structure.last.edited" value="SDKs" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
+    <property name="SearchEverywhereHistoryKey" value="&#9;FILE&#9;file://C:/Users/royag/IdeaProjects/DB_Project/Java/Tables/Group.java" />
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
@@ -455,7 +487,7 @@
       <workItem from="1512162227750" duration="475000" />
       <workItem from="1512163132708" duration="398000" />
       <workItem from="1512164131059" duration="2224000" />
-      <workItem from="1512166403552" duration="17161000" />
+      <workItem from="1512166403552" duration="19187000" />
     </task>
     <task id="LOCAL-00001" summary="Wrote csv loading for Structure">
       <created>1512165036182</created>
@@ -513,11 +545,25 @@
       <option name="project" value="LOCAL" />
       <updated>1512180650478</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="Updated group functions">
+      <created>1512183616420</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1512183616420</updated>
+    </task>
+    <task id="LOCAL-00010" summary="Updated group functions">
+      <created>1512183711243</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1512183711243</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="22827000" />
+    <option name="totallyTimeSpent" value="24853000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-9" y="-9" width="1938" height="1048" extended-state="6" />
@@ -568,7 +614,8 @@
     <MESSAGE value="Commented out CSV loading for now" />
     <MESSAGE value="Fixed csv loading" />
     <MESSAGE value="Java functions" />
-    <option name="LAST_COMMIT_MESSAGE" value="Java functions" />
+    <MESSAGE value="Updated group functions" />
+    <option name="LAST_COMMIT_MESSAGE" value="Updated group functions" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
@@ -904,14 +951,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/SQL/Structure.sql">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1571">
-          <caret line="76" column="19" lean-forward="false" selection-start-line="76" selection-start-column="19" selection-end-line="76" selection-end-column="19" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/SQL/Data/profile.csv">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
@@ -925,24 +964,6 @@
         <state relative-caret-position="21">
           <caret line="1" column="33" lean-forward="false" selection-start-line="1" selection-start-column="33" selection-end-line="1" selection-end-column="33" />
           <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Java/Tables/Friends.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="532">
-          <caret line="31" column="51" lean-forward="true" selection-start-line="31" selection-start-column="51" selection-end-line="31" selection-end-column="51" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#1174#1175#0" expanded="true" />
-            <element signature="e#1204#1205#0" expanded="true" />
-            <element signature="e#1241#1242#0" expanded="true" />
-            <element signature="e#1271#1272#0" expanded="true" />
-            <element signature="e#1303#1304#0" expanded="true" />
-            <element signature="e#1336#1337#0" expanded="true" />
-            <element signature="e#1366#1367#0" expanded="true" />
-            <element signature="e#1399#1400#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -960,48 +981,105 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Java/Tables/Profile.java">
+    <entry file="file://$PROJECT_DIR$/SQL/Structure.sql">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2154">
-          <caret line="105" column="40" lean-forward="true" selection-start-line="105" selection-start-column="40" selection-end-line="105" selection-end-column="40" />
+        <state relative-caret-position="21">
+          <caret line="196" column="35" lean-forward="false" selection-start-line="196" selection-start-column="35" selection-end-line="196" selection-end-column="35" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Java/Tables/Friends.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="615">
+          <caret line="64" column="51" lean-forward="false" selection-start-line="64" selection-start-column="51" selection-end-line="64" selection-end-column="51" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#2173#2182#0" expanded="true" />
-            <element signature="e#3362#3379#0" expanded="true" />
-            <element signature="e#4116#4117#0" expanded="true" />
-            <element signature="e#4145#4146#0" expanded="true" />
-            <element signature="e#4189#4190#0" expanded="true" />
-            <element signature="e#4225#4226#0" expanded="true" />
-            <element signature="e#4256#4257#0" expanded="true" />
-            <element signature="e#4283#4284#0" expanded="true" />
-            <element signature="e#4323#4324#0" expanded="true" />
-            <element signature="e#4355#4356#0" expanded="true" />
-            <element signature="e#4387#4388#0" expanded="true" />
-            <element signature="e#4415#4416#0" expanded="true" />
-            <element signature="e#4457#4458#0" expanded="true" />
-            <element signature="e#4491#4492#0" expanded="true" />
-            <element signature="e#4529#4530#0" expanded="true" />
-            <element signature="e#4565#4566#0" expanded="true" />
-            <element signature="e#4621#4622#0" expanded="true" />
-            <element signature="e#4671#4672#0" expanded="true" />
-            <element signature="e#4710#4711#0" expanded="true" />
-            <element signature="e#4742#4743#0" expanded="true" />
-            <element signature="e#4795#4796#0" expanded="true" />
-            <element signature="e#4837#4838#0" expanded="true" />
-            <marker date="1512183598756" expanded="true" signature="935:963" ph="SELECT COUNT... Profile" />
-            <marker date="1512183598756" expanded="true" signature="1976:2080" ph="SELECT fromI... " />
-            <marker date="1512183598756" expanded="true" signature="3127:3264" ph="SELECT userI... " />
+            <element signature="e#2668#2669#0" expanded="true" />
+            <element signature="e#2698#2699#0" expanded="true" />
+            <element signature="e#2735#2736#0" expanded="true" />
+            <element signature="e#2765#2766#0" expanded="true" />
+            <element signature="e#2797#2798#0" expanded="true" />
+            <element signature="e#2830#2831#0" expanded="true" />
+            <element signature="e#2860#2861#0" expanded="true" />
+            <element signature="e#2893#2894#0" expanded="true" />
+            <element signature="e#2927#2928#0" expanded="true" />
+            <element signature="e#2957#2958#0" expanded="true" />
+            <marker date="1512185025624" expanded="true" signature="1240:1267" ph="INSERT INTO Pending_Friends... " />
+            <marker date="1512185025624" expanded="true" signature="1240:1291" ph="INSERT INTO Pending_Friends... " />
+            <marker date="1512185025624" expanded="true" signature="1240:1327" ph="INSERT INTO Pending_Friends... " />
+            <marker date="1512185025624" expanded="true" signature="1240:1329" ph="INSERT INTO Pending_Friends... " />
+            <marker date="1512185025624" expanded="true" signature="1240:1381" ph="INSERT INTO Pending_Friends... " />
+            <marker date="1512185025624" expanded="true" signature="1240:1382" ph="INSERT INTO Pending_Friends... " />
+            <marker date="1512185025624" expanded="true" signature="1240:1434" ph="INSERT INTO Pending_Friends... " />
+            <marker date="1512185025624" expanded="true" signature="1240:1435" ph="INSERT INTO Pending_Friends... " />
+            <marker date="1512185025624" expanded="true" signature="1240:1499" ph="INSERT INTO Pending_Friends... " />
+            <marker date="1512185025624" expanded="true" signature="1690:2028" ph="INSERT INTO Pending_Friends... " />
+            <marker date="1512185025624" expanded="true" signature="2243:2377" ph="DELETE FROM Pending_Friends... " />
+            <marker date="1512185025624" expanded="true" signature="2471:2490" ph="DELETE FROM Friends... " />
+            <marker date="1512185025624" expanded="true" signature="2471:2524" ph="DELETE FROM Friends... " />
+            <marker date="1512185025624" expanded="true" signature="2471:2589" ph="DELETE FROM Friends... " />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Java/Tables/Profile.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1596">
+          <caret line="139" column="35" lean-forward="true" selection-start-line="139" selection-start-column="35" selection-end-line="139" selection-end-column="35" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#3453#3462#0" expanded="true" />
+            <element signature="e#4721#4738#0" expanded="true" />
+            <element signature="e#5475#5476#0" expanded="true" />
+            <element signature="e#5504#5505#0" expanded="true" />
+            <element signature="e#5548#5549#0" expanded="true" />
+            <element signature="e#5584#5585#0" expanded="true" />
+            <element signature="e#5615#5616#0" expanded="true" />
+            <element signature="e#5642#5643#0" expanded="true" />
+            <element signature="e#5682#5683#0" expanded="true" />
+            <element signature="e#5714#5715#0" expanded="true" />
+            <element signature="e#5746#5747#0" expanded="true" />
+            <element signature="e#5774#5775#0" expanded="true" />
+            <element signature="e#5816#5817#0" expanded="true" />
+            <element signature="e#5850#5851#0" expanded="true" />
+            <element signature="e#5888#5889#0" expanded="true" />
+            <element signature="e#5924#5925#0" expanded="true" />
+            <element signature="e#5980#5981#0" expanded="true" />
+            <element signature="e#6030#6031#0" expanded="true" />
+            <element signature="e#6069#6070#0" expanded="true" />
+            <element signature="e#6101#6102#0" expanded="true" />
+            <element signature="e#6154#6155#0" expanded="true" />
+            <element signature="e#6196#6197#0" expanded="true" />
+            <marker date="1512185216312" expanded="true" signature="571:714" ph="SELECT userI... " />
+            <marker date="1512185216312" expanded="true" signature="1208:1319" ph="SELECT userI... " />
+            <marker date="1512185216312" expanded="true" signature="1930:1958" ph="SELECT COUNT... Profile" />
+            <marker date="1512185216312" expanded="true" signature="2499:2637" ph="SELECT userI... " />
+            <marker date="1512185216312" expanded="true" signature="3231:3351" ph="SELECT fromI... " />
+            <marker date="1512185216312" expanded="true" signature="4461:4614" ph="SELECT userI... " />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/Java/Tables/Group.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="63">
-          <caret line="21" column="51" lean-forward="false" selection-start-line="21" selection-start-column="51" selection-end-line="21" selection-end-column="51" />
+        <state relative-caret-position="598">
+          <caret line="56" column="41" lean-forward="false" selection-start-line="56" selection-start-column="41" selection-end-line="56" selection-end-column="41" />
           <folding>
             <element signature="imports" expanded="true" />
-            <marker date="1512183598769" expanded="true" signature="738:765" ph="SELECT COUNT... Groups" />
+            <marker date="1512185630885" expanded="true" signature="501:530" ph="SELECT gID, " />
+            <marker date="1512185630885" expanded="true" signature="501:570" ph="SELECT gID, " />
+            <marker date="1512185630885" expanded="true" signature="501:574" ph="SELECT gID, " />
+            <marker date="1512185630885" expanded="true" signature="501:610" ph="SELECT gID, " />
+            <marker date="1512185630885" expanded="true" signature="501:611" ph="SELECT gID, " />
+            <marker date="1512185630885" expanded="true" signature="1116:1143" ph="SELECT COUNT... Groups" />
+            <marker date="1512185630885" expanded="true" signature="1428:1446" ph="INSERT INTO Groups... " />
+            <marker date="1512185630885" expanded="true" signature="1648:1680" ph="INSERT INTO Pending_Groupmembers... " />
+            <marker date="1512185630885" expanded="true" signature="1648:1703" ph="INSERT INTO Pending_Groupmembers... " />
+            <marker date="1512185630885" expanded="true" signature="1648:1732" ph="INSERT INTO Pending_Groupmembers... " />
+            <marker date="1512185630885" expanded="true" signature="1648:1800" ph="INSERT INTO Pending_Groupmembers... " />
+            <marker date="1512185630885" expanded="true" signature="1648:1801" ph="INSERT INTO Pending_Groupmembers... " />
+            <marker date="1512185630885" expanded="true" signature="1648:1849" ph="INSERT INTO Pending_Groupmembers... " />
           </folding>
         </state>
       </provider>
