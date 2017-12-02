@@ -19,49 +19,39 @@ public class Profile {
 
         if (full) {
             // get all fields
-			/*
-			Statement stmt = conn.createStatement();
-			ResultSet rs = stmt.executeQuery("SELECT");
-			stmt.executeUpdate("UPDATE/DELETE");
-			stmt.execute();
-			
-			PreparedStatement ps = conn.createPreparedStatement("SELECT fromID FROM messages WHERE toID = ?");
-			*/
-			
-			Statement stmt = conn.createStatement();
-			ResultSet rs = stmt.executeQuery("SELECT userID,name,email, date_of_birth, lastlogin"+
-												"FROM PROFILE" +
-												"WHERE userID = " + userID);
-												
-			Profile temp = new Profile();
-			temp.userID = rs.getString(1);
-			temp.name = rs.getString(2);
-			temp.email = rs.getString(3);
-			temp.date_of_birth = rs.getString(4);
-			temp.lastlogin = rs.getString(5);
-			
-			return temp;
-			
-			
-			
-			
 
-			
-			
+            Statement stmt = conn.createStatement();
+            ResultSet rs = stmt.executeQuery(
+                    "SELECT userID,name,email, date_of_birth, lastlogin" +
+                            "FROM PROFILE" +
+                            "WHERE userID = " + userID
+            );
+
+            Profile temp = new Profile();
+            temp.userID = rs.getString(1);
+            temp.name = rs.getString(2);
+            temp.email = rs.getString(3);
+            temp.date_of_birth = rs.getDate(4);
+            temp.lastlogin = rs.getTimestamp(5);
+
+            return temp;
+
         } else {
             // just get name, userID
-			
-			Statement stmt = conn.createStatement();
-			ResultSet rs = stmt.executeQuery("SELECT userID,name"+
-												"FROM PROFILE" +
-												"WHERE userID = " + userID);
-												
-			Profile temp = new Profile();
-			temp.userID = rs.getString(1);
-			temp.name = rs.getString(2);
-			
-			return temp;
-												
+
+            Statement stmt = conn.createStatement();
+            ResultSet rs = stmt.executeQuery(
+                    "SELECT userID,name" +
+                            "FROM PROFILE" +
+                            "WHERE userID = " + userID
+            );
+
+            Profile temp = new Profile();
+            temp.userID = rs.getString(1);
+            temp.name = rs.getString(2);
+
+            return temp;
+
         }
     }
 
@@ -121,9 +111,11 @@ public class Profile {
 
         // Get list
         Statement stmt = conn.createStatement();
-        ResultSet rs = stmt.executeQuery("SELECT fromID, toID, message" +
-                "FROM Pending_Friends " +
-                "WHERE toID = " + userID);
+        ResultSet rs = stmt.executeQuery(
+                "SELECT fromID, toID, message" +
+                        "FROM Pending_Friends " +
+                        "WHERE toID = " + userID
+        );
 
         // Populate our list
         ArrayList<Friends> pending = new ArrayList<Friends>();
@@ -160,9 +152,11 @@ public class Profile {
 
         // Query for friends
         Statement stmt = conn.createStatement();
-        ResultSet rs = stmt.executeQuery("SELECT userID1, userID2, JDate, message" +
-                "FROM Friends" +
-                "WHERE userID1 = " + userID + " OR userID2 = " + userID);
+        ResultSet rs = stmt.executeQuery(
+                "SELECT userID1, userID2, JDate, message" +
+                        "FROM Friends" +
+                        "WHERE userID1 = " + userID + " OR userID2 = " + userID
+        );
 
 
         // Populate our list
