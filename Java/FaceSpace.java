@@ -243,8 +243,13 @@ public class FaceSpace {
                         e.printStackTrace();
                     }
 
+					break;
 
                 case 8:
+					
+					//user message
+					
+				
 
                 case 9:
 
