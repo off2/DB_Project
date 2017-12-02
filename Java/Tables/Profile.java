@@ -2,7 +2,6 @@ package Tables;
 
 import java.sql.*;
 import java.util.ArrayList;
-import java.util.HashMap;
 
 public class Profile {
 
@@ -95,9 +94,11 @@ public class Profile {
         String function = "login";
 
         Statement stmt = conn.createStatement();
-        ResultSet rs = stmt.executeQuery("SELECT userID,name,email, date_of_birth, lastlogin " +
-                "FROM PROFILE " +
-                "WHERE userID = " + userID + " AND password = " + password);
+        ResultSet rs = stmt.executeQuery(
+                "SELECT userID,name,email, date_of_birth, lastlogin " +
+                        "FROM PROFILE " +
+                        "WHERE userID = " + userID + " AND password = " + password
+        );
 
         //if no matches
 
@@ -117,15 +118,13 @@ public class Profile {
 
         return temp;
 
-
     }
 
     // TODO fix
     public void logout() {
 
-
-		Timestamp ts = new Timestamp(System.currentTimeMillis());
-		lastlogin = ts;
+        Timestamp ts = new Timestamp(System.currentTimeMillis());
+        lastlogin = ts;
 
     }
 
@@ -141,7 +140,6 @@ public class Profile {
         Friends.addPending(conn, this, other, message);
     }
 
-    // TODO Queries pending friends, mapping by ID? Name?
     public ArrayList<Friends> displayPendingFriends()
             throws SQLException {
 
@@ -174,6 +172,48 @@ public class Profile {
                     .append(pending.size())
                     .append(". ")
                     .append(temp.getFrom().getName())
+                    .append("\t")
+                    .append(temp.getMessage())
+                    .append("\n");
+        }
+
+        System.out.println(output);
+
+        return pending;
+    }
+
+    public ArrayList<GroupMembership> displayPendingGroups(int startFrom)
+            throws SQLException {
+
+        // Get list
+        Statement stmt = conn.createStatement();
+        ResultSet rs = stmt.executeQuery(
+                "SELECT gID, message" +
+                        "FROM Pending_Groupmembers " +
+                        "WHERE toID = " + userID
+        );
+
+        // Populate our list
+        ArrayList<GroupMembership> pending = new ArrayList<GroupMembership>();
+        StringBuilder output = new StringBuilder();
+
+        while (rs.next()) {
+
+            GroupMembership temp = new GroupMembership(
+                    conn,
+                    true,
+                    Group.get(conn, rs.getString(1)),
+                    this,
+                    rs.getString(2)
+            );
+
+            pending.add(temp);
+
+            // TODO possible off by one
+            output
+                    .append(pending.size() + startFrom)
+                    .append(". ")
+                    .append(temp.getGroup().getName())
                     .append("\t")
                     .append(temp.getMessage())
                     .append("\n");

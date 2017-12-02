@@ -1,12 +1,12 @@
 import Tables.Friends;
 import Tables.Group;
+import Tables.GroupMembership;
 import Tables.Profile;
 
 import java.sql.*;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
-import java.util.HashMap;
 import java.util.Scanner;
 
 public class FaceSpace {
@@ -140,26 +140,27 @@ public class FaceSpace {
                 case 4:
 
                     // Get list
-                    ArrayList<Friends> pending = null;
+                    ArrayList<Friends> pendingFriends = null;
+                    ArrayList<GroupMembership> pendingGroups = null;
                     try {
                         assert loggedIn != null;
-                        pending = loggedIn.displayPendingFriends();
+                        pendingFriends = loggedIn.displayPendingFriends();
+                        pendingGroups = loggedIn.displayPendingGroups(pendingFriends.size());
                     } catch (SQLException e) {
                         e.printStackTrace();
                     }
 
                     // TODO possible off by 1
-                    assert pending != null;
-                    boolean[] confirmed = new boolean[pending.size()];
+                    assert pendingFriends != null && pendingGroups != null;
+                    boolean[] confirmed = new boolean[pendingFriends.size() + pendingGroups.size()];
                     while (!(input = get(sc, "an index")).equals("\n")) {
                         try {
-                            int index = Integer.parseInt(input);
-                            pending.get(index).confirm();
-                            confirmed[index] = true;
-
-                            // Delete unconfirmed
-                            for (int i = 0; i < pending.size(); i++)
-                                if (!confirmed[i]) pending.get(i).delete();
+                            int select = Integer.parseInt(input);
+                            if (select <= pendingFriends.size()) {
+                                pendingFriends.get(select - 1).confirm();
+                            } else {
+                                pendingGroups.get(select - (pendingFriends.size() + 1)).confirm();
+                            }
                         } catch (NumberFormatException e) {
                             System.out.println("Invalid input, strike return to exit");
                         } catch (SQLException e) {
@@ -167,12 +168,24 @@ public class FaceSpace {
                         }
                     }
 
+                    try {
+                        for (int i = 0; i < confirmed.length; i++) {
+                            if (i <= pendingFriends.size() && confirmed[i]) {
+                                pendingFriends.get(i - 1).delete();
+                            } else if (i > pendingFriends.size() && confirmed[i]) {
+                                pendingGroups.get(i - (pendingFriends.size() + 1)).delete();
+                            }
+                        }
+                    } catch (SQLException e) {
+                        e.printStackTrace();
+                    }
+
                     break;
 
                 case 5:
 
                     // Get friends
-                    HashMap<String, Profile> friends;
+                    ArrayList<Profile> friends;
                     try {
                         assert loggedIn != null;
                         friends = loggedIn.displayFriends();
