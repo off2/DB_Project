@@ -106,15 +106,15 @@ public class FaceSpace {
                 case 2:
 
                     // Login
-					//will set loggedIn to appropriot profile iff there is exactly one match in profiles
+                    //will set loggedIn to appropriot profile iff there is exactly one match in profiles
                     try {
-					
+
                         loggedIn = Profile.login(conn, get(sc, "userID"), get(sc, "password"));
-						if(loggedIn != NULL){
-							System.out.println("logged in as " + loggedIn.name);
-						}else{
-							System.out.println("Invalid login");
-						}
+                        if (loggedIn != null) {
+                            System.out.println("logged in as " + loggedIn.getName());
+                        } else {
+                            System.out.println("Invalid login");
+                        }
                     } catch (SQLException e) {
                         e.printStackTrace();
                     }
@@ -156,14 +156,16 @@ public class FaceSpace {
                             int index = Integer.parseInt(input);
                             pending.get(index).confirm();
                             confirmed[index] = true;
+
+                            // Delete unconfirmed
+                            for (int i = 0; i < pending.size(); i++)
+                                if (!confirmed[i]) pending.get(i).delete();
                         } catch (NumberFormatException e) {
                             System.out.println("Invalid input, strike return to exit");
+                        } catch (SQLException e) {
+                            e.printStackTrace();
                         }
                     }
-
-                    // Delete unconfirmed
-                    for (int i = 0; i < pending.size(); i++)
-                        if (!confirmed[i]) pending.get(i).delete();
 
                     break;
 
@@ -188,6 +190,9 @@ public class FaceSpace {
                             e.printStackTrace();
                         }
                     }
+
+                    break;
+
                 case 6:
 
                     Group newGroup;
@@ -212,14 +217,14 @@ public class FaceSpace {
 
                 case 7:
 
-                    // TODO fix
+                    // Add to group
                     try {
                         Profile other = Profile.get(conn, get(sc, "user's ID"), false);
-                        Group group = Group.get(conn, get(sc, "group's ID"), false);
+                        Group group = Group.get(conn, get(sc, "group's ID"));
 
                         System.out.println(other);
 
-                        loggedIn.initiateFriendship(other, get(sc, "message"));
+                        group.initiateAddUser(other, get(sc, "message"));
 
                     } catch (SQLException e) {
                         e.printStackTrace();

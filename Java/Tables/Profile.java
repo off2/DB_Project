@@ -181,7 +181,7 @@ public class Profile {
         return pending;
     }
 
-    public HashMap<String, Profile> displayFriends()
+    public ArrayList<Profile> displayFriends()
             throws SQLException {
 
         // Query for friends
@@ -194,7 +194,7 @@ public class Profile {
 
 
         // Populate our list
-        HashMap<String, Profile> friends = new HashMap<String, Profile>();
+        ArrayList<Profile> friends = new ArrayList<Profile>();
         StringBuilder output = new StringBuilder();
 
         while (rs.next()) {
@@ -208,7 +208,7 @@ public class Profile {
                 throw new SQLException("Unknown error when retrieving friends list");
             }
 
-            friends.put(temp.userID, temp);
+            friends.add(temp);
 
             output
                     .append(temp.userID)
