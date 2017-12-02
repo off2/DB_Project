@@ -124,6 +124,9 @@ public class Profile {
     public void logout() {
 
 
+		Timestamp ts = new Timestamp(System.currentTimeMillis());
+		lastlogin = ts;
+
     }
 
     public void sendMessage(Profile to, String message) {
