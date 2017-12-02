@@ -23,8 +23,8 @@ public class Profile {
             Statement stmt = conn.createStatement();
             ResultSet rs = stmt.executeQuery(
                     "SELECT userID,name,email, date_of_birth, lastlogin" +
-                            "FROM PROFILE" +
-                            "WHERE userID = " + userID
+                            " FROM PROFILE" +
+                            " WHERE userID = " + userID
             );
 
             Profile temp = new Profile();
@@ -42,10 +42,11 @@ public class Profile {
             Statement stmt = conn.createStatement();
             ResultSet rs = stmt.executeQuery(
                     "SELECT userID,name" +
-                            "FROM PROFILE" +
-                            "WHERE userID = " + userID
+                            " FROM PROFILE" +
+                            " WHERE userID = " + userID
             );
-
+			
+			rs.next();
             Profile temp = new Profile();
             temp.userID = rs.getString(1);
             temp.name = rs.getString(2);
@@ -94,10 +95,29 @@ public class Profile {
         String function = "login";
 		
 		Statement stmt = conn.createStatement();
-		ResultSet rs = stmt.executeQuery("SELECT userID,name,email, date_of_birth, lastlogin"+
-											"FROM PROFILE" +
+		ResultSet rs = stmt.executeQuery("SELECT userID,name,email, date_of_birth, lastlogin "+
+											"FROM PROFILE " +
 											"WHERE userID = " + userID + " AND password = " + password );
+		
+		//if no matches
+		
+		Profile temp = null;
+		
+		if(!rs.next()){
+			//no profile matches login
+			return null;
 			
+			//no second profile that also matches loggin
+		}else if(!rs.next()){
+			 temp = get(conn, userID, true);
+		}else{
+			//a second matches login
+			return null;
+		}
+			
+		return temp;
+		
+		
 		
 		
 
@@ -106,6 +126,8 @@ public class Profile {
     // TODO fix
     public void logout() {
 
+		
+	
     }
 
     public void sendMessage(Profile to, String message) {

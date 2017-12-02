@@ -106,8 +106,15 @@ public class FaceSpace {
                 case 2:
 
                     // Login
+					//will set loggedIn to appropriot profile iff there is exactly one match in profiles
                     try {
+					
                         loggedIn = Profile.login(conn, get(sc, "userID"), get(sc, "password"));
+						if(loggedIn != NULL){
+							System.out.println("logged in as " + loggedIn.name);
+						}else{
+							System.out.println("Invalid login");
+						}
                     } catch (SQLException e) {
                         e.printStackTrace();
                     }
