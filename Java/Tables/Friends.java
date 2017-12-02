@@ -4,7 +4,6 @@ import java.sql.Connection;
 import java.sql.Date;
 import java.sql.SQLException;
 import java.sql.Statement;
-import java.util.Arrays;
 
 public class Friends {
 
@@ -22,7 +21,6 @@ public class Friends {
      * @param pending if the friendship is pending
      * @param friend1 from
      * @param friend2 to
-     * @throws SQLException on failure
      */
     Friends(Connection conn, boolean pending, Profile friend1, Profile friend2, String message) {
 
@@ -47,11 +45,11 @@ public class Friends {
         Statement stmt = conn.createStatement();
         stmt.executeUpdate(
                 "INSERT INTO Pending_Friends (fromID, toID, message) " +
-                        "VALUES (" +
-                        friend1.getUserID() + ", " +
-                        friend2.getUserID() + ", " +
+                        "VALUES ('" +
+                        friend1.getUserID() + "'', '" +
+                        friend2.getUserID() + "'', '" +
                         message +
-                        ")"
+                        "')"
         );
 
     }
@@ -63,31 +61,31 @@ public class Friends {
         delete();
         conn.createStatement().executeUpdate(
                 "INSERT INTO Friends (userID1, userID2, JDate, message) " +
-                        "VALUES (" +
-                        friends[0].getUserID() + ", " +
-                        friends[1].getUserID() + ", " +
-                        new Date(System.currentTimeMillis()) + ", " +
+                        "VALUES ('" +
+                        friends[0].getUserID() + "', '" +
+                        friends[1].getUserID() + "', '" +
+                        new Date(System.currentTimeMillis()) + "', '" +
                         message +
-                        ")"
+                        "')"
         );
 
-        return true;
+        return pending = true;
     }
 
     public void delete() throws SQLException {
-        Statement stmt = conn.createStatement();
 
+        Statement stmt = conn.createStatement();
         if (pending) {
             stmt.executeUpdate(
                     "DELETE FROM Pending_Friends " +
-                            "WHERE fromID = " + friends[0] +
-                            " AND toID = " + friends[1]
+                            "WHERE fromID = '" + friends[0] +
+                            "' AND toID = '" + friends[1] + "'"
             );
         } else {
             stmt.executeUpdate(
               "DELETE FROM Friends " +
-                      "WHERE userID1 = " + friends[0] +
-                      " AND userID2 = " + friends[1]
+                      "WHERE userID1 = '" + friends[0] +
+                      "' AND userID2 = '" + friends[1] + "'"
             );
         }
 

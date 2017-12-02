@@ -16,6 +16,21 @@ public class Group {
     private ArrayList<Profile> members;
     private Integer memberLimit;
 
+    public Group() {
+
+    }
+
+    public Group(Connection conn, String gID, String name, String description) {
+        this.conn = conn;
+        this.gID = gID;
+        this.name = name;
+        this.description = description;
+
+        // TODO get members?
+        // TODO get admin
+        // TODO get memberlimit
+    }
+
     public static Group get(Connection conn, String gID)
             throws SQLException {
 
@@ -23,7 +38,7 @@ public class Group {
         ResultSet rs = stmt.executeQuery(
                 "SELECT gID, name, description" +
                         "FROM Groups" +
-                        "WHERE gID = " + gID
+                        "WHERE gID = '" + gID + "'"
         );
 
         Group temp = new Group();
@@ -55,11 +70,11 @@ public class Group {
         created.memberLimit = memberLimit;
 
         stmt.execute("INSERT INTO Groups (GID, NAME, DESCRIPTION) " +
-                "VALUES (" +
-                created.gID + ", " +
-                created.name + ", " +
+                "VALUES ('" +
+                created.gID + "'', '" +
+                created.name + "', '" +
                 created.description +
-                ")"
+                "'')"
         );
 
         return created;
@@ -70,12 +85,20 @@ public class Group {
 
         Statement stmt = conn.createStatement();
         stmt.execute("INSERT INTO Pending_Groupmembers (gID, userID, message)" +
-                "VALUES (" +
-                gID + ", " +
-                to.getUserID() + ", " +
+                "VALUES ('" +
+                gID + "', '" +
+                to.getUserID() + "', '" +
                 message +
-                ")"
+                "')"
         );
+    }
+
+    public String getgID() {
+        return gID;
+    }
+
+    public String getName() {
+        return name;
     }
 
     @Override
