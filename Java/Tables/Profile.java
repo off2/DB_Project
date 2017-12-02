@@ -76,6 +76,8 @@ public class Profile {
         created.date_of_birth = date_of_birth;
 
         // save
+		
+		
 
         return created;
     }
@@ -85,6 +87,14 @@ public class Profile {
             throws SQLException {
 
         String function = "login";
+		
+		Statement stmt = conn.createStatement();
+		ResultSet rs = stmt.executeQuery("SELECT userID,name,email, date_of_birth, lastlogin"+
+											"FROM PROFILE" +
+											"WHERE userID = " + userID + " AND password = " + password );
+			
+		
+		
 
     }
 
