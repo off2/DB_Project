@@ -75,9 +75,14 @@ public class Profile {
         created.email = email;
         created.date_of_birth = date_of_birth;
 
-        // save
-		
-		
+        stmt.execute("INSERT INTO Friends (userID, name, email, date_of_birth) " +
+                "VALUES (" +
+                created.userID + ", " +
+                created.name + ", " +
+                created.email + ", " +
+                created.date_of_birth +
+                ")"
+        );
 
         return created;
     }
