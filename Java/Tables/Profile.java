@@ -45,8 +45,8 @@ public class Profile {
                             " FROM PROFILE" +
                             " WHERE userID = " + userID
             );
-			
-			rs.next();
+
+            rs.next();
             Profile temp = new Profile();
             temp.userID = rs.getString(1);
             temp.name = rs.getString(2);
@@ -93,41 +93,37 @@ public class Profile {
             throws SQLException {
 
         String function = "login";
-		
-		Statement stmt = conn.createStatement();
-		ResultSet rs = stmt.executeQuery("SELECT userID,name,email, date_of_birth, lastlogin "+
-											"FROM PROFILE " +
-											"WHERE userID = " + userID + " AND password = " + password );
-		
-		//if no matches
-		
-		Profile temp = null;
-		
-		if(!rs.next()){
-			//no profile matches login
-			return null;
-			
-			//no second profile that also matches loggin
-		}else if(!rs.next()){
-			 temp = get(conn, userID, true);
-		}else{
-			//a second matches login
-			return null;
-		}
-			
-		return temp;
-		
-		
-		
-		
+
+        Statement stmt = conn.createStatement();
+        ResultSet rs = stmt.executeQuery("SELECT userID,name,email, date_of_birth, lastlogin " +
+                "FROM PROFILE " +
+                "WHERE userID = " + userID + " AND password = " + password);
+
+        //if no matches
+
+        Profile temp = null;
+
+        if (!rs.next()) {
+            //no profile matches login
+            return null;
+
+            //no second profile that also matches loggin
+        } else if (!rs.next()) {
+            temp = get(conn, userID, true);
+        } else {
+            //a second matches login
+            return null;
+        }
+
+        return temp;
+
 
     }
 
     // TODO fix
     public void logout() {
 
-		
-	
+
     }
 
     public void sendMessage(Profile to, String message) {
@@ -136,7 +132,8 @@ public class Profile {
 
     }
 
-    public void initiateFriendship(Profile other, String message) {
+    public void initiateFriendship(Profile other, String message)
+            throws SQLException {
 
         Friends.addPending(conn, this, other, message);
     }
@@ -228,40 +225,8 @@ public class Profile {
         return userID;
     }
 
-    public void setUserID(String userID) {
-        this.userID = userID;
-    }
-
     public String getName() {
         return name;
-    }
-
-    public void setName(String name) {
-        this.name = name;
-    }
-
-    public String getEmail() {
-        return email;
-    }
-
-    public void setEmail(String email) {
-        this.email = email;
-    }
-
-    public Date getDate_of_birth() {
-        return date_of_birth;
-    }
-
-    public void setDate_of_birth(Date date_of_birth) {
-        this.date_of_birth = date_of_birth;
-    }
-
-    public Timestamp getLastlogin() {
-        return lastlogin;
-    }
-
-    public void setLastlogin(Timestamp lastlogin) {
-        this.lastlogin = lastlogin;
     }
 
     @Override
