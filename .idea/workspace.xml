@@ -1,26 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="b20357d1-2871-48ef-9065-071a93e1cdea" name="Default" comment="Fixed csv loading">
-      <change beforePath="" afterPath="$PROJECT_DIR$/Java/Tables/Friends.java" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/Java/Tables/GroupMembership.java" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/Java/Tables/Groups.java" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/Java/Tables/Message.java" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/Java/Tables/MessageRecipient.java" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/Java/Tables/Profile.java" />
-      <change beforePath="$PROJECT_DIR$/.idea/DB_Project.iml" afterPath="$PROJECT_DIR$/.idea/DB_Project.iml" />
+    <list default="true" id="b20357d1-2871-48ef-9065-071a93e1cdea" name="Default" comment="">
+      <change beforePath="" afterPath="$PROJECT_DIR$/Java/Tables/Group.java" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change beforePath="$PROJECT_DIR$/Data/friends.csv" afterPath="$PROJECT_DIR$/Data/friends.csv" />
-      <change beforePath="$PROJECT_DIR$/Data/group_membership.csv" afterPath="$PROJECT_DIR$/Data/group_membership.csv" />
-      <change beforePath="$PROJECT_DIR$/Data/groups.csv" afterPath="$PROJECT_DIR$/Data/groups.csv" />
-      <change beforePath="$PROJECT_DIR$/Data/message.csv" afterPath="$PROJECT_DIR$/Data/message.csv" />
-      <change beforePath="$PROJECT_DIR$/Data/message_recipient.csv" afterPath="$PROJECT_DIR$/Data/message_recipient.csv" />
-      <change beforePath="$PROJECT_DIR$/Data/profile.csv" afterPath="$PROJECT_DIR$/Data/profile.csv" />
-      <change beforePath="$PROJECT_DIR$/Java/Database.java" afterPath="" />
       <change beforePath="$PROJECT_DIR$/Java/FaceSpace.java" afterPath="$PROJECT_DIR$/Java/FaceSpace.java" />
-      <change beforePath="$PROJECT_DIR$/Python/CsvCreator.py" afterPath="$PROJECT_DIR$/Python/CsvCreator.py" />
-      <change beforePath="$PROJECT_DIR$/SQL/Objects/Users.sql" afterPath="$PROJECT_DIR$/SQL/Objects/Users.sql" />
-      <change beforePath="$PROJECT_DIR$/SQL/Structure.sql" afterPath="$PROJECT_DIR$/SQL/Structure.sql" />
+      <change beforePath="$PROJECT_DIR$/Java/Tables/Friends.java" afterPath="$PROJECT_DIR$/Java/Tables/Friends.java" />
+      <change beforePath="$PROJECT_DIR$/Java/Tables/Groups.java" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/Java/Tables/Profile.java" afterPath="$PROJECT_DIR$/Java/Tables/Profile.java" />
     </list>
     <ignored path="$PROJECT_DIR$/.idea/" />
     <ignored path="$PROJECT_DIR$/Classes/" />
@@ -49,17 +36,30 @@
     <splitter split-orientation="horizontal" split-proportion="0.49583334">
       <split-first>
         <leaf SIDE_TABS_SIZE_LIMIT_KEY="375">
-          <file leaf-file-name="FaceSpace.java" pinned="false" current-in-tab="true">
+          <file leaf-file-name="FaceSpace.java" pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/Java/FaceSpace.java">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="435">
-                  <caret line="177" column="72" lean-forward="false" selection-start-line="177" selection-start-column="72" selection-end-line="177" selection-end-column="72" />
+                <state relative-caret-position="367">
+                  <caret line="210" column="84" lean-forward="false" selection-start-line="210" selection-start-column="84" selection-end-line="210" selection-end-column="84" />
                   <folding>
                     <element signature="imports" expanded="true" />
-                    <marker date="1512180615769" expanded="true" signature="3025:3040" ph="SELECT \&quot;pas... " />
-                    <marker date="1512180615769" expanded="true" signature="3025:3052" ph="SELECT \&quot;pas... Profile" />
-                    <marker date="1512180615769" expanded="true" signature="3025:3068" ph="SELECT passw... Profile" />
-                    <marker date="1512180615769" expanded="true" signature="3025:3069" ph="SELECT Passw... Profile" />
+                    <marker date="1512183598782" expanded="true" signature="3031:3046" ph="SELECT \&quot;pas... " />
+                    <marker date="1512183598782" expanded="true" signature="3031:3058" ph="SELECT \&quot;pas... Profile" />
+                    <marker date="1512183598782" expanded="true" signature="3031:3074" ph="SELECT passw... Profile" />
+                    <marker date="1512183598782" expanded="true" signature="3031:3075" ph="SELECT Passw... Profile" />
+                  </folding>
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="Group.java" pinned="false" current-in-tab="true">
+            <entry file="file://$PROJECT_DIR$/Java/Tables/Group.java">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="63">
+                  <caret line="21" column="51" lean-forward="false" selection-start-line="21" selection-start-column="51" selection-end-line="21" selection-end-column="51" />
+                  <folding>
+                    <element signature="imports" expanded="true" />
+                    <marker date="1512183598769" expanded="true" signature="738:765" ph="SELECT COUNT... Groups" />
                   </folding>
                 </state>
               </provider>
@@ -68,28 +68,28 @@
           <file leaf-file-name="Friends.java" pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/Java/Tables/Friends.java">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="658">
-                  <caret line="72" column="0" lean-forward="true" selection-start-line="72" selection-start-column="0" selection-end-line="72" selection-end-column="0" />
+                <state relative-caret-position="532">
+                  <caret line="31" column="51" lean-forward="true" selection-start-line="31" selection-start-column="51" selection-end-line="31" selection-end-column="51" />
                   <folding>
                     <element signature="imports" expanded="true" />
-                    <element signature="e#1040#1041#0" expanded="true" />
-                    <element signature="e#1070#1071#0" expanded="true" />
-                    <element signature="e#1107#1108#0" expanded="true" />
-                    <element signature="e#1137#1138#0" expanded="true" />
-                    <element signature="e#1200#1201#0" expanded="true" />
-                    <element signature="e#1233#1234#0" expanded="true" />
-                    <element signature="e#1263#1264#0" expanded="true" />
-                    <element signature="e#1296#1297#0" expanded="true" />
+                    <element signature="e#1174#1175#0" expanded="true" />
+                    <element signature="e#1204#1205#0" expanded="true" />
+                    <element signature="e#1241#1242#0" expanded="true" />
+                    <element signature="e#1271#1272#0" expanded="true" />
+                    <element signature="e#1303#1304#0" expanded="true" />
+                    <element signature="e#1336#1337#0" expanded="true" />
+                    <element signature="e#1366#1367#0" expanded="true" />
+                    <element signature="e#1399#1400#0" expanded="true" />
                   </folding>
                 </state>
               </provider>
             </entry>
           </file>
-          <file leaf-file-name="Structure.sql" pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/SQL/Structure.sql">
+          <file leaf-file-name="group_membership.txt" pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/Python/group_membership.txt">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="1596">
-                  <caret line="76" column="19" lean-forward="false" selection-start-line="76" selection-start-column="19" selection-end-line="76" selection-end-column="19" />
+                <state relative-caret-position="0">
+                  <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
                   <folding />
                 </state>
               </provider>
@@ -122,36 +122,46 @@
           <file leaf-file-name="Profile.java" pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/Java/Tables/Profile.java">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="420">
-                  <caret line="74" column="16" lean-forward="false" selection-start-line="74" selection-start-column="16" selection-end-line="74" selection-end-column="16" />
+                <state relative-caret-position="2154">
+                  <caret line="105" column="40" lean-forward="true" selection-start-line="105" selection-start-column="40" selection-end-line="105" selection-end-column="40" />
                   <folding>
                     <element signature="imports" expanded="true" />
-                    <element signature="e#2174#2183#0" expanded="true" />
-                    <element signature="e#3348#3365#0" expanded="true" />
-                    <element signature="e#3928#3929#0" expanded="true" />
-                    <element signature="e#3957#3958#0" expanded="true" />
-                    <element signature="e#4001#4002#0" expanded="true" />
-                    <element signature="e#4037#4038#0" expanded="true" />
-                    <element signature="e#4068#4069#0" expanded="true" />
-                    <element signature="e#4095#4096#0" expanded="true" />
-                    <element signature="e#4135#4136#0" expanded="true" />
-                    <element signature="e#4167#4168#0" expanded="true" />
-                    <element signature="e#4199#4200#0" expanded="true" />
-                    <element signature="e#4227#4228#0" expanded="true" />
-                    <element signature="e#4269#4270#0" expanded="true" />
-                    <element signature="e#4303#4304#0" expanded="true" />
-                    <element signature="e#4341#4342#0" expanded="true" />
-                    <element signature="e#4377#4378#0" expanded="true" />
-                    <element signature="e#4433#4434#0" expanded="true" />
-                    <element signature="e#4483#4484#0" expanded="true" />
-                    <element signature="e#4522#4523#0" expanded="true" />
-                    <element signature="e#4554#4555#0" expanded="true" />
-                    <element signature="e#4607#4608#0" expanded="true" />
-                    <element signature="e#4649#4650#0" expanded="true" />
-                    <marker date="1512180624911" expanded="true" signature="974:1002" ph="SELECT COUNT... Profile" />
-                    <marker date="1512180624911" expanded="true" signature="1977:2081" ph="SELECT fromI... " />
-                    <marker date="1512180624911" expanded="true" signature="3113:3250" ph="SELECT userI... " />
+                    <element signature="e#2173#2182#0" expanded="true" />
+                    <element signature="e#3362#3379#0" expanded="true" />
+                    <element signature="e#4116#4117#0" expanded="true" />
+                    <element signature="e#4145#4146#0" expanded="true" />
+                    <element signature="e#4189#4190#0" expanded="true" />
+                    <element signature="e#4225#4226#0" expanded="true" />
+                    <element signature="e#4256#4257#0" expanded="true" />
+                    <element signature="e#4283#4284#0" expanded="true" />
+                    <element signature="e#4323#4324#0" expanded="true" />
+                    <element signature="e#4355#4356#0" expanded="true" />
+                    <element signature="e#4387#4388#0" expanded="true" />
+                    <element signature="e#4415#4416#0" expanded="true" />
+                    <element signature="e#4457#4458#0" expanded="true" />
+                    <element signature="e#4491#4492#0" expanded="true" />
+                    <element signature="e#4529#4530#0" expanded="true" />
+                    <element signature="e#4565#4566#0" expanded="true" />
+                    <element signature="e#4621#4622#0" expanded="true" />
+                    <element signature="e#4671#4672#0" expanded="true" />
+                    <element signature="e#4710#4711#0" expanded="true" />
+                    <element signature="e#4742#4743#0" expanded="true" />
+                    <element signature="e#4795#4796#0" expanded="true" />
+                    <element signature="e#4837#4838#0" expanded="true" />
+                    <marker date="1512183598756" expanded="true" signature="935:963" ph="SELECT COUNT... Profile" />
+                    <marker date="1512183598756" expanded="true" signature="1976:2080" ph="SELECT fromI... " />
+                    <marker date="1512183598756" expanded="true" signature="3127:3264" ph="SELECT userI... " />
                   </folding>
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="Structure.sql" pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/SQL/Structure.sql">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="-1571">
+                  <caret line="76" column="19" lean-forward="false" selection-start-line="76" selection-start-column="19" selection-end-line="76" selection-end-column="19" />
+                  <folding />
                 </state>
               </provider>
             </entry>
@@ -206,9 +216,11 @@
         <option value="$PROJECT_DIR$/Python/CsvCreator.py" />
         <option value="$PROJECT_DIR$/SQL/Structure.sql" />
         <option value="$PROJECT_DIR$/SQL/Objects/Users.sql" />
+        <option value="$PROJECT_DIR$/Java/Tables/Groups.java" />
         <option value="$PROJECT_DIR$/Java/Tables/Friends.java" />
-        <option value="$PROJECT_DIR$/Java/FaceSpace.java" />
         <option value="$PROJECT_DIR$/Java/Tables/Profile.java" />
+        <option value="$PROJECT_DIR$/Java/FaceSpace.java" />
+        <option value="$PROJECT_DIR$/Java/Tables/Group.java" />
       </list>
     </option>
   </component>
@@ -220,7 +232,7 @@
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
     <option name="x" value="-8" />
-    <option name="width" value="1314" />
+    <option name="width" value="1222" />
     <option name="height" value="1038" />
   </component>
   <component name="ProjectView">
@@ -250,11 +262,6 @@
             <path>
               <item name="DB_Project" type="b2602c69:ProjectViewProjectNode" />
               <item name="DB_Project" type="462c0819:PsiDirectoryNode" />
-              <item name="Data" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="DB_Project" type="b2602c69:ProjectViewProjectNode" />
-              <item name="DB_Project" type="462c0819:PsiDirectoryNode" />
               <item name="Java" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -271,7 +278,25 @@
             <path>
               <item name="DB_Project" type="b2602c69:ProjectViewProjectNode" />
               <item name="DB_Project" type="462c0819:PsiDirectoryNode" />
+              <item name="Python" type="462c0819:PsiDirectoryNode" />
+              <item name="text" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="DB_Project" type="b2602c69:ProjectViewProjectNode" />
+              <item name="DB_Project" type="462c0819:PsiDirectoryNode" />
               <item name="SQL" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="DB_Project" type="b2602c69:ProjectViewProjectNode" />
+              <item name="DB_Project" type="462c0819:PsiDirectoryNode" />
+              <item name="SQL" type="462c0819:PsiDirectoryNode" />
+              <item name="Data" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="DB_Project" type="b2602c69:ProjectViewProjectNode" />
+              <item name="DB_Project" type="462c0819:PsiDirectoryNode" />
+              <item name="SQL" type="462c0819:PsiDirectoryNode" />
+              <item name="Objects" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -430,7 +455,7 @@
       <workItem from="1512162227750" duration="475000" />
       <workItem from="1512163132708" duration="398000" />
       <workItem from="1512164131059" duration="2224000" />
-      <workItem from="1512166403552" duration="14194000" />
+      <workItem from="1512166403552" duration="17161000" />
     </task>
     <task id="LOCAL-00001" summary="Wrote csv loading for Structure">
       <created>1512165036182</created>
@@ -481,11 +506,18 @@
       <option name="project" value="LOCAL" />
       <updated>1512168677365</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="Java functions">
+      <created>1512180650478</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1512180650478</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="19860000" />
+    <option name="totallyTimeSpent" value="22827000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-9" y="-9" width="1938" height="1048" extended-state="6" />
@@ -506,11 +538,11 @@
       <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Image Layers" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32849163" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3281768" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33072627" sideWeight="0.48434237" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Database Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32960895" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.31041667" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.19427083" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="SciView" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Concurrent Activities Diagram" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32960895" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
       <window_info id="Theme Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
@@ -535,53 +567,14 @@
     <MESSAGE value="Updated location of CSV" />
     <MESSAGE value="Commented out CSV loading for now" />
     <MESSAGE value="Fixed csv loading" />
-    <option name="LAST_COMMIT_MESSAGE" value="Fixed csv loading" />
+    <MESSAGE value="Java functions" />
+    <option name="LAST_COMMIT_MESSAGE" value="Java functions" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/SQL/Structure.sql">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="30" lean-forward="false" selection-start-line="0" selection-start-column="30" selection-end-line="0" selection-end-column="30" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Python/CsvCreator.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="3486">
-          <caret line="166" column="30" lean-forward="true" selection-start-line="166" selection-start-column="30" selection-end-line="166" selection-end-column="30" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Data/message.csv">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="210">
-          <caret line="10" column="28" lean-forward="false" selection-start-line="10" selection-start-column="28" selection-end-line="10" selection-end-column="28" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Data/friends.csv">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/SQL/Objects/Friends.sql">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/SQL/Inserts/InsertAll.sql" />
     <entry file="file://$PROJECT_DIR$/Data/group_membership.csv">
       <provider selected="true" editor-type-id="text-editor">
@@ -815,14 +808,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Java/Tables/Groups.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="42">
-          <caret line="2" column="19" lean-forward="false" selection-start-line="2" selection-start-column="19" selection-end-line="2" selection-end-column="19" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Java/Tables/Message.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="42">
@@ -871,10 +856,66 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/Python/CsvCreator.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1036">
+          <caret line="91" column="26" lean-forward="true" selection-start-line="91" selection-start-column="26" selection-end-line="91" selection-end-column="26" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/SQL/InsertAll.sql">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="210">
+          <caret line="76" column="14" lean-forward="true" selection-start-line="76" selection-start-column="14" selection-end-line="76" selection-end-column="14" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/SQL/Data/friends.csv">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Python/groups.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Python/group_membership.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/SQL/Objects/Messages.sql">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="252">
           <caret line="12" column="29" lean-forward="false" selection-start-line="12" selection-start-column="29" selection-end-line="12" selection-end-column="29" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/SQL/Structure.sql">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-1571">
+          <caret line="76" column="19" lean-forward="false" selection-start-line="76" selection-start-column="19" selection-end-line="76" selection-end-column="19" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/SQL/Data/profile.csv">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding />
         </state>
       </provider>
@@ -887,85 +928,80 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Python/CsvCreator.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1036">
-          <caret line="91" column="26" lean-forward="true" selection-start-line="91" selection-start-column="26" selection-end-line="91" selection-end-column="26" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Java/Tables/Friends.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="658">
-          <caret line="72" column="0" lean-forward="true" selection-start-line="72" selection-start-column="0" selection-end-line="72" selection-end-column="0" />
+        <state relative-caret-position="532">
+          <caret line="31" column="51" lean-forward="true" selection-start-line="31" selection-start-column="51" selection-end-line="31" selection-end-column="51" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#1040#1041#0" expanded="true" />
-            <element signature="e#1070#1071#0" expanded="true" />
-            <element signature="e#1107#1108#0" expanded="true" />
-            <element signature="e#1137#1138#0" expanded="true" />
-            <element signature="e#1200#1201#0" expanded="true" />
-            <element signature="e#1233#1234#0" expanded="true" />
-            <element signature="e#1263#1264#0" expanded="true" />
-            <element signature="e#1296#1297#0" expanded="true" />
+            <element signature="e#1174#1175#0" expanded="true" />
+            <element signature="e#1204#1205#0" expanded="true" />
+            <element signature="e#1241#1242#0" expanded="true" />
+            <element signature="e#1271#1272#0" expanded="true" />
+            <element signature="e#1303#1304#0" expanded="true" />
+            <element signature="e#1336#1337#0" expanded="true" />
+            <element signature="e#1366#1367#0" expanded="true" />
+            <element signature="e#1399#1400#0" expanded="true" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/SQL/Structure.sql">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1596">
-          <caret line="76" column="19" lean-forward="false" selection-start-line="76" selection-start-column="19" selection-end-line="76" selection-end-column="19" />
-          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/Java/FaceSpace.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="435">
-          <caret line="177" column="72" lean-forward="false" selection-start-line="177" selection-start-column="72" selection-end-line="177" selection-end-column="72" />
+        <state relative-caret-position="367">
+          <caret line="210" column="84" lean-forward="false" selection-start-line="210" selection-start-column="84" selection-end-line="210" selection-end-column="84" />
           <folding>
             <element signature="imports" expanded="true" />
-            <marker date="1512180615769" expanded="true" signature="3025:3040" ph="SELECT \&quot;pas... " />
-            <marker date="1512180615769" expanded="true" signature="3025:3052" ph="SELECT \&quot;pas... Profile" />
-            <marker date="1512180615769" expanded="true" signature="3025:3068" ph="SELECT passw... Profile" />
-            <marker date="1512180615769" expanded="true" signature="3025:3069" ph="SELECT Passw... Profile" />
+            <marker date="1512183598782" expanded="true" signature="3031:3046" ph="SELECT \&quot;pas... " />
+            <marker date="1512183598782" expanded="true" signature="3031:3058" ph="SELECT \&quot;pas... Profile" />
+            <marker date="1512183598782" expanded="true" signature="3031:3074" ph="SELECT passw... Profile" />
+            <marker date="1512183598782" expanded="true" signature="3031:3075" ph="SELECT Passw... Profile" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/Java/Tables/Profile.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="420">
-          <caret line="74" column="16" lean-forward="false" selection-start-line="74" selection-start-column="16" selection-end-line="74" selection-end-column="16" />
+        <state relative-caret-position="2154">
+          <caret line="105" column="40" lean-forward="true" selection-start-line="105" selection-start-column="40" selection-end-line="105" selection-end-column="40" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#2174#2183#0" expanded="true" />
-            <element signature="e#3348#3365#0" expanded="true" />
-            <element signature="e#3928#3929#0" expanded="true" />
-            <element signature="e#3957#3958#0" expanded="true" />
-            <element signature="e#4001#4002#0" expanded="true" />
-            <element signature="e#4037#4038#0" expanded="true" />
-            <element signature="e#4068#4069#0" expanded="true" />
-            <element signature="e#4095#4096#0" expanded="true" />
-            <element signature="e#4135#4136#0" expanded="true" />
-            <element signature="e#4167#4168#0" expanded="true" />
-            <element signature="e#4199#4200#0" expanded="true" />
-            <element signature="e#4227#4228#0" expanded="true" />
-            <element signature="e#4269#4270#0" expanded="true" />
-            <element signature="e#4303#4304#0" expanded="true" />
-            <element signature="e#4341#4342#0" expanded="true" />
-            <element signature="e#4377#4378#0" expanded="true" />
-            <element signature="e#4433#4434#0" expanded="true" />
-            <element signature="e#4483#4484#0" expanded="true" />
-            <element signature="e#4522#4523#0" expanded="true" />
-            <element signature="e#4554#4555#0" expanded="true" />
-            <element signature="e#4607#4608#0" expanded="true" />
-            <element signature="e#4649#4650#0" expanded="true" />
-            <marker date="1512180624911" expanded="true" signature="974:1002" ph="SELECT COUNT... Profile" />
-            <marker date="1512180624911" expanded="true" signature="1977:2081" ph="SELECT fromI... " />
-            <marker date="1512180624911" expanded="true" signature="3113:3250" ph="SELECT userI... " />
+            <element signature="e#2173#2182#0" expanded="true" />
+            <element signature="e#3362#3379#0" expanded="true" />
+            <element signature="e#4116#4117#0" expanded="true" />
+            <element signature="e#4145#4146#0" expanded="true" />
+            <element signature="e#4189#4190#0" expanded="true" />
+            <element signature="e#4225#4226#0" expanded="true" />
+            <element signature="e#4256#4257#0" expanded="true" />
+            <element signature="e#4283#4284#0" expanded="true" />
+            <element signature="e#4323#4324#0" expanded="true" />
+            <element signature="e#4355#4356#0" expanded="true" />
+            <element signature="e#4387#4388#0" expanded="true" />
+            <element signature="e#4415#4416#0" expanded="true" />
+            <element signature="e#4457#4458#0" expanded="true" />
+            <element signature="e#4491#4492#0" expanded="true" />
+            <element signature="e#4529#4530#0" expanded="true" />
+            <element signature="e#4565#4566#0" expanded="true" />
+            <element signature="e#4621#4622#0" expanded="true" />
+            <element signature="e#4671#4672#0" expanded="true" />
+            <element signature="e#4710#4711#0" expanded="true" />
+            <element signature="e#4742#4743#0" expanded="true" />
+            <element signature="e#4795#4796#0" expanded="true" />
+            <element signature="e#4837#4838#0" expanded="true" />
+            <marker date="1512183598756" expanded="true" signature="935:963" ph="SELECT COUNT... Profile" />
+            <marker date="1512183598756" expanded="true" signature="1976:2080" ph="SELECT fromI... " />
+            <marker date="1512183598756" expanded="true" signature="3127:3264" ph="SELECT userI... " />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Java/Tables/Group.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="63">
+          <caret line="21" column="51" lean-forward="false" selection-start-line="21" selection-start-column="51" selection-end-line="21" selection-end-column="51" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <marker date="1512183598769" expanded="true" signature="738:765" ph="SELECT COUNT... Groups" />
           </folding>
         </state>
       </provider>

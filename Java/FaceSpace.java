@@ -1,7 +1,7 @@
 import Tables.Friends;
+import Tables.Group;
 import Tables.Profile;
 
-import java.io.File;
 import java.sql.*;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
@@ -83,18 +83,18 @@ public class FaceSpace {
                 case 1:
 
                     // Create profile
-                    Profile created;
+                    Profile newProfile;
                     try {
-                        created = Profile.create(conn,
+                        newProfile = Profile.create(conn,
                                 get(sc, "your name"),
                                 get(sc, "your email"),
                                 getDate(sc, "date of birth"));
 
                         Statement stmt = conn.createStatement();
-                        ResultSet rs = stmt.executeQuery("SELECT Password FROM Profile WHERE userID = " + created.getUserID());
+                        ResultSet rs = stmt.executeQuery("SELECT Password FROM Profile WHERE userID = " + newProfile.getUserID());
                         rs.next();
 
-                        System.out.println("UserID: " + created.getUserID() +
+                        System.out.println("UserID: " + newProfile.getUserID() +
                                 "\nPassword : " + rs.getString(1));
 
                     } catch (SQLException e) {
@@ -163,27 +163,61 @@ public class FaceSpace {
                 case 5:
 
                     // Get friends
-                    HashMap<String, Profile> friends
+                    HashMap<String, Profile> friends;
                     try {
                         assert loggedIn != null;
                         friends = loggedIn.displayFriends();
                     } catch (SQLException e) {
                         e.printStackTrace();
                     }
-                    // get friends list
-                    // display friends
 
+                    // Get profiles, print more info
                     while (!(input = get(sc, "a userID to view profile")).equals("\n")) {
                         try {
-                            System.out.println(Profile.get(conn, input, ))
+                            System.out.println(Profile.get(conn, input, true));
                         } catch (NumberFormatException e) {
                             System.out.println("Invalid input, strike return to exit");
+                        } catch (SQLException e) {
+                            e.printStackTrace();
                         }
-
                     }
                 case 6:
 
+                    Group newGroup;
+                    try {
+                        newGroup = Group.create(
+                                conn,
+                                loggedIn,
+                                get(sc, "name"),
+                                get(sc, "description"),
+                                Integer.parseInt(get(sc, "maximum number of members"))
+                        );
+
+                        System.out.println(newGroup);
+
+                    } catch (NumberFormatException e) {
+                        System.out.println("This is not a number");
+                    } catch (SQLException e) {
+                        e.printStackTrace();
+                    }
+
+                    break;
+
                 case 7:
+
+                    // TODO fix
+                    try {
+                        Profile other = Profile.get(conn, get(sc, "user's ID"), false);
+                        Group group = Group.get(conn, get(sc, "group's ID"), false);
+
+                        System.out.println(other);
+
+                        loggedIn.initiateFriendship(other, get(sc, "message"));
+
+                    } catch (SQLException e) {
+                        e.printStackTrace();
+                    }
+
 
                 case 8:
 

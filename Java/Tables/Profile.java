@@ -27,9 +27,6 @@ public class Profile {
     public static Profile create(Connection conn, String email, String name, Date date_of_birth)
             throws SQLException {
 
-        String function = "addUser";
-
-
         Profile created = new Profile();
 
         StringBuilder ID = new StringBuilder();
@@ -41,6 +38,7 @@ public class Profile {
         rs.next();
         ID.append(rs.getInt(1) + 1);
 
+        created.conn = conn;
         created.userID = ID.toString();
         created.name = name;
         created.email = email;
@@ -72,7 +70,7 @@ public class Profile {
 
     public void initiateFriendship(Profile other, String message) {
 
-        // TODO Create new Friends with pending = true
+        Friends created = new Friends(conn, true, this, other);
 
     }
 
@@ -93,6 +91,7 @@ public class Profile {
         while (rs.next()) {
 
             Friends temp = new Friends(
+                    conn,
                     true,
                     Profile.get(conn, rs.getString(1), false),
                     Profile.get(conn, rs.getString(2), false)
@@ -110,7 +109,7 @@ public class Profile {
                     .append("\n");
         }
 
-        System.out.println(output.toString());
+        System.out.println(output);
 
         return pending;
     }
@@ -141,7 +140,14 @@ public class Profile {
             }
 
             friends.put(temp.userID, temp);
+
+            output
+                    .append(temp.userID)
+                    .append(": \t")
+                    .append(temp.name);
         }
+
+        System.out.println(output);
 
         return friends;
     }
