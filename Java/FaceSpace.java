@@ -347,17 +347,44 @@ public class FaceSpace {
                     break;
 
                 case 12:
-
+                    /*
+                    searchForUser
+                    Given a string on which to match any user in the system, any item in this string must be
+                    matched against any significant field of a user’s profile. That is if the user searches for “xyz
+                    abc”, the results should be the set of all profiles that match “xyz” union the set of all profiles
+                    that matches “abc”
+                    */
 
                     break;
 
                 case 13:
+                    /*
+                    threeDegress
+                    Given two users (A and B), find a path, if one exists, between A and B with at most 3 hop
+                    between them. A hop is defined as a friendship between any two users.
+                     */
 
 
                     break;
 
                 case 14:
+                    /*
+                    topMessages
+                    Display top K who have sent or received the highest number of messages during for the past x
+                    months. x and K are input parameters to this function
+                     */
 
+                    break;
+
+                case 15:
+                    /*
+                    dropUser
+                    Remove a user and all of their information from the system. When a user is removed, the system
+                    should delete the user from the groups he or she was a member of using a trigger. Note:
+                    messages require special handling because they are owned by both sender and receiver. Therefore,
+                    a message is deleted only when both he sender and all receivers are deleted. Attention
+                    should be paid handling integrity constraints.
+                     */
 
                     break;
 
