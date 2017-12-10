@@ -102,7 +102,7 @@ CREATE TABLE MESSAGE_RECIPIENT (
   CONSTRAINT MESSAGE_RECIPIENT_FK2 FOREIGN KEY (userID) REFERENCES PROFILE (userID)
 );
 
-CREATE TRIGGER sendMesage
+CREATE TRIGGER sendMessage
   BEFORE INSERT
   ON Message
 
@@ -111,25 +111,23 @@ CREATE TRIGGER sendMesage
     IF (new.toGroupID IS NULL)
     THEN
 
-      INSERT INTO
-        Message_Recipient (msgID, userID)
-      VALUES
-        (new.msgID, new.toUserID);
+      INSERT INTO MESSAGE_RECIPIENT (msgID, userID)
+      VALUES (new.msgID, new.toUserID);
 
-    ELSEIF (new.toUserID IS NULL)
+    ELSEIF (new.toGroupID IS NULL)
       THEN
 
         FOR groupMember IN (SELECT userID
-                            FROM Group_Membership
+                            FROM GROUP_MEMBERSHIP
                             WHERE gID = new.toGroupID)
         LOOP
-          INSERT INTO
-            Message_Recipient (msgID, userID)
-          VALUES
-            (new.msgID, groupMember.userID);
+
+          INSERT INTO MESSAGE_RECIPIENT (msgID, userID)
+          VALUES (new.msgID, groupMember.userID);
+
         END LOOP;
 
     END IF;
 
-  END sendMesage;
+  END sendMessage;
 /
