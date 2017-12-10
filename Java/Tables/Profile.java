@@ -16,43 +16,40 @@ public class Profile {
     public static Profile get(Connection conn, String userID, boolean full)
             throws SQLException {
 
+        Profile temp = new Profile();
+
         if (full) {
-            // get all fields
-
-            Statement stmt = conn.createStatement();
-            ResultSet rs = stmt.executeQuery(
-                    "SELECT userID,name,email, date_of_birth, lastlogin" +
-                            " FROM PROFILE" +
-                            " WHERE userID = '" + userID + "'"
+            // Get all fields
+            PreparedStatement ps = conn.prepareStatement(
+                    "SELECT userID,name,email, date_of_birth, lastlogin " +
+                            "FROM PROFILE " +
+                            "WHERE userID = ?"
             );
+            ps.setString(1, userID);
+            ResultSet rs = ps.executeQuery();
 
-            Profile temp = new Profile();
+            rs.next();
             temp.userID = rs.getString(1);
             temp.name = rs.getString(2);
             temp.email = rs.getString(3);
             temp.date_of_birth = rs.getDate(4);
             temp.lastlogin = rs.getTimestamp(5);
 
-            return temp;
-
         } else {
             // just get name, userID
-
-            Statement stmt = conn.createStatement();
-            ResultSet rs = stmt.executeQuery(
-                    "SELECT userID,name" +
-                            " FROM PROFILE" +
-                            " WHERE userID = '" + userID + "'"
-            );
+            PreparedStatement ps = conn.prepareStatement("SELECT userID,name " +
+                    "FROM PROFILE " +
+                    "WHERE userID = ?");
+            ps.setString(1, userID);
+            ResultSet rs = ps.executeQuery();
 
             rs.next();
-            Profile temp = new Profile();
             temp.userID = rs.getString(1);
             temp.name = rs.getString(2);
-
-            return temp;
-
         }
+
+        return temp;
+
     }
 
     public static Profile create(Connection conn, String email, String name, Date date_of_birth)
@@ -64,8 +61,9 @@ public class Profile {
         for (String s : name.split(" "))
             ID.append(Character.toLowerCase(s.charAt(0)));
 
-        Statement stmt = conn.createStatement();
-        ResultSet rs = stmt.executeQuery("SELECT COUNT(*) FROM Profile");
+        PreparedStatement ps = conn.prepareStatement("SELECT COUNT(*) FROM Profile");
+        ResultSet rs = ps.executeQuery();
+
         rs.next();
         ID.append(rs.getInt(1) + 1);
 
@@ -75,14 +73,14 @@ public class Profile {
         created.email = email;
         created.date_of_birth = date_of_birth;
 
-        stmt.execute("INSERT INTO Friends (userID, name, email, date_of_birth) " +
-                "VALUES ('" +
-                created.userID + "','" +
-                created.name + "','" +
-                created.email + "','" +
-                created.date_of_birth +
-                "')"
+        ps = conn.prepareStatement(
+                "INSERT INTO Friends (userID, name, email, date_of_birth) VALUES (?, ?, ?, ?)"
         );
+        ps.setString(1, created.userID);
+        ps.setString(2, created.userID);
+        ps.setString(3, created.email);
+        ps.setDate(4, created.date_of_birth);
+        ps.execute();
 
         return created;
     }
@@ -91,49 +89,32 @@ public class Profile {
     public static Profile login(Connection conn, String userID, String password)
             throws SQLException {
 
-        String function = "login";
-
-        Statement stmt = conn.createStatement();
-        ResultSet rs = stmt.executeQuery(
-                "SELECT userID,name,email, date_of_birth, lastlogin " +
-                        "FROM PROFILE " +
-                        "WHERE userID = '" + userID +
-                        "' AND password = '" + password + "'"
+        PreparedStatement ps = conn.prepareStatement(
+                "SELECT COUNT(*) FROM PROFILE WHERE userID = ? AND password = ?"
         );
+        ps.setString(1, userID);
+        ps.setString(2, password);
 
-        //if no matches
+        ResultSet rs = ps.executeQuery();
+        rs.next();
+        if (rs.getInt(1) != 1) return null;
 
-        Profile temp = null;
-
-        if (!rs.next()) {
-            //no profile matches login
-            return null;
-
-            //no second profile that also matches loggin
-        } else if (!rs.next()) {
-            temp = get(conn, userID, true);
-        } else {
-            //a second matches login
-            return null;
-        }
-
-        return temp;
-
-
+        return Profile.get(conn, userID, true);
     }
 
     public void logout() throws SQLException {
 
-        Timestamp ts = new Timestamp(System.currentTimeMillis());
-        lastlogin = ts;
-        Statement stmt = conn.createStatement();
-        stmt.executeUpdate(
+        lastlogin = new Timestamp(System.currentTimeMillis());
+
+        PreparedStatement ps = conn.prepareStatement(
                 "UPDATE PROFILE " +
-                        "SET lastlogin = '" + ts +
-                        "' WHERE userID = '" + userID + "'"
+                        "SET lastlogin = ?" +
+                        " WHERE userID = ?"
         );
+        ps.setTimestamp(1, lastlogin);
+        ps.setString(2, userID);
 
-
+        ps.executeUpdate();
     }
 
     public void sendMessageToUser(Profile to, String message, Connection conn)
@@ -145,28 +126,21 @@ public class Profile {
         ResultSet rs = stmt.executeQuery("SELECT COUNT(*) FROM message");
         rs.next();
         String mID = String.format("%d", rs.getInt(1) + 1);
-		
-		if(stmt.execute("INSERT INTO MESSAGE (msgID, fromID, message, toUserID, dateSent) " +
+
+        if (stmt.execute("INSERT INTO MESSAGE (msgID, fromID, message, toUserID, dateSent) " +
                 "VALUES ('" +
                 mID + "','" +
                 userID + "','" +
                 message + "','" +
-				userID + "', NULL,'" +
+                userID + "', NULL,'" +
                 new Date(System.currentTimeMillis()) +
                 "')"
-				
-				
-				
-			))
-			{
-				System.out.println("Message sent");
-			}
-			
-		
-		
-	
-                
-        
+
+
+        )) {
+            System.out.println("Message sent");
+        }
+
 
     }
 
@@ -204,17 +178,17 @@ public class Profile {
             throws SQLException {
 
         // Get list
-        Statement stmt = conn.createStatement();
-        ResultSet rs = stmt.executeQuery(
-                "SELECT fromID, toID, message" +
-                        "FROM Pending_Friends " +
-                        "WHERE toID = '" + userID + "'"
+        PreparedStatement ps = conn.prepareStatement(
+                "SELECT fromID, toID, message " +
+                "FROM Pending_Friends " +
+                "WHERE toID = ?"
         );
+        ps.setString(1, userID);
+
+        ResultSet rs = ps.executeQuery();
 
         // Populate our list
         ArrayList<Friends> pending = new ArrayList<Friends>();
-        StringBuilder output = new StringBuilder();
-
         while (rs.next()) {
 
             Friends temp = new Friends(
@@ -224,20 +198,15 @@ public class Profile {
                     Profile.get(conn, rs.getString(2), false),
                     rs.getString(3)
             );
-
             pending.add(temp);
 
-            // TODO possible off by one
-            output
-                    .append(pending.size())
-                    .append(". ")
-                    .append(temp.getFrom().getName())
-                    .append("\t")
-                    .append(temp.getMessage())
-                    .append("\n");
+            System.out.format(
+                    "%s. %s:\n\t%s\n\n",
+                    pending.size(),
+                    temp.getFrom().getName(),
+                    temp.getMessage()
+            );
         }
-
-        System.out.println(output);
 
         return pending;
     }
@@ -246,17 +215,17 @@ public class Profile {
             throws SQLException {
 
         // Get list
-        Statement stmt = conn.createStatement();
-        ResultSet rs = stmt.executeQuery(
-                "SELECT gID, message" +
+        PreparedStatement ps = conn.prepareStatement(
+                "SELECT gID, message " +
                         "FROM Pending_Groupmembers " +
-                        "WHERE toID = " + userID
+                        "WHERE toID = ?"
         );
+        ps.setString(1, userID);
+
+        ResultSet rs = ps.executeQuery();
 
         // Populate our list
         ArrayList<GroupMembership> pending = new ArrayList<GroupMembership>();
-        StringBuilder output = new StringBuilder();
-
         while (rs.next()) {
 
             GroupMembership temp = new GroupMembership(
@@ -269,17 +238,13 @@ public class Profile {
 
             pending.add(temp);
 
-            // TODO possible off by one
-            output
-                    .append(pending.size() + startFrom)
-                    .append(". ")
-                    .append(temp.getGroup().getName())
-                    .append("\t")
-                    .append(temp.getMessage())
-                    .append("\n");
+            System.out.format(
+                    "%s. %s:\n\t%s\n\n",
+                    pending.size(),
+                    temp.getGroup().getName(),
+                    temp.getMessage()
+            );
         }
-
-        System.out.println(output);
 
         return pending;
     }
@@ -288,18 +253,18 @@ public class Profile {
             throws SQLException {
 
         // Query for friends
-        Statement stmt = conn.createStatement();
-        ResultSet rs = stmt.executeQuery(
-                "SELECT userID1, userID2, JDate, message" +
-                        "FROM Friends" +
-                        "WHERE userID1 = '" + userID + "' OR userID2 = '" + userID + "'"
+        PreparedStatement ps = conn.prepareStatement(
+                "SELECT userID1, userID2, JDate, message " +
+                        "FROM Friends " +
+                        "WHERE userID1 = ? OR userID2 = ?"
         );
+        ps.setString(1, userID);
+        ps.setString(2, userID);
 
+        ResultSet rs = ps.executeQuery();
 
         // Populate our list
         ArrayList<Profile> friends = new ArrayList<Profile>();
-        StringBuilder output = new StringBuilder();
-
         while (rs.next()) {
 
             Profile temp;
@@ -313,13 +278,11 @@ public class Profile {
 
             friends.add(temp);
 
-            output
-                    .append(temp.userID)
-                    .append(": \t")
-                    .append(temp.name);
+            System.out.format("%s:\t%s\n",
+                    temp.userID,
+                    temp.name
+            );
         }
-
-        System.out.println(output);
 
         return friends;
     }
