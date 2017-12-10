@@ -30,7 +30,6 @@ public class GroupMembership {
 
         delete();
 
-
         PreparedStatement stmt = conn.prepareStatement(
                 "INSERT INTO Group_Membership (gID, userID, message) " +
                         "VALUES (?, ?, ?)"

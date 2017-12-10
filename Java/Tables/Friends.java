@@ -50,47 +50,49 @@ public class Friends {
         ps.executeUpdate();
     }
 
-	//HELP
+    //HELP
     public boolean confirm() throws SQLException {
 
         if (!pending) return false;
 
         delete();
-        conn.createStatement().executeUpdate(
+
+        PreparedStatement ps = conn.prepareStatement(
                 "INSERT INTO Friends (userID1, userID2, JDate, message) " +
-                        "VALUES ('" +
-                        friends[0].getUserID() + "', '" +
-                        friends[1].getUserID() + "', '" +
-                        new Date(System.currentTimeMillis()) + "', '" +
-                        message +
-                        "')"
+                        "VALUES (?, ?, ?, ?)"
         );
 
-        return pending = true;
+        ps.setString(1, friends[0].getUserID());
+        ps.setString(2, friends[1].getUserID());
+        ps.setDate(3, new Date(System.currentTimeMillis()));
+        ps.setString(4, message);
+
+        pending = false;
+        return true;
     }
 
     public void delete() throws SQLException {
 
-        Statement stmt;
-        if (pending) {
-			stmt = conn.prepareStatement(
-				"DELETE FROM Pending_Friends " +
-                            "WHERE fromID = ? AND toID = ?"
-			);
-			stmt.setString(1, friends[0]);
-			stmt.setString(2, friends[1]);           
-		   
-        } else {
-            stmt = conn.prepareStatement(
-				"DELETE FROM Pending_Friends " +
-                            "WHERE fromID = '?' AND toID = '?'"
-			);
-			stmt.setString(1, friends[0]);
-			stmt.setString(2, friends[1]); 
-        }
-		
-		stmt.executeUpdate();
+        PreparedStatement ps;
 
+        if (pending) {
+            ps = conn.prepareStatement(
+                    "DELETE FROM Pending_Friends " +
+                            "WHERE fromID = ? AND toID = ?"
+            );
+            ps.setString(1, friends[0].getUserID());
+            ps.setString(2, friends[1].getUserID());
+
+        } else {
+            ps = conn.prepareStatement(
+                    "DELETE FROM Pending_Friends " +
+                            "WHERE fromID = ? AND toID = ?"
+            );
+            ps.setString(1, friends[0].getUserID());
+            ps.setString(2, friends[1].getUserID());
+        }
+
+        ps.executeUpdate();
     }
 
     public boolean isPending() {
