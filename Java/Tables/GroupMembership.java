@@ -3,6 +3,7 @@ package Tables;
 import java.sql.Connection;
 import java.sql.SQLException;
 import java.sql.Statement;
+import java.sql.*;
 
 public class GroupMembership {
 
@@ -42,7 +43,7 @@ public class GroupMembership {
 
     public void delete() throws SQLException {
 
-        Statement stmt = conn.createStatement();
+        PreparedStatement stmt = conn.createStatement();
         if (pending) {
             stmt.executeUpdate(
                     "DELETE FROM Pending_Groupmembers " +

@@ -2,12 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="b20357d1-2871-48ef-9065-071a93e1cdea" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change beforePath="$PROJECT_DIR$/Java/FaceSpace.java" afterPath="$PROJECT_DIR$/Java/FaceSpace.java" />
-      <change beforePath="$PROJECT_DIR$/Java/Tables/Message.java" afterPath="$PROJECT_DIR$/Java/Tables/Message.java" />
-      <change beforePath="$PROJECT_DIR$/Java/Tables/MessageRecipient.java" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/Java/Tables/Profile.java" afterPath="$PROJECT_DIR$/Java/Tables/Profile.java" />
-      <change beforePath="$PROJECT_DIR$/SQL/Structure.sql" afterPath="$PROJECT_DIR$/SQL/Structure.sql" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="$PROJECT_DIR$/.idea/" />
     <ignored path="$PROJECT_DIR$/Classes/" />
@@ -19,7 +14,7 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="CoverageDataManager">
-    <SUITE FILE_PATH="coverage/DB_Project$Unnamed.coverage" NAME="Unnamed Coverage Results" MODIFIED="1512168044409" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Python" />
+    <SUITE FILE_PATH="coverage/DB_Project$Unnamed.coverage" NAME="Unnamed Coverage Results" MODIFIED="1510865518155" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Python" />
   </component>
   <component name="DatabaseView">
     <option name="SHOW_INTERMEDIATE" value="true" />
@@ -32,147 +27,32 @@
     <expand />
     <select />
   </component>
-  <component name="FavoritesManager">
-    <favorites_list name="DB_Project" />
-  </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="375">
-      <file leaf-file-name="FaceSpace.java" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/Java/FaceSpace.java">
+      <file leaf-file-name="friends.csv" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/Data/friends.csv">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="399">
-              <caret line="19" column="32" lean-forward="false" selection-start-line="19" selection-start-column="32" selection-end-line="19" selection-end-column="32" />
-              <folding>
-                <element signature="imports" expanded="true" />
-                <marker date="1512872421774" expanded="true" signature="3053:3098" ph="SELECT Passw... Profile" />
-              </folding>
+            <state relative-caret-position="0">
+              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+              <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Friends.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Java/Tables/Friends.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1995">
-              <caret line="95" column="5" lean-forward="true" selection-start-line="95" selection-start-column="5" selection-end-line="95" selection-end-column="5" />
-              <folding>
-                <element signature="e#2521#2522#0" expanded="true" />
-                <element signature="e#2551#2552#0" expanded="true" />
-                <element signature="e#2588#2589#0" expanded="true" />
-                <element signature="e#2618#2619#0" expanded="true" />
-                <element signature="e#2650#2651#0" expanded="true" />
-                <element signature="e#2683#2684#0" expanded="true" />
-                <element signature="e#2713#2714#0" expanded="true" />
-                <element signature="e#2746#2747#0" expanded="true" />
-                <element signature="e#2780#2781#0" expanded="true" />
-                <element signature="e#2810#2811#0" expanded="true" />
-                <marker date="1512869668078" expanded="true" signature="1065:1152" ph="INSERT INTO Pending_Friends... " />
-                <marker date="1512869668078" expanded="true" signature="1065:1156" ph="INSERT INTO Pending_Friends... " />
-                <marker date="1512869668078" expanded="true" signature="1065:1159" ph="INSERT INTO Pending_Friends... " />
-                <marker date="1512869668078" expanded="true" signature="1065:1162" ph="INSERT INTO Pending_Friends... " />
-                <marker date="1512869668078" expanded="true" signature="1507:1853" ph="INSERT INTO Pending_Friends... " />
-                <marker date="1512869668078" expanded="true" signature="2078:2214" ph="DELETE FROM Pending_Friends... " />
-                <marker date="1512869668078" expanded="true" signature="2078:2215" ph="DELETE FROM Pending_Friends... " />
-                <marker date="1512869668078" expanded="true" signature="2078:2234" ph="DELETE FROM Pending_Friends... " />
-                <marker date="1512869668078" expanded="true" signature="2315:2334" ph="DELETE FROM Friends... " />
-                <marker date="1512869668078" expanded="true" signature="2315:2368" ph="DELETE FROM Friends... " />
-                <marker date="1512869668078" expanded="true" signature="2315:2435" ph="DELETE FROM Friends... " />
-                <marker date="1512869668078" expanded="true" signature="2315:2436" ph="DELETE FROM Friends... " />
-                <marker date="1512869668078" expanded="true" signature="2315:2455" ph="DELETE FROM Friends... " />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Message.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Java/Tables/Message.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="507">
-              <caret line="104" column="30" lean-forward="true" selection-start-line="104" selection-start-column="30" selection-end-line="104" selection-end-column="30" />
-              <folding>
-                <marker date="1512872207201" expanded="true" signature="446:557" ph="SELECT fromI... Message" />
-                <marker date="1512872207201" expanded="true" signature="2005:2034" ph="SELECT COUNT... Messages" />
-                <marker date="1512872207201" expanded="true" signature="2440:2570" ph="INSERT INTO Message... " />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Profile.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Java/Tables/Profile.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="3150">
-              <caret line="163" column="40" lean-forward="true" selection-start-line="163" selection-start-column="40" selection-end-line="163" selection-end-column="40" />
-              <folding>
-                <element signature="imports" expanded="true" />
-                <element signature="method#logout#0;class#Profile#0" expanded="false" />
-                <element signature="e#8512#8513#0" expanded="true" />
-                <element signature="e#8541#8542#0" expanded="true" />
-                <element signature="e#8572#8573#0" expanded="true" />
-                <element signature="e#8599#8600#0" expanded="true" />
-                <marker date="1512872200608" expanded="true" signature="542:688" ph="SELECT userI... PROFILE" />
-                <marker date="1512872200608" expanded="true" signature="1148:1246" ph="SELECT userI... PROFILE" />
-                <marker date="1512872200608" expanded="true" signature="1858:1886" ph="SELECT COUNT... Profile" />
-                <marker date="1512872200608" expanded="true" signature="2220:2295" ph="INSERT INTO Friends... " />
-                <marker date="1512872200608" expanded="true" signature="2220:2296" ph="INSERT INTO Friends... " />
-                <marker date="1512872200608" expanded="true" signature="2718:2763" ph="SELECT userI... PROFILE" />
-                <marker date="1512872200608" expanded="true" signature="2718:2780" ph="SELECT userI... PROFILE" />
-                <marker date="1512872200608" expanded="true" signature="2718:2781" ph="SELECT userI... PROFILE" />
-                <marker date="1512872200608" expanded="true" signature="4105:4227" ph="SELECT fromI... " />
-                <marker date="1512872200608" expanded="true" signature="5188:5306" ph="SELECT gID, Pending_Groupmembers" />
-                <marker date="1512872200608" expanded="true" signature="6237:6380" ph="SELECT userI... " />
-                <marker date="1512872200608" expanded="true" signature="7318:7325" ph="SELECT msgID... " />
-                <marker date="1512872200608" expanded="true" signature="7318:7332" ph="SELECT m.msg... " />
-                <marker date="1512872200608" expanded="true" signature="7318:7376" ph="SELECT m.msg... Message" />
-                <marker date="1512872200608" expanded="true" signature="7318:7436" ph="SELECT m.msg... Message" />
-                <marker date="1512872200608" expanded="true" signature="7318:7486" ph="SELECT m.msg... Message" />
-                <marker date="1512872200608" expanded="true" signature="7318:7533" ph="SELECT m.msg... Message" />
-                <marker date="1512872200608" expanded="true" signature="7318:7582" ph="SELECT m.msg... Message" />
-                <marker date="1512872200608" expanded="true" signature="7937:8220" ph="SELECT m.msg... Message" />
-              </folding>
+      <file leaf-file-name="README.md" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/README.md">
+          <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+            <state split_layout="SPLIT">
+              <first_editor relative-caret-position="0">
+                <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+                <folding />
+              </first_editor>
+              <second_editor />
             </state>
           </provider>
         </entry>
       </file>
     </leaf>
-  </component>
-  <component name="FileTemplateManagerImpl">
-    <option name="RECENT_TEMPLATES">
-      <list>
-        <option value="Class" />
-      </list>
-    </option>
-  </component>
-  <component name="FindInProjectRecents">
-    <findStrings>
-      <find>../Data/</find>
-      <find>f.write</find>
-      <find>not null</find>
-      <find>NOT NULL</find>
-      <find>message.csv</find>
-      <find>messages</find>
-      <find>../SQL/</find>
-      <find>);*/</find>
-      <find>message</find>
-      <find>&quot; +</find>
-      <find>continue</find>
-      <find>sc.next</find>
-      <find>pending</find>
-      <find>initiateF</find>
-      <find>sendMessageToUser</find>
-      <find>throw</find>
-      <find>createSta</find>
-      <find>createSt</find>
-      <find>other</find>
-      <find>login</find>
-      <find>createStat</find>
-    </findStrings>
-    <replaceStrings>
-      <replace>../SQL/Data/</replace>
-      <replace>../</replace>
-      <replace>)*/;</replace>
-      <replace>\n&quot; +</replace>
-    </replaceStrings>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -186,20 +66,6 @@
     <option name="CHANGED_PATHS">
       <list>
         <option value="$PROJECT_DIR$/SQL/Objects/Structure.sql" />
-        <option value="$PROJECT_DIR$/SQL/Objects/organization.sql" />
-        <option value="$PROJECT_DIR$/Java/Database.java" />
-        <option value="$PROJECT_DIR$/Python/CsvCreator.py" />
-        <option value="$PROJECT_DIR$/SQL/Objects/Users.sql" />
-        <option value="$PROJECT_DIR$/Java/Tables/Groups.java" />
-        <option value="$PROJECT_DIR$/Java/Tables/Group_Membership.java" />
-        <option value="$PROJECT_DIR$/Java/Tables/GroupMembership.java" />
-        <option value="$PROJECT_DIR$/SQL/StructureNoCSV.sql" />
-        <option value="$PROJECT_DIR$/Java/Tables/Group.java" />
-        <option value="$PROJECT_DIR$/Java/Tables/Friends.java" />
-        <option value="$PROJECT_DIR$/SQL/Structure.sql" />
-        <option value="$PROJECT_DIR$/Java/Tables/Profile.java" />
-        <option value="$PROJECT_DIR$/Java/Tables/Message.java" />
-        <option value="$PROJECT_DIR$/Java/FaceSpace.java" />
       </list>
     </option>
   </component>
@@ -210,9 +76,10 @@
     <sorting>DEFINITION_ORDER</sorting>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="-8" />
-    <option name="width" value="966" />
-    <option name="height" value="1038" />
+    <option name="x" value="214" />
+    <option name="y" value="44" />
+    <option name="width" value="1400" />
+    <option name="height" value="1074" />
   </component>
   <component name="ProjectView">
     <navigator currentView="ProjectPane" proportions="" version="1">
@@ -229,6 +96,8 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scope" />
+      <pane id="PackagesPane" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -241,65 +110,22 @@
               <item name="DB_Project" type="462c0819:PsiDirectoryNode" />
               <item name="Java" type="462c0819:PsiDirectoryNode" />
             </path>
-            <path>
-              <item name="DB_Project" type="b2602c69:ProjectViewProjectNode" />
-              <item name="DB_Project" type="462c0819:PsiDirectoryNode" />
-              <item name="Java" type="462c0819:PsiDirectoryNode" />
-              <item name="Tables" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="DB_Project" type="b2602c69:ProjectViewProjectNode" />
-              <item name="DB_Project" type="462c0819:PsiDirectoryNode" />
-              <item name="Python" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="DB_Project" type="b2602c69:ProjectViewProjectNode" />
-              <item name="DB_Project" type="462c0819:PsiDirectoryNode" />
-              <item name="Python" type="462c0819:PsiDirectoryNode" />
-              <item name="text" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="DB_Project" type="b2602c69:ProjectViewProjectNode" />
-              <item name="DB_Project" type="462c0819:PsiDirectoryNode" />
-              <item name="SQL" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="DB_Project" type="b2602c69:ProjectViewProjectNode" />
-              <item name="DB_Project" type="462c0819:PsiDirectoryNode" />
-              <item name="SQL" type="462c0819:PsiDirectoryNode" />
-              <item name="Data" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="DB_Project" type="b2602c69:ProjectViewProjectNode" />
-              <item name="DB_Project" type="462c0819:PsiDirectoryNode" />
-              <item name="SQL" type="462c0819:PsiDirectoryNode" />
-              <item name="Objects" type="462c0819:PsiDirectoryNode" />
-            </path>
           </expand>
           <select />
         </subPane>
       </pane>
-      <pane id="Scope" />
-      <pane id="PackagesPane" />
-      <pane id="AndroidView" />
       <pane id="Scratches" />
+      <pane id="AndroidView" />
     </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="D:/Python3.6/python.exe" />
     <property name="settings.editor.selected.configurable" value="settings.github" />
     <property name="project.structure.last.edited" value="SDKs" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
-    <property name="SearchEverywhereHistoryKey" value="&#9;FILE&#9;file://C:/Users/royag/IdeaProjects/DB_Project/Java/Tables/Group.java" />
-  </component>
-  <component name="RecentsManager">
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="C:\Users\royag\IdeaProjects\DB_Project" />
-      <recent name="C:\Users\royag\IdeaProjects\DB_Project\SQL" />
-    </key>
   </component>
   <component name="RunDashboard">
     <option name="ruleStates">
@@ -313,27 +139,31 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Application.Unnamed">
+  <component name="RunManager" selected="Python.Unnamed">
+    <configuration name="Unnamed" type="PythonConfigurationType" factoryName="Python">
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="D:\Python3.6\python.exe" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/Python" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <module name="DB_Project" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/Python/CsvCreator.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+    </configuration>
     <configuration default="true" type="Applet" factoryName="Applet">
       <option name="HTML_USED" value="false" />
       <option name="WIDTH" value="400" />
       <option name="HEIGHT" value="300" />
       <option name="POLICY_FILE" value="$APPLICATION_HOME_DIR$/bin/appletviewer.policy" />
       <module />
-    </configuration>
-    <configuration name="Unnamed" type="Application" factoryName="Application">
-      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
-      <option name="MAIN_CLASS_NAME" value="FaceSpace" />
-      <option name="VM_PARAMETERS" value="" />
-      <option name="PROGRAM_PARAMETERS" value="" />
-      <option name="WORKING_DIRECTORY" value="file://$PROJECT_DIR$" />
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
-      <option name="ALTERNATIVE_JRE_PATH" />
-      <option name="ENABLE_SWING_INSPECTOR" value="false" />
-      <option name="ENV_VARIABLES" />
-      <option name="PASS_PARENT_ENVS" value="true" />
-      <module name="DB_Project" />
-      <envs />
     </configuration>
     <configuration default="true" type="Application" factoryName="Application">
       <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
@@ -369,24 +199,11 @@
       <envs />
       <patterns />
     </configuration>
-    <configuration name="Unnamed" type="PythonConfigurationType" factoryName="Python">
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="C:\Anaconda3\python.exe" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/Python" />
-      <option name="IS_MODULE_SDK" value="false" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <module name="DB_Project" />
-      <EXTENSION ID="PythonCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/Python/CsvCreator.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <option name="EMULATE_TERMINAL" value="false" />
-      <option name="MODULE_MODE" value="false" />
+    <configuration default="true" type="#org.jetbrains.idea.devkit.run.PluginConfigurationType" factoryName="Plugin">
+      <module name="" />
+      <option name="VM_PARAMETERS" value="-Xmx512m -Xms256m -XX:MaxPermSize=250m -ea" />
+      <option name="PROGRAM_PARAMETERS" />
+      <predefined_log_file id="idea.log" enabled="true" />
     </configuration>
     <configuration default="true" type="Remote" factoryName="Remote">
       <option name="USE_SOCKET_TRANSPORT" value="true" />
@@ -422,16 +239,6 @@
       <properties />
       <listeners />
     </configuration>
-    <configuration default="true" type="#org.jetbrains.idea.devkit.run.PluginConfigurationType" factoryName="Plugin">
-      <module name="" />
-      <option name="VM_PARAMETERS" value="-Xmx512m -Xms256m -XX:MaxPermSize=250m -ea" />
-      <option name="PROGRAM_PARAMETERS" />
-      <predefined_log_file id="idea.log" enabled="true" />
-    </configuration>
-    <list size="2">
-      <item index="0" class="java.lang.String" itemvalue="Application.Unnamed" />
-      <item index="1" class="java.lang.String" itemvalue="Python.Unnamed" />
-    </list>
   </component>
   <component name="ShelveChangesManager" show_recycled="false">
     <option name="remove_strategy" value="false" />
@@ -448,218 +255,44 @@
       <updated>1510864266411</updated>
       <workItem from="1510864274571" duration="480000" />
       <workItem from="1510864828638" duration="1720000" />
-      <workItem from="1510895225318" duration="179000" />
-      <workItem from="1511210090463" duration="190000" />
-      <workItem from="1512162227750" duration="475000" />
-      <workItem from="1512163132708" duration="398000" />
-      <workItem from="1512164131059" duration="2224000" />
-      <workItem from="1512166403552" duration="23667000" />
-      <workItem from="1512190410132" duration="382000" />
-      <workItem from="1512840642593" duration="36000" />
-      <workItem from="1512863788006" duration="8624000" />
+      <workItem from="1512159682473" duration="1196000" />
     </task>
-    <task id="LOCAL-00001" summary="Wrote csv loading for Structure">
-      <created>1512165036182</created>
-      <option name="number" value="00001" />
-      <option name="presentableId" value="LOCAL-00001" />
-      <option name="project" value="LOCAL" />
-      <updated>1512165036182</updated>
-    </task>
-    <task id="LOCAL-00002" summary="Updated location of CSV">
-      <created>1512165162198</created>
-      <option name="number" value="00002" />
-      <option name="presentableId" value="LOCAL-00002" />
-      <option name="project" value="LOCAL" />
-      <updated>1512165162198</updated>
-    </task>
-    <task id="LOCAL-00003" summary="Fixed csv loading">
-      <created>1512166304031</created>
-      <option name="number" value="00003" />
-      <option name="presentableId" value="LOCAL-00003" />
-      <option name="project" value="LOCAL" />
-      <updated>1512166304031</updated>
-    </task>
-    <task id="LOCAL-00004" summary="Fixed csv loading">
-      <created>1512166336241</created>
-      <option name="number" value="00004" />
-      <option name="presentableId" value="LOCAL-00004" />
-      <option name="project" value="LOCAL" />
-      <updated>1512166336241</updated>
-    </task>
-    <task id="LOCAL-00005" summary="Fixed csv loading">
-      <created>1512166529113</created>
-      <option name="number" value="00005" />
-      <option name="presentableId" value="LOCAL-00005" />
-      <option name="project" value="LOCAL" />
-      <updated>1512166529113</updated>
-    </task>
-    <task id="LOCAL-00006" summary="Commented out CSV loading for now">
-      <created>1512167406096</created>
-      <option name="number" value="00006" />
-      <option name="presentableId" value="LOCAL-00006" />
-      <option name="project" value="LOCAL" />
-      <updated>1512167406096</updated>
-    </task>
-    <task id="LOCAL-00007" summary="Fixed csv loading">
-      <created>1512168677365</created>
-      <option name="number" value="00007" />
-      <option name="presentableId" value="LOCAL-00007" />
-      <option name="project" value="LOCAL" />
-      <updated>1512168677365</updated>
-    </task>
-    <task id="LOCAL-00008" summary="Java functions">
-      <created>1512180650478</created>
-      <option name="number" value="00008" />
-      <option name="presentableId" value="LOCAL-00008" />
-      <option name="project" value="LOCAL" />
-      <updated>1512180650478</updated>
-    </task>
-    <task id="LOCAL-00009" summary="Updated group functions">
-      <created>1512183616420</created>
-      <option name="number" value="00009" />
-      <option name="presentableId" value="LOCAL-00009" />
-      <option name="project" value="LOCAL" />
-      <updated>1512183616420</updated>
-    </task>
-    <task id="LOCAL-00010" summary="Updated group functions">
-      <created>1512183711243</created>
-      <option name="number" value="00010" />
-      <option name="presentableId" value="LOCAL-00010" />
-      <option name="project" value="LOCAL" />
-      <updated>1512183711243</updated>
-    </task>
-    <task id="LOCAL-00011" summary="Updated group functions">
-      <created>1512185636343</created>
-      <option name="number" value="00011" />
-      <option name="presentableId" value="LOCAL-00011" />
-      <option name="project" value="LOCAL" />
-      <updated>1512185636343</updated>
-    </task>
-    <task id="LOCAL-00012" summary="Updated group functions">
-      <created>1512185819010</created>
-      <option name="number" value="00012" />
-      <option name="presentableId" value="LOCAL-00012" />
-      <option name="project" value="LOCAL" />
-      <updated>1512185819010</updated>
-    </task>
-    <task id="LOCAL-00013" summary="Fixed profile">
-      <created>1512185878820</created>
-      <option name="number" value="00013" />
-      <option name="presentableId" value="LOCAL-00013" />
-      <option name="project" value="LOCAL" />
-      <updated>1512185878820</updated>
-    </task>
-    <task id="LOCAL-00014" summary="Fixed profile">
-      <created>1512186136257</created>
-      <option name="number" value="00014" />
-      <option name="presentableId" value="LOCAL-00014" />
-      <option name="project" value="LOCAL" />
-      <updated>1512186136257</updated>
-    </task>
-    <task id="LOCAL-00015" summary="Fixed everything forever">
-      <created>1512188615868</created>
-      <option name="number" value="00015" />
-      <option name="presentableId" value="LOCAL-00015" />
-      <option name="project" value="LOCAL" />
-      <updated>1512188615868</updated>
-    </task>
-    <task id="LOCAL-00016" summary="Merged w/ oliver's profile code">
-      <created>1512189332641</created>
-      <option name="number" value="00016" />
-      <option name="presentableId" value="LOCAL-00016" />
-      <option name="project" value="LOCAL" />
-      <updated>1512189332641</updated>
-    </task>
-    <task id="LOCAL-00017" summary="Merged w/ oliver's profile code">
-      <created>1512189428378</created>
-      <option name="number" value="00017" />
-      <option name="presentableId" value="LOCAL-00017" />
-      <option name="project" value="LOCAL" />
-      <updated>1512189428378</updated>
-    </task>
-    <task id="LOCAL-00018" summary="Merged w/ oliver's profile code">
-      <created>1512189616617</created>
-      <option name="number" value="00018" />
-      <option name="presentableId" value="LOCAL-00018" />
-      <option name="project" value="LOCAL" />
-      <updated>1512189616617</updated>
-    </task>
-    <task id="LOCAL-00019" summary="Fixed structure">
-      <created>1512189777681</created>
-      <option name="number" value="00019" />
-      <option name="presentableId" value="LOCAL-00019" />
-      <option name="project" value="LOCAL" />
-      <updated>1512189777681</updated>
-    </task>
-    <task id="LOCAL-00020" summary="Fixed structure">
-      <created>1512190760020</created>
-      <option name="number" value="00020" />
-      <option name="presentableId" value="LOCAL-00020" />
-      <option name="project" value="LOCAL" />
-      <updated>1512190760020</updated>
-    </task>
-    <task id="LOCAL-00021" summary="Phase 2 submission">
-      <created>1512190779778</created>
-      <option name="number" value="00021" />
-      <option name="presentableId" value="LOCAL-00021" />
-      <option name="project" value="LOCAL" />
-      <updated>1512190779778</updated>
-    </task>
-    <task id="LOCAL-00022" summary="Fixed data input">
-      <created>1512865972935</created>
-      <option name="number" value="00022" />
-      <option name="presentableId" value="LOCAL-00022" />
-      <option name="project" value="LOCAL" />
-      <updated>1512865972935</updated>
-    </task>
-    <task id="LOCAL-00023" summary="Fewer SQL injections">
-      <created>1512869703174</created>
-      <option name="number" value="00023" />
-      <option name="presentableId" value="LOCAL-00023" />
-      <option name="project" value="LOCAL" />
-      <updated>1512869703174</updated>
-    </task>
-    <option name="localTasksCounter" value="24" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="38375000" />
+    <option name="totallyTimeSpent" value="3396000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="0" width="966" height="1038" extended-state="0" />
+    <frame x="214" y="44" width="1400" height="1074" extended-state="0" />
+    <editor active="true" />
     <layout>
-      <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
-      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
-      <window_info id="Image Layers" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33448672" sideWeight="0.52" order="8" side_tool="true" content_ui="tabs" />
-      <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33448672" sideWeight="0.48" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.327252" sideWeight="0.48818475" order="9" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
+      <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Image Layers" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.29957357" sideWeight="0.50289434" order="7" side_tool="true" content_ui="tabs" />
+      <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3290398" sideWeight="0.49710566" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.41910112" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
-      <window_info id="Docker" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="SciView" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2496382" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Theme Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32975295" sideWeight="0.5" order="5" side_tool="true" content_ui="tabs" />
-      <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
-      <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="3" side_tool="false" content_ui="combo" />
-      <window_info id="Data View" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
-      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Database Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32960895" sideWeight="0.5" order="12" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32928178" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Concurrent Activities Diagram" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32960895" sideWeight="0.5" order="12" side_tool="false" content_ui="tabs" />
+      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Theme Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
+      <window_info id="Data View" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
+      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
     </layout>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -668,72 +301,24 @@
   <component name="VcsContentAnnotationSettings">
     <option name="myLimit" value="2678400000" />
   </component>
-  <component name="VcsManagerConfiguration">
-    <MESSAGE value="Wrote csv loading for Structure" />
-    <MESSAGE value="Updated location of CSV" />
-    <MESSAGE value="Commented out CSV loading for now" />
-    <MESSAGE value="Fixed csv loading" />
-    <MESSAGE value="Java functions" />
-    <MESSAGE value="Updated group functions" />
-    <MESSAGE value="Fixed profile" />
-    <MESSAGE value="Fixed everything forever" />
-    <MESSAGE value="Merged w/ oliver's profile code" />
-    <MESSAGE value="Fixed structure" />
-    <MESSAGE value="Phase 2 submission" />
-    <MESSAGE value="Fixed data input" />
-    <MESSAGE value="Fewer SQL injections" />
-    <option name="LAST_COMMIT_MESSAGE" value="Fewer SQL injections" />
-  </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/Data/group_membership.csv" />
-    <entry file="file://$PROJECT_DIR$/Java/Database.java" />
-    <entry file="file://$PROJECT_DIR$/Data/message.csv" />
-    <entry file="file://$PROJECT_DIR$/README.md">
-      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
-        <state split_layout="SPLIT">
-          <first_editor relative-caret-position="0">
-            <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          </first_editor>
-          <second_editor />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Python/text/first.txt">
+    <entry file="file://$PROJECT_DIR$/Data/friends.csv">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Data/friends.csv" />
-    <entry file="file://$PROJECT_DIR$/Data/group_membership.csv" />
-    <entry file="file://$PROJECT_DIR$/Java/Database.java" />
-    <entry file="file://$PROJECT_DIR$/README.md">
-      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
-        <state split_layout="SPLIT">
-          <first_editor relative-caret-position="0">
-            <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          </first_editor>
-          <second_editor />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Data/message.csv" />
-    <entry file="file://$PROJECT_DIR$/Data/friends.csv" />
-    <entry file="file://$PROJECT_DIR$/Data/group_membership.csv" />
-    <entry file="file://$PROJECT_DIR$/Java/Database.java" />
-    <entry file="file://$PROJECT_DIR$/Data/message.csv" />
-    <entry file="file://$PROJECT_DIR$/README.md">
-      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
-        <state split_layout="SPLIT">
-          <first_editor relative-caret-position="0">
-            <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          </first_editor>
-          <second_editor />
+    <entry file="file://$PROJECT_DIR$/Java/Database.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="126">
+          <caret line="6" column="6" lean-forward="false" selection-start-line="6" selection-start-column="6" selection-end-line="6" selection-end-column="6" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -742,320 +327,49 @@
         <state split_layout="SPLIT">
           <first_editor relative-caret-position="0">
             <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          </first_editor>
-          <second_editor />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Data/friends.csv" />
-    <entry file="file://$PROJECT_DIR$/Java/Database.java" />
-    <entry file="file://$PROJECT_DIR$/SQL/Objects/Structure.sql" />
-    <entry file="file://$PROJECT_DIR$/README.md">
-      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
-        <state split_layout="SPLIT">
-          <first_editor relative-caret-position="0">
-            <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          </first_editor>
-          <second_editor />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/README.md">
-      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
-        <state split_layout="SPLIT">
-          <first_editor relative-caret-position="0">
-            <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+            <folding />
           </first_editor>
           <second_editor />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/SQL/Objects/Structure.sql" />
-    <entry file="file://$PROJECT_DIR$/Data/message.csv" />
-    <entry file="file://$PROJECT_DIR$/SQL/Inserts/InsertAll.sql" />
-    <entry file="file://$PROJECT_DIR$/Data/friends.csv" />
-    <entry file="file://$PROJECT_DIR$/SQL/Objects/organization.sql" />
-    <entry file="file://$PROJECT_DIR$/SQL/Objects/Friends.sql">
+    <entry file="file://$PROJECT_DIR$/README.md">
+      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+        <state split_layout="SPLIT">
+          <first_editor relative-caret-position="0">
+            <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+            <folding />
+          </first_editor>
+          <second_editor />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/README.md">
+      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+        <state split_layout="SPLIT">
+          <first_editor relative-caret-position="0">
+            <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+            <folding />
+          </first_editor>
+          <second_editor />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/SQL/Objects/Structure.sql" />
+    <entry file="file://$PROJECT_DIR$/Data/friends.csv">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Data/message_recipient.csv" />
-    <entry file="file://$PROJECT_DIR$/Python/text/message.txt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="315">
-          <caret line="15" column="41" lean-forward="false" selection-start-line="15" selection-start-column="41" selection-end-line="15" selection-end-column="41" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Data/group_membership.csv" />
-    <entry file="file://$PROJECT_DIR$/Python/text/first.txt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/SQL/CreationScript.sql" />
-    <entry file="file://$PROJECT_DIR$/Java/Database.java" />
-    <entry file="file://$PROJECT_DIR$/Python/CsvCreator.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1036">
-          <caret line="91" column="26" lean-forward="true" selection-start-line="91" selection-start-column="26" selection-end-line="91" selection-end-column="26" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/SQL/InsertAll.sql">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="210">
-          <caret line="76" column="14" lean-forward="true" selection-start-line="76" selection-start-column="14" selection-end-line="76" selection-end-column="14" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/SQL/Data/friends.csv">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Python/groups.txt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Python/group_membership.txt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/SQL/Data/profile.csv">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Java/Tables/GroupMembership.java">
+    <entry file="file://$PROJECT_DIR$/Java/Database.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="42">
-          <caret line="2" column="13" lean-forward="false" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="13" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#1672#1673#0" expanded="true" />
-            <element signature="e#1700#1701#0" expanded="true" />
-            <element signature="e#1741#1742#0" expanded="true" />
-            <element signature="e#1775#1776#0" expanded="true" />
-            <element signature="e#1807#1808#0" expanded="true" />
-            <element signature="e#1834#1835#0" expanded="true" />
-            <element signature="e#1868#1869#0" expanded="true" />
-            <element signature="e#1898#1899#0" expanded="true" />
-            <element signature="e#1944#1945#0" expanded="true" />
-            <element signature="e#1982#1983#0" expanded="true" />
-            <marker date="1512188456671" expanded="true" signature="703:754" ph="INSERT INTO Group_Membership... " />
-            <marker date="1512188456671" expanded="true" signature="703:792" ph="INSERT INTO Group_Membership... " />
-            <marker date="1512188456671" expanded="true" signature="703:841" ph="INSERT INTO Group_Membership... " />
-            <marker date="1512188456671" expanded="true" signature="703:842" ph="INSERT INTO Group_Membership... " />
-            <marker date="1512188456671" expanded="true" signature="703:893" ph="INSERT INTO Group_Membership... " />
-            <marker date="1512188456671" expanded="true" signature="703:894" ph="INSERT INTO Group_Membership... " />
-            <marker date="1512188456671" expanded="true" signature="703:960" ph="INSERT INTO Group_Membership... " />
-            <marker date="1512188456671" expanded="true" signature="1185:1329" ph="DELETE FROM Pending_Friends... " />
-            <marker date="1512188456671" expanded="true" signature="1185:1330" ph="DELETE FROM Pending_Groupmembers... " />
-            <marker date="1512188456671" expanded="true" signature="1185:1355" ph="DELETE FROM Pending_Groupmembers... " />
-            <marker date="1512188456671" expanded="true" signature="1442:1584" ph="DELETE FROM Friends... " />
-            <marker date="1512188456671" expanded="true" signature="1442:1609" ph="DELETE FROM Friends... " />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/SQL/Objects/Users.sql">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="21">
-          <caret line="1" column="33" lean-forward="false" selection-start-line="1" selection-start-column="33" selection-end-line="1" selection-end-column="33" />
+          <caret line="6" column="6" lean-forward="false" selection-start-line="6" selection-start-column="6" selection-end-line="6" selection-end-column="6" />
           <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/SQL/Structure.sql">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-226">
-          <caret line="187" column="27" lean-forward="false" selection-start-line="187" selection-start-column="11" selection-end-line="187" selection-end-column="27" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/SQL/Objects/Messages.sql">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="21">
-          <caret line="1" column="0" lean-forward="false" selection-start-line="1" selection-start-column="0" selection-end-line="30" selection-end-column="1" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Java/Tables/MessageRecipient.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="42">
-          <caret line="2" column="29" lean-forward="false" selection-start-line="2" selection-start-column="29" selection-end-line="2" selection-end-column="29" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Java/Tables/GroupMembership.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="252">
-          <caret line="12" column="24" lean-forward="true" selection-start-line="12" selection-start-column="24" selection-end-line="12" selection-end-column="24" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#1672#1673#0" expanded="true" />
-            <element signature="e#1700#1701#0" expanded="true" />
-            <element signature="e#1741#1742#0" expanded="true" />
-            <element signature="e#1775#1776#0" expanded="true" />
-            <element signature="e#1807#1808#0" expanded="true" />
-            <element signature="e#1834#1835#0" expanded="true" />
-            <element signature="e#1868#1869#0" expanded="true" />
-            <element signature="e#1898#1899#0" expanded="true" />
-            <element signature="e#1944#1945#0" expanded="true" />
-            <element signature="e#1982#1983#0" expanded="true" />
-            <marker date="1512188456671" expanded="true" signature="703:754" ph="INSERT INTO Group_Membership... " />
-            <marker date="1512188456671" expanded="true" signature="703:792" ph="INSERT INTO Group_Membership... " />
-            <marker date="1512188456671" expanded="true" signature="703:841" ph="INSERT INTO Group_Membership... " />
-            <marker date="1512188456671" expanded="true" signature="703:842" ph="INSERT INTO Group_Membership... " />
-            <marker date="1512188456671" expanded="true" signature="703:893" ph="INSERT INTO Group_Membership... " />
-            <marker date="1512188456671" expanded="true" signature="703:894" ph="INSERT INTO Group_Membership... " />
-            <marker date="1512188456671" expanded="true" signature="703:960" ph="INSERT INTO Group_Membership... " />
-            <marker date="1512188456671" expanded="true" signature="1185:1329" ph="DELETE FROM Pending_Friends... " />
-            <marker date="1512188456671" expanded="true" signature="1185:1330" ph="DELETE FROM Pending_Groupmembers... " />
-            <marker date="1512188456671" expanded="true" signature="1185:1355" ph="DELETE FROM Pending_Groupmembers... " />
-            <marker date="1512188456671" expanded="true" signature="1442:1584" ph="DELETE FROM Friends... " />
-            <marker date="1512188456671" expanded="true" signature="1442:1609" ph="DELETE FROM Friends... " />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/SQL/Structure.sql">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1848">
-          <caret line="88" column="44" lean-forward="true" selection-start-line="88" selection-start-column="44" selection-end-line="88" selection-end-column="44" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Java/Tables/Group.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="444">
-          <caret line="107" column="32" lean-forward="false" selection-start-line="107" selection-start-column="32" selection-end-line="107" selection-end-column="32" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#2445#2446#0" expanded="true" />
-            <element signature="e#2471#2472#0" expanded="true" />
-            <element signature="e#2502#2503#0" expanded="true" />
-            <element signature="e#2529#2530#0" expanded="true" />
-            <marker date="1512869548881" expanded="true" signature="484:597" ph="SELECT gID, " />
-            <marker date="1512869548881" expanded="true" signature="484:598" ph="SELECT gID, " />
-            <marker date="1512869548881" expanded="true" signature="1117:1144" ph="SELECT COUNT... Groups" />
-            <marker date="1512869548881" expanded="true" signature="1598:1677" ph="INSERT INTO Groups... " />
-            <marker date="1512869548881" expanded="true" signature="1598:1684" ph="INSERT INTO Groups... " />
-            <marker date="1512869548881" expanded="true" signature="1598:1686" ph="INSERT INTO Groups... " />
-            <marker date="1512869548881" expanded="true" signature="1598:1687" ph="INSERT INTO Groups... " />
-            <marker date="1512869548881" expanded="true" signature="2043:2098" ph="INSERT INTO Pending_Groupmembers... " />
-            <marker date="1512869548881" expanded="true" signature="2043:2144" ph="INSERT INTO Pending_Groupmembers... " />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Java/Tables/Message.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="507">
-          <caret line="104" column="30" lean-forward="true" selection-start-line="104" selection-start-column="30" selection-end-line="104" selection-end-column="30" />
-          <folding>
-            <marker date="1512872207201" expanded="true" signature="446:557" ph="SELECT fromI... Message" />
-            <marker date="1512872207201" expanded="true" signature="2005:2034" ph="SELECT COUNT... Messages" />
-            <marker date="1512872207201" expanded="true" signature="2440:2570" ph="INSERT INTO Message... " />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Java/Tables/Friends.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1995">
-          <caret line="95" column="5" lean-forward="true" selection-start-line="95" selection-start-column="5" selection-end-line="95" selection-end-column="5" />
-          <folding>
-            <element signature="e#2521#2522#0" expanded="true" />
-            <element signature="e#2551#2552#0" expanded="true" />
-            <element signature="e#2588#2589#0" expanded="true" />
-            <element signature="e#2618#2619#0" expanded="true" />
-            <element signature="e#2650#2651#0" expanded="true" />
-            <element signature="e#2683#2684#0" expanded="true" />
-            <element signature="e#2713#2714#0" expanded="true" />
-            <element signature="e#2746#2747#0" expanded="true" />
-            <element signature="e#2780#2781#0" expanded="true" />
-            <element signature="e#2810#2811#0" expanded="true" />
-            <marker date="1512869668078" expanded="true" signature="1065:1152" ph="INSERT INTO Pending_Friends... " />
-            <marker date="1512869668078" expanded="true" signature="1065:1156" ph="INSERT INTO Pending_Friends... " />
-            <marker date="1512869668078" expanded="true" signature="1065:1159" ph="INSERT INTO Pending_Friends... " />
-            <marker date="1512869668078" expanded="true" signature="1065:1162" ph="INSERT INTO Pending_Friends... " />
-            <marker date="1512869668078" expanded="true" signature="1507:1853" ph="INSERT INTO Pending_Friends... " />
-            <marker date="1512869668078" expanded="true" signature="2078:2214" ph="DELETE FROM Pending_Friends... " />
-            <marker date="1512869668078" expanded="true" signature="2078:2215" ph="DELETE FROM Pending_Friends... " />
-            <marker date="1512869668078" expanded="true" signature="2078:2234" ph="DELETE FROM Pending_Friends... " />
-            <marker date="1512869668078" expanded="true" signature="2315:2334" ph="DELETE FROM Friends... " />
-            <marker date="1512869668078" expanded="true" signature="2315:2368" ph="DELETE FROM Friends... " />
-            <marker date="1512869668078" expanded="true" signature="2315:2435" ph="DELETE FROM Friends... " />
-            <marker date="1512869668078" expanded="true" signature="2315:2436" ph="DELETE FROM Friends... " />
-            <marker date="1512869668078" expanded="true" signature="2315:2455" ph="DELETE FROM Friends... " />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Java/Tables/Profile.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="3150">
-          <caret line="163" column="40" lean-forward="true" selection-start-line="163" selection-start-column="40" selection-end-line="163" selection-end-column="40" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="method#logout#0;class#Profile#0" expanded="false" />
-            <element signature="e#8512#8513#0" expanded="true" />
-            <element signature="e#8541#8542#0" expanded="true" />
-            <element signature="e#8572#8573#0" expanded="true" />
-            <element signature="e#8599#8600#0" expanded="true" />
-            <marker date="1512872200608" expanded="true" signature="542:688" ph="SELECT userI... PROFILE" />
-            <marker date="1512872200608" expanded="true" signature="1148:1246" ph="SELECT userI... PROFILE" />
-            <marker date="1512872200608" expanded="true" signature="1858:1886" ph="SELECT COUNT... Profile" />
-            <marker date="1512872200608" expanded="true" signature="2220:2295" ph="INSERT INTO Friends... " />
-            <marker date="1512872200608" expanded="true" signature="2220:2296" ph="INSERT INTO Friends... " />
-            <marker date="1512872200608" expanded="true" signature="2718:2763" ph="SELECT userI... PROFILE" />
-            <marker date="1512872200608" expanded="true" signature="2718:2780" ph="SELECT userI... PROFILE" />
-            <marker date="1512872200608" expanded="true" signature="2718:2781" ph="SELECT userI... PROFILE" />
-            <marker date="1512872200608" expanded="true" signature="4105:4227" ph="SELECT fromI... " />
-            <marker date="1512872200608" expanded="true" signature="5188:5306" ph="SELECT gID, Pending_Groupmembers" />
-            <marker date="1512872200608" expanded="true" signature="6237:6380" ph="SELECT userI... " />
-            <marker date="1512872200608" expanded="true" signature="7318:7325" ph="SELECT msgID... " />
-            <marker date="1512872200608" expanded="true" signature="7318:7332" ph="SELECT m.msg... " />
-            <marker date="1512872200608" expanded="true" signature="7318:7376" ph="SELECT m.msg... Message" />
-            <marker date="1512872200608" expanded="true" signature="7318:7436" ph="SELECT m.msg... Message" />
-            <marker date="1512872200608" expanded="true" signature="7318:7486" ph="SELECT m.msg... Message" />
-            <marker date="1512872200608" expanded="true" signature="7318:7533" ph="SELECT m.msg... Message" />
-            <marker date="1512872200608" expanded="true" signature="7318:7582" ph="SELECT m.msg... Message" />
-            <marker date="1512872200608" expanded="true" signature="7937:8220" ph="SELECT m.msg... Message" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Java/FaceSpace.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="399">
-          <caret line="19" column="32" lean-forward="false" selection-start-line="19" selection-start-column="32" selection-end-line="19" selection-end-column="32" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <marker date="1512872421774" expanded="true" signature="3053:3098" ph="SELECT Passw... Profile" />
-          </folding>
         </state>
       </provider>
     </entry>
