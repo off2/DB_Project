@@ -1,9 +1,6 @@
 package Tables;
 
-import java.sql.Connection;
-import java.sql.Date;
-import java.sql.SQLException;
-import java.sql.Statement;
+import java.sql.*;
 
 public class Friends {
 
@@ -42,16 +39,15 @@ public class Friends {
     public static void addPending(Connection conn, Profile friend1, Profile friend2, String message)
             throws SQLException {
 
-        Statement stmt = conn.createStatement();
-        stmt.executeUpdate(
+        PreparedStatement ps = conn.prepareStatement(
                 "INSERT INTO Pending_Friends (fromID, toID, message) " +
-                        "VALUES ('" +
-                        friend1.getUserID() + "'', '" +
-                        friend2.getUserID() + "'', '" +
-                        message +
-                        "')"
+                        "VALUES (?, ?, ?)"
         );
+        ps.setString(1, friend1.getUserID());
+        ps.setString(2, friend2.getUserID());
+        ps.setString(3, message);
 
+        ps.executeUpdate();
     }
 
     public boolean confirm() throws SQLException {
