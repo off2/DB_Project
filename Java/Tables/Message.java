@@ -100,4 +100,13 @@ public class Message {
 
         ps.execute();
     }
+
+    @Override
+    public String toString() {
+        return String.format(
+                "From: %s (%s)\nDate: %s\nMessage: %s\n\n",
+                from.getName(), from.getUserID(),
+                datesent, message
+        );
+    }
 }

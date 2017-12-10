@@ -3,6 +3,11 @@
   <component name="ChangeListManager">
     <list default="true" id="b20357d1-2871-48ef-9065-071a93e1cdea" name="Default" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change beforePath="$PROJECT_DIR$/Java/FaceSpace.java" afterPath="$PROJECT_DIR$/Java/FaceSpace.java" />
+      <change beforePath="$PROJECT_DIR$/Java/Tables/Message.java" afterPath="$PROJECT_DIR$/Java/Tables/Message.java" />
+      <change beforePath="$PROJECT_DIR$/Java/Tables/MessageRecipient.java" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/Java/Tables/Profile.java" afterPath="$PROJECT_DIR$/Java/Tables/Profile.java" />
+      <change beforePath="$PROJECT_DIR$/SQL/Structure.sql" afterPath="$PROJECT_DIR$/SQL/Structure.sql" />
     </list>
     <ignored path="$PROJECT_DIR$/.idea/" />
     <ignored path="$PROJECT_DIR$/Classes/" />
@@ -27,222 +32,109 @@
     <expand />
     <select />
   </component>
+  <component name="FavoritesManager">
+    <favorites_list name="DB_Project" />
+  </component>
   <component name="FileEditorManager">
-    <splitter split-orientation="horizontal" split-proportion="0.5078125">
-      <split-first>
-        <leaf SIDE_TABS_SIZE_LIMIT_KEY="375">
-          <file leaf-file-name="FaceSpace.java" pinned="false" current-in-tab="true">
-            <entry file="file://$PROJECT_DIR$/Java/FaceSpace.java">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="294">
-                  <caret line="21" column="31" lean-forward="false" selection-start-line="21" selection-start-column="31" selection-end-line="21" selection-end-column="31" />
-                  <folding>
-                    <element signature="imports" expanded="true" />
-                    <marker date="1512190625410" expanded="true" signature="3036:3051" ph="SELECT \&quot;pas... " />
-                    <marker date="1512190625410" expanded="true" signature="3036:3063" ph="SELECT \&quot;pas... Profile" />
-                    <marker date="1512190625410" expanded="true" signature="3036:3079" ph="SELECT passw... Profile" />
-                    <marker date="1512190625410" expanded="true" signature="3036:3080" ph="SELECT Passw... Profile" />
-                  </folding>
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file leaf-file-name="Group.java" pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/Java/Tables/Group.java">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="378">
-                  <caret line="19" column="0" lean-forward="false" selection-start-line="19" selection-start-column="0" selection-end-line="19" selection-end-column="0" />
-                  <folding>
-                    <element signature="imports" expanded="true" />
-                    <element signature="e#2437#2438#0" expanded="true" />
-                    <element signature="e#2463#2464#0" expanded="true" />
-                    <element signature="e#2494#2495#0" expanded="true" />
-                    <element signature="e#2521#2522#0" expanded="true" />
-                    <marker date="1512188421886" expanded="true" signature="822:851" ph="SELECT gID, " />
-                    <marker date="1512188421886" expanded="true" signature="822:891" ph="SELECT gID, " />
-                    <marker date="1512188421886" expanded="true" signature="822:895" ph="SELECT gID, " />
-                    <marker date="1512188421886" expanded="true" signature="822:931" ph="SELECT gID, " />
-                    <marker date="1512188421886" expanded="true" signature="822:932" ph="SELECT gID, " />
-                    <marker date="1512188421886" expanded="true" signature="822:933" ph="SELECT gID, " />
-                    <marker date="1512188421886" expanded="true" signature="822:945" ph="SELECT gID, " />
-                    <marker date="1512188421886" expanded="true" signature="1444:1471" ph="SELECT COUNT... Groups" />
-                    <marker date="1512188421886" expanded="true" signature="1756:1774" ph="INSERT INTO Groups... " />
-                    <marker date="1512188421886" expanded="true" signature="1756:1829" ph="INSERT INTO Groups... " />
-                    <marker date="1512188421886" expanded="true" signature="1756:1868" ph="INSERT INTO Groups... " />
-                    <marker date="1512188421886" expanded="true" signature="1756:1869" ph="INSERT INTO Groups... " />
-                    <marker date="1512188421886" expanded="true" signature="1756:1908" ph="INSERT INTO Groups... " />
-                    <marker date="1512188421886" expanded="true" signature="1756:1909" ph="INSERT INTO Groups... " />
-                    <marker date="1512188421886" expanded="true" signature="1756:1949" ph="INSERT INTO Groups... " />
-                    <marker date="1512188421886" expanded="true" signature="1756:1972" ph="INSERT INTO Groups... " />
-                    <marker date="1512188421886" expanded="true" signature="2183:2215" ph="INSERT INTO Pending_Groupmembers... " />
-                    <marker date="1512188421886" expanded="true" signature="2183:2238" ph="INSERT INTO Pending_Groupmembers... " />
-                    <marker date="1512188421886" expanded="true" signature="2183:2267" ph="INSERT INTO Pending_Groupmembers... " />
-                    <marker date="1512188421886" expanded="true" signature="2183:2339" ph="INSERT INTO Pending_Groupmembers... " />
-                    <marker date="1512188421886" expanded="true" signature="2183:2340" ph="INSERT INTO Pending_Groupmembers... " />
-                    <marker date="1512188421886" expanded="true" signature="2183:2390" ph="INSERT INTO Pending_Groupmembers... " />
-                  </folding>
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file leaf-file-name="GroupMembership.java" pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/Java/Tables/GroupMembership.java">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="63">
-                  <caret line="9" column="0" lean-forward="false" selection-start-line="9" selection-start-column="0" selection-end-line="9" selection-end-column="0" />
-                  <folding>
-                    <element signature="imports" expanded="true" />
-                    <element signature="e#1672#1673#0" expanded="true" />
-                    <element signature="e#1700#1701#0" expanded="true" />
-                    <element signature="e#1741#1742#0" expanded="true" />
-                    <element signature="e#1775#1776#0" expanded="true" />
-                    <element signature="e#1807#1808#0" expanded="true" />
-                    <element signature="e#1834#1835#0" expanded="true" />
-                    <element signature="e#1868#1869#0" expanded="true" />
-                    <element signature="e#1898#1899#0" expanded="true" />
-                    <element signature="e#1944#1945#0" expanded="true" />
-                    <element signature="e#1982#1983#0" expanded="true" />
-                    <marker date="1512188456671" expanded="true" signature="703:754" ph="INSERT INTO Group_Membership... " />
-                    <marker date="1512188456671" expanded="true" signature="703:792" ph="INSERT INTO Group_Membership... " />
-                    <marker date="1512188456671" expanded="true" signature="703:841" ph="INSERT INTO Group_Membership... " />
-                    <marker date="1512188456671" expanded="true" signature="703:842" ph="INSERT INTO Group_Membership... " />
-                    <marker date="1512188456671" expanded="true" signature="703:893" ph="INSERT INTO Group_Membership... " />
-                    <marker date="1512188456671" expanded="true" signature="703:894" ph="INSERT INTO Group_Membership... " />
-                    <marker date="1512188456671" expanded="true" signature="703:960" ph="INSERT INTO Group_Membership... " />
-                    <marker date="1512188456671" expanded="true" signature="1185:1329" ph="DELETE FROM Pending_Friends... " />
-                    <marker date="1512188456671" expanded="true" signature="1185:1330" ph="DELETE FROM Pending_Groupmembers... " />
-                    <marker date="1512188456671" expanded="true" signature="1185:1355" ph="DELETE FROM Pending_Groupmembers... " />
-                    <marker date="1512188456671" expanded="true" signature="1442:1584" ph="DELETE FROM Friends... " />
-                    <marker date="1512188456671" expanded="true" signature="1442:1609" ph="DELETE FROM Friends... " />
-                  </folding>
-                </state>
-              </provider>
-            </entry>
-          </file>
-        </leaf>
-      </split-first>
-      <split-second>
-        <leaf SIDE_TABS_SIZE_LIMIT_KEY="375">
-          <file leaf-file-name="Users.sql" pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/SQL/Objects/Users.sql">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="21">
-                  <caret line="1" column="33" lean-forward="false" selection-start-line="1" selection-start-column="33" selection-end-line="1" selection-end-column="33" />
-                  <folding />
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file leaf-file-name="Messages.sql" pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/SQL/Objects/Messages.sql">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="21">
-                  <caret line="1" column="0" lean-forward="false" selection-start-line="1" selection-start-column="0" selection-end-line="30" selection-end-column="1" />
-                  <folding />
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file leaf-file-name="Message.java" pinned="false" current-in-tab="true">
-            <entry file="file://$PROJECT_DIR$/Java/Tables/Message.java">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="168">
-                  <caret line="8" column="0" lean-forward="false" selection-start-line="8" selection-start-column="0" selection-end-line="8" selection-end-column="0" />
-                  <folding />
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file leaf-file-name="Profile.java" pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/Java/Tables/Profile.java">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="0">
-                  <caret line="0" column="15" lean-forward="false" selection-start-line="0" selection-start-column="15" selection-end-line="0" selection-end-column="15" />
-                  <folding>
-                    <element signature="imports" expanded="true" />
-                    <element signature="e#9331#9332#0" expanded="true" />
-                    <element signature="e#9360#9361#0" expanded="true" />
-                    <element signature="e#9391#9392#0" expanded="true" />
-                    <element signature="e#9418#9419#0" expanded="true" />
-                    <marker date="1512190534320" expanded="true" signature="545:691" ph="SELECT userI... PROFILE" />
-                    <marker date="1512190534320" expanded="true" signature="545:706" ph="SELECT userI... PROFILE" />
-                    <marker date="1512190534320" expanded="true" signature="1191:1305" ph="SELECT userI... PROFILE" />
-                    <marker date="1512190534320" expanded="true" signature="1191:1320" ph="SELECT userI... PROFILE" />
-                    <marker date="1512190534320" expanded="true" signature="1945:1973" ph="SELECT COUNT... Profile" />
-                    <marker date="1512190534320" expanded="true" signature="2233:2483" ph="INSERT INTO Friends... " />
-                    <marker date="1512190534320" expanded="true" signature="2233:2503" ph="INSERT INTO Friends... " />
-                    <marker date="1512190534320" expanded="true" signature="2824:3017" ph="SELECT userI... PROFILE" />
-                    <marker date="1512190534320" expanded="true" signature="2824:3018" ph="SELECT userI... PROFILE" />
-                    <marker date="1512190534320" expanded="true" signature="2824:3035" ph="SELECT userI... PROFILE" />
-                    <marker date="1512190534320" expanded="true" signature="3681:3793" ph="UPDATE PROFILE... " />
-                    <marker date="1512190534320" expanded="true" signature="3681:3794" ph="UPDATE PROFILE... " />
-                    <marker date="1512190534320" expanded="true" signature="3681:3809" ph="UPDATE PROFILE... " />
-                    <marker date="1512190534320" expanded="true" signature="4867:4895" ph="SELECT COUNT... message" />
-                    <marker date="1512190534320" expanded="true" signature="5018:5394" ph="INSERT INTO MESSAGE... " />
-                    <marker date="1512190534320" expanded="true" signature="5854:5975" ph="SELECT fromI... " />
-                    <marker date="1512190534320" expanded="true" signature="5854:5990" ph="SELECT fromI... " />
-                    <marker date="1512190534320" expanded="true" signature="7103:7219" ph="SELECT gID, " />
-                    <marker date="1512190534320" expanded="true" signature="8322:8477" ph="SELECT userI... " />
-                    <marker date="1512190534320" expanded="true" signature="8322:8478" ph="SELECT userI... " />
-                    <marker date="1512190534320" expanded="true" signature="8322:8493" ph="SELECT userI... " />
-                  </folding>
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file leaf-file-name="Friends.java" pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/Java/Tables/Friends.java">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="294">
-                  <caret line="17" column="56" lean-forward="false" selection-start-line="17" selection-start-column="56" selection-end-line="17" selection-end-column="56" />
-                  <folding>
-                    <element signature="imports" expanded="true" />
-                    <element signature="e#2648#2649#0" expanded="true" />
-                    <element signature="e#2678#2679#0" expanded="true" />
-                    <element signature="e#2715#2716#0" expanded="true" />
-                    <element signature="e#2745#2746#0" expanded="true" />
-                    <element signature="e#2777#2778#0" expanded="true" />
-                    <element signature="e#2810#2811#0" expanded="true" />
-                    <element signature="e#2840#2841#0" expanded="true" />
-                    <element signature="e#2873#2874#0" expanded="true" />
-                    <element signature="e#2907#2908#0" expanded="true" />
-                    <element signature="e#2937#2938#0" expanded="true" />
-                    <marker date="1512188357303" expanded="true" signature="1176:1203" ph="INSERT INTO Pending_Friends... " />
-                    <marker date="1512188357303" expanded="true" signature="1176:1227" ph="INSERT INTO Pending_Friends... " />
-                    <marker date="1512188357303" expanded="true" signature="1176:1263" ph="INSERT INTO Pending_Friends... " />
-                    <marker date="1512188357303" expanded="true" signature="1176:1265" ph="INSERT INTO Pending_Friends... " />
-                    <marker date="1512188357303" expanded="true" signature="1176:1320" ph="INSERT INTO Pending_Friends... " />
-                    <marker date="1512188357303" expanded="true" signature="1176:1321" ph="INSERT INTO Pending_Friends... " />
-                    <marker date="1512188357303" expanded="true" signature="1176:1376" ph="INSERT INTO Pending_Friends... " />
-                    <marker date="1512188357303" expanded="true" signature="1176:1377" ph="INSERT INTO Pending_Friends... " />
-                    <marker date="1512188357303" expanded="true" signature="1176:1443" ph="INSERT INTO Pending_Friends... " />
-                    <marker date="1512188357303" expanded="true" signature="1634:1980" ph="INSERT INTO Pending_Friends... " />
-                    <marker date="1512188357303" expanded="true" signature="2205:2341" ph="DELETE FROM Pending_Friends... " />
-                    <marker date="1512188357303" expanded="true" signature="2205:2342" ph="DELETE FROM Pending_Friends... " />
-                    <marker date="1512188357303" expanded="true" signature="2205:2361" ph="DELETE FROM Pending_Friends... " />
-                    <marker date="1512188357303" expanded="true" signature="2442:2461" ph="DELETE FROM Friends... " />
-                    <marker date="1512188357303" expanded="true" signature="2442:2495" ph="DELETE FROM Friends... " />
-                    <marker date="1512188357303" expanded="true" signature="2442:2562" ph="DELETE FROM Friends... " />
-                    <marker date="1512188357303" expanded="true" signature="2442:2563" ph="DELETE FROM Friends... " />
-                    <marker date="1512188357303" expanded="true" signature="2442:2582" ph="DELETE FROM Friends... " />
-                  </folding>
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file leaf-file-name="Structure.sql" pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/SQL/Structure.sql">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="966">
-                  <caret line="46" column="26" lean-forward="false" selection-start-line="46" selection-start-column="26" selection-end-line="46" selection-end-column="26" />
-                  <folding />
-                </state>
-              </provider>
-            </entry>
-          </file>
-        </leaf>
-      </split-second>
-    </splitter>
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="375">
+      <file leaf-file-name="FaceSpace.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/Java/FaceSpace.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="399">
+              <caret line="19" column="32" lean-forward="false" selection-start-line="19" selection-start-column="32" selection-end-line="19" selection-end-column="32" />
+              <folding>
+                <element signature="imports" expanded="true" />
+                <marker date="1512872421774" expanded="true" signature="3053:3098" ph="SELECT Passw... Profile" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Friends.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Java/Tables/Friends.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="1995">
+              <caret line="95" column="5" lean-forward="true" selection-start-line="95" selection-start-column="5" selection-end-line="95" selection-end-column="5" />
+              <folding>
+                <element signature="e#2521#2522#0" expanded="true" />
+                <element signature="e#2551#2552#0" expanded="true" />
+                <element signature="e#2588#2589#0" expanded="true" />
+                <element signature="e#2618#2619#0" expanded="true" />
+                <element signature="e#2650#2651#0" expanded="true" />
+                <element signature="e#2683#2684#0" expanded="true" />
+                <element signature="e#2713#2714#0" expanded="true" />
+                <element signature="e#2746#2747#0" expanded="true" />
+                <element signature="e#2780#2781#0" expanded="true" />
+                <element signature="e#2810#2811#0" expanded="true" />
+                <marker date="1512869668078" expanded="true" signature="1065:1152" ph="INSERT INTO Pending_Friends... " />
+                <marker date="1512869668078" expanded="true" signature="1065:1156" ph="INSERT INTO Pending_Friends... " />
+                <marker date="1512869668078" expanded="true" signature="1065:1159" ph="INSERT INTO Pending_Friends... " />
+                <marker date="1512869668078" expanded="true" signature="1065:1162" ph="INSERT INTO Pending_Friends... " />
+                <marker date="1512869668078" expanded="true" signature="1507:1853" ph="INSERT INTO Pending_Friends... " />
+                <marker date="1512869668078" expanded="true" signature="2078:2214" ph="DELETE FROM Pending_Friends... " />
+                <marker date="1512869668078" expanded="true" signature="2078:2215" ph="DELETE FROM Pending_Friends... " />
+                <marker date="1512869668078" expanded="true" signature="2078:2234" ph="DELETE FROM Pending_Friends... " />
+                <marker date="1512869668078" expanded="true" signature="2315:2334" ph="DELETE FROM Friends... " />
+                <marker date="1512869668078" expanded="true" signature="2315:2368" ph="DELETE FROM Friends... " />
+                <marker date="1512869668078" expanded="true" signature="2315:2435" ph="DELETE FROM Friends... " />
+                <marker date="1512869668078" expanded="true" signature="2315:2436" ph="DELETE FROM Friends... " />
+                <marker date="1512869668078" expanded="true" signature="2315:2455" ph="DELETE FROM Friends... " />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Message.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Java/Tables/Message.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="507">
+              <caret line="104" column="30" lean-forward="true" selection-start-line="104" selection-start-column="30" selection-end-line="104" selection-end-column="30" />
+              <folding>
+                <marker date="1512872207201" expanded="true" signature="446:557" ph="SELECT fromI... Message" />
+                <marker date="1512872207201" expanded="true" signature="2005:2034" ph="SELECT COUNT... Messages" />
+                <marker date="1512872207201" expanded="true" signature="2440:2570" ph="INSERT INTO Message... " />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Profile.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Java/Tables/Profile.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="3150">
+              <caret line="163" column="40" lean-forward="true" selection-start-line="163" selection-start-column="40" selection-end-line="163" selection-end-column="40" />
+              <folding>
+                <element signature="imports" expanded="true" />
+                <element signature="method#logout#0;class#Profile#0" expanded="false" />
+                <element signature="e#8512#8513#0" expanded="true" />
+                <element signature="e#8541#8542#0" expanded="true" />
+                <element signature="e#8572#8573#0" expanded="true" />
+                <element signature="e#8599#8600#0" expanded="true" />
+                <marker date="1512872200608" expanded="true" signature="542:688" ph="SELECT userI... PROFILE" />
+                <marker date="1512872200608" expanded="true" signature="1148:1246" ph="SELECT userI... PROFILE" />
+                <marker date="1512872200608" expanded="true" signature="1858:1886" ph="SELECT COUNT... Profile" />
+                <marker date="1512872200608" expanded="true" signature="2220:2295" ph="INSERT INTO Friends... " />
+                <marker date="1512872200608" expanded="true" signature="2220:2296" ph="INSERT INTO Friends... " />
+                <marker date="1512872200608" expanded="true" signature="2718:2763" ph="SELECT userI... PROFILE" />
+                <marker date="1512872200608" expanded="true" signature="2718:2780" ph="SELECT userI... PROFILE" />
+                <marker date="1512872200608" expanded="true" signature="2718:2781" ph="SELECT userI... PROFILE" />
+                <marker date="1512872200608" expanded="true" signature="4105:4227" ph="SELECT fromI... " />
+                <marker date="1512872200608" expanded="true" signature="5188:5306" ph="SELECT gID, Pending_Groupmembers" />
+                <marker date="1512872200608" expanded="true" signature="6237:6380" ph="SELECT userI... " />
+                <marker date="1512872200608" expanded="true" signature="7318:7325" ph="SELECT msgID... " />
+                <marker date="1512872200608" expanded="true" signature="7318:7332" ph="SELECT m.msg... " />
+                <marker date="1512872200608" expanded="true" signature="7318:7376" ph="SELECT m.msg... Message" />
+                <marker date="1512872200608" expanded="true" signature="7318:7436" ph="SELECT m.msg... Message" />
+                <marker date="1512872200608" expanded="true" signature="7318:7486" ph="SELECT m.msg... Message" />
+                <marker date="1512872200608" expanded="true" signature="7318:7533" ph="SELECT m.msg... Message" />
+                <marker date="1512872200608" expanded="true" signature="7318:7582" ph="SELECT m.msg... Message" />
+                <marker date="1512872200608" expanded="true" signature="7937:8220" ph="SELECT m.msg... Message" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -268,6 +160,12 @@
       <find>pending</find>
       <find>initiateF</find>
       <find>sendMessageToUser</find>
+      <find>throw</find>
+      <find>createSta</find>
+      <find>createSt</find>
+      <find>other</find>
+      <find>login</find>
+      <find>createStat</find>
     </findStrings>
     <replaceStrings>
       <replace>../SQL/Data/</replace>
@@ -293,13 +191,13 @@
         <option value="$PROJECT_DIR$/Python/CsvCreator.py" />
         <option value="$PROJECT_DIR$/SQL/Objects/Users.sql" />
         <option value="$PROJECT_DIR$/Java/Tables/Groups.java" />
-        <option value="$PROJECT_DIR$/Java/Tables/Friends.java" />
-        <option value="$PROJECT_DIR$/Java/Tables/Group.java" />
         <option value="$PROJECT_DIR$/Java/Tables/Group_Membership.java" />
         <option value="$PROJECT_DIR$/Java/Tables/GroupMembership.java" />
-        <option value="$PROJECT_DIR$/Java/Tables/Profile.java" />
         <option value="$PROJECT_DIR$/SQL/StructureNoCSV.sql" />
+        <option value="$PROJECT_DIR$/Java/Tables/Group.java" />
+        <option value="$PROJECT_DIR$/Java/Tables/Friends.java" />
         <option value="$PROJECT_DIR$/SQL/Structure.sql" />
+        <option value="$PROJECT_DIR$/Java/Tables/Profile.java" />
         <option value="$PROJECT_DIR$/Java/Tables/Message.java" />
         <option value="$PROJECT_DIR$/Java/FaceSpace.java" />
       </list>
@@ -313,7 +211,7 @@
   </component>
   <component name="ProjectFrameBounds">
     <option name="x" value="-8" />
-    <option name="width" value="976" />
+    <option name="width" value="966" />
     <option name="height" value="1038" />
   </component>
   <component name="ProjectView">
@@ -331,10 +229,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="AndroidView" />
-      <pane id="PackagesPane" />
-      <pane id="Scope" />
-      <pane id="Scratches" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -385,12 +279,16 @@
           <select />
         </subPane>
       </pane>
+      <pane id="Scope" />
+      <pane id="PackagesPane" />
+      <pane id="AndroidView" />
+      <pane id="Scratches" />
     </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="last_opened_file_path" value="D:/Python3.6/python.exe" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="settings.editor.selected.configurable" value="settings.github" />
     <property name="project.structure.last.edited" value="SDKs" />
     <property name="project.structure.proportion" value="0.15" />
@@ -556,7 +454,9 @@
       <workItem from="1512163132708" duration="398000" />
       <workItem from="1512164131059" duration="2224000" />
       <workItem from="1512166403552" duration="23667000" />
-      <workItem from="1512190410132" duration="363000" />
+      <workItem from="1512190410132" duration="382000" />
+      <workItem from="1512840642593" duration="36000" />
+      <workItem from="1512863788006" duration="8624000" />
     </task>
     <task id="LOCAL-00001" summary="Wrote csv loading for Structure">
       <created>1512165036182</created>
@@ -698,29 +598,49 @@
       <option name="project" value="LOCAL" />
       <updated>1512190760020</updated>
     </task>
-    <option name="localTasksCounter" value="21" />
+    <task id="LOCAL-00021" summary="Phase 2 submission">
+      <created>1512190779778</created>
+      <option name="number" value="00021" />
+      <option name="presentableId" value="LOCAL-00021" />
+      <option name="project" value="LOCAL" />
+      <updated>1512190779778</updated>
+    </task>
+    <task id="LOCAL-00022" summary="Fixed data input">
+      <created>1512865972935</created>
+      <option name="number" value="00022" />
+      <option name="presentableId" value="LOCAL-00022" />
+      <option name="project" value="LOCAL" />
+      <updated>1512865972935</updated>
+    </task>
+    <task id="LOCAL-00023" summary="Fewer SQL injections">
+      <created>1512869703174</created>
+      <option name="number" value="00023" />
+      <option name="presentableId" value="LOCAL-00023" />
+      <option name="project" value="LOCAL" />
+      <updated>1512869703174</updated>
+    </task>
+    <option name="localTasksCounter" value="24" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="29696000" />
+    <option name="totallyTimeSpent" value="38375000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="0" width="976" height="1038" extended-state="0" />
+    <frame x="-8" y="0" width="966" height="1038" extended-state="0" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
       <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Image Layers" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.33448672" sideWeight="0.52" order="8" side_tool="true" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33448672" sideWeight="0.52" order="8" side_tool="true" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.33448672" sideWeight="0.48" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33448672" sideWeight="0.48" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.327252" sideWeight="0.48818475" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.20111111" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.41910112" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Docker" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="SciView" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
@@ -729,12 +649,13 @@
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Theme Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="true" content_ui="tabs" />
+      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32975295" sideWeight="0.5" order="5" side_tool="true" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="3" side_tool="false" content_ui="combo" />
       <window_info id="Data View" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Database Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32960895" sideWeight="0.5" order="12" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32928178" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
@@ -758,7 +679,10 @@
     <MESSAGE value="Fixed everything forever" />
     <MESSAGE value="Merged w/ oliver's profile code" />
     <MESSAGE value="Fixed structure" />
-    <option name="LAST_COMMIT_MESSAGE" value="Fixed structure" />
+    <MESSAGE value="Phase 2 submission" />
+    <MESSAGE value="Fixed data input" />
+    <MESSAGE value="Fewer SQL injections" />
+    <option name="LAST_COMMIT_MESSAGE" value="Fewer SQL injections" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
@@ -874,13 +798,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Java/Tables/MessageRecipient.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="42">
-          <caret line="2" column="29" lean-forward="false" selection-start-line="2" selection-start-column="29" selection-end-line="2" selection-end-column="29" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/SQL/CreationScript.sql" />
     <entry file="file://$PROJECT_DIR$/Java/Database.java" />
     <entry file="file://$PROJECT_DIR$/Python/CsvCreator.py">
@@ -923,44 +840,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Java/Tables/Friends.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="294">
-          <caret line="17" column="56" lean-forward="false" selection-start-line="17" selection-start-column="56" selection-end-line="17" selection-end-column="56" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#2648#2649#0" expanded="true" />
-            <element signature="e#2678#2679#0" expanded="true" />
-            <element signature="e#2715#2716#0" expanded="true" />
-            <element signature="e#2745#2746#0" expanded="true" />
-            <element signature="e#2777#2778#0" expanded="true" />
-            <element signature="e#2810#2811#0" expanded="true" />
-            <element signature="e#2840#2841#0" expanded="true" />
-            <element signature="e#2873#2874#0" expanded="true" />
-            <element signature="e#2907#2908#0" expanded="true" />
-            <element signature="e#2937#2938#0" expanded="true" />
-            <marker date="1512188357303" expanded="true" signature="1176:1203" ph="INSERT INTO Pending_Friends... " />
-            <marker date="1512188357303" expanded="true" signature="1176:1227" ph="INSERT INTO Pending_Friends... " />
-            <marker date="1512188357303" expanded="true" signature="1176:1263" ph="INSERT INTO Pending_Friends... " />
-            <marker date="1512188357303" expanded="true" signature="1176:1265" ph="INSERT INTO Pending_Friends... " />
-            <marker date="1512188357303" expanded="true" signature="1176:1320" ph="INSERT INTO Pending_Friends... " />
-            <marker date="1512188357303" expanded="true" signature="1176:1321" ph="INSERT INTO Pending_Friends... " />
-            <marker date="1512188357303" expanded="true" signature="1176:1376" ph="INSERT INTO Pending_Friends... " />
-            <marker date="1512188357303" expanded="true" signature="1176:1377" ph="INSERT INTO Pending_Friends... " />
-            <marker date="1512188357303" expanded="true" signature="1176:1443" ph="INSERT INTO Pending_Friends... " />
-            <marker date="1512188357303" expanded="true" signature="1634:1980" ph="INSERT INTO Pending_Friends... " />
-            <marker date="1512188357303" expanded="true" signature="2205:2341" ph="DELETE FROM Pending_Friends... " />
-            <marker date="1512188357303" expanded="true" signature="2205:2342" ph="DELETE FROM Pending_Friends... " />
-            <marker date="1512188357303" expanded="true" signature="2205:2361" ph="DELETE FROM Pending_Friends... " />
-            <marker date="1512188357303" expanded="true" signature="2442:2461" ph="DELETE FROM Friends... " />
-            <marker date="1512188357303" expanded="true" signature="2442:2495" ph="DELETE FROM Friends... " />
-            <marker date="1512188357303" expanded="true" signature="2442:2562" ph="DELETE FROM Friends... " />
-            <marker date="1512188357303" expanded="true" signature="2442:2563" ph="DELETE FROM Friends... " />
-            <marker date="1512188357303" expanded="true" signature="2442:2582" ph="DELETE FROM Friends... " />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1012,14 +891,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/SQL/Structure.sql">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="966">
-          <caret line="46" column="26" lean-forward="false" selection-start-line="46" selection-start-column="26" selection-end-line="46" selection-end-column="26" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/SQL/Objects/Messages.sql">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="21">
@@ -1028,46 +899,18 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Java/Tables/Group.java">
+    <entry file="file://$PROJECT_DIR$/Java/Tables/MessageRecipient.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="378">
-          <caret line="19" column="0" lean-forward="false" selection-start-line="19" selection-start-column="0" selection-end-line="19" selection-end-column="0" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#2437#2438#0" expanded="true" />
-            <element signature="e#2463#2464#0" expanded="true" />
-            <element signature="e#2494#2495#0" expanded="true" />
-            <element signature="e#2521#2522#0" expanded="true" />
-            <marker date="1512188421886" expanded="true" signature="822:851" ph="SELECT gID, " />
-            <marker date="1512188421886" expanded="true" signature="822:891" ph="SELECT gID, " />
-            <marker date="1512188421886" expanded="true" signature="822:895" ph="SELECT gID, " />
-            <marker date="1512188421886" expanded="true" signature="822:931" ph="SELECT gID, " />
-            <marker date="1512188421886" expanded="true" signature="822:932" ph="SELECT gID, " />
-            <marker date="1512188421886" expanded="true" signature="822:933" ph="SELECT gID, " />
-            <marker date="1512188421886" expanded="true" signature="822:945" ph="SELECT gID, " />
-            <marker date="1512188421886" expanded="true" signature="1444:1471" ph="SELECT COUNT... Groups" />
-            <marker date="1512188421886" expanded="true" signature="1756:1774" ph="INSERT INTO Groups... " />
-            <marker date="1512188421886" expanded="true" signature="1756:1829" ph="INSERT INTO Groups... " />
-            <marker date="1512188421886" expanded="true" signature="1756:1868" ph="INSERT INTO Groups... " />
-            <marker date="1512188421886" expanded="true" signature="1756:1869" ph="INSERT INTO Groups... " />
-            <marker date="1512188421886" expanded="true" signature="1756:1908" ph="INSERT INTO Groups... " />
-            <marker date="1512188421886" expanded="true" signature="1756:1909" ph="INSERT INTO Groups... " />
-            <marker date="1512188421886" expanded="true" signature="1756:1949" ph="INSERT INTO Groups... " />
-            <marker date="1512188421886" expanded="true" signature="1756:1972" ph="INSERT INTO Groups... " />
-            <marker date="1512188421886" expanded="true" signature="2183:2215" ph="INSERT INTO Pending_Groupmembers... " />
-            <marker date="1512188421886" expanded="true" signature="2183:2238" ph="INSERT INTO Pending_Groupmembers... " />
-            <marker date="1512188421886" expanded="true" signature="2183:2267" ph="INSERT INTO Pending_Groupmembers... " />
-            <marker date="1512188421886" expanded="true" signature="2183:2339" ph="INSERT INTO Pending_Groupmembers... " />
-            <marker date="1512188421886" expanded="true" signature="2183:2340" ph="INSERT INTO Pending_Groupmembers... " />
-            <marker date="1512188421886" expanded="true" signature="2183:2390" ph="INSERT INTO Pending_Groupmembers... " />
-          </folding>
+        <state relative-caret-position="42">
+          <caret line="2" column="29" lean-forward="false" selection-start-line="2" selection-start-column="29" selection-end-line="2" selection-end-column="29" />
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/Java/Tables/GroupMembership.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="63">
-          <caret line="9" column="0" lean-forward="false" selection-start-line="9" selection-start-column="0" selection-end-line="9" selection-end-column="0" />
+        <state relative-caret-position="252">
+          <caret line="12" column="24" lean-forward="true" selection-start-line="12" selection-start-column="24" selection-end-line="12" selection-end-column="24" />
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="e#1672#1673#0" expanded="true" />
@@ -1096,59 +939,122 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Java/Tables/Profile.java">
+    <entry file="file://$PROJECT_DIR$/SQL/Structure.sql">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="15" lean-forward="false" selection-start-line="0" selection-start-column="15" selection-end-line="0" selection-end-column="15" />
+        <state relative-caret-position="1848">
+          <caret line="88" column="44" lean-forward="true" selection-start-line="88" selection-start-column="44" selection-end-line="88" selection-end-column="44" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Java/Tables/Group.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="444">
+          <caret line="107" column="32" lean-forward="false" selection-start-line="107" selection-start-column="32" selection-end-line="107" selection-end-column="32" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#9331#9332#0" expanded="true" />
-            <element signature="e#9360#9361#0" expanded="true" />
-            <element signature="e#9391#9392#0" expanded="true" />
-            <element signature="e#9418#9419#0" expanded="true" />
-            <marker date="1512190534320" expanded="true" signature="545:691" ph="SELECT userI... PROFILE" />
-            <marker date="1512190534320" expanded="true" signature="545:706" ph="SELECT userI... PROFILE" />
-            <marker date="1512190534320" expanded="true" signature="1191:1305" ph="SELECT userI... PROFILE" />
-            <marker date="1512190534320" expanded="true" signature="1191:1320" ph="SELECT userI... PROFILE" />
-            <marker date="1512190534320" expanded="true" signature="1945:1973" ph="SELECT COUNT... Profile" />
-            <marker date="1512190534320" expanded="true" signature="2233:2483" ph="INSERT INTO Friends... " />
-            <marker date="1512190534320" expanded="true" signature="2233:2503" ph="INSERT INTO Friends... " />
-            <marker date="1512190534320" expanded="true" signature="2824:3017" ph="SELECT userI... PROFILE" />
-            <marker date="1512190534320" expanded="true" signature="2824:3018" ph="SELECT userI... PROFILE" />
-            <marker date="1512190534320" expanded="true" signature="2824:3035" ph="SELECT userI... PROFILE" />
-            <marker date="1512190534320" expanded="true" signature="3681:3793" ph="UPDATE PROFILE... " />
-            <marker date="1512190534320" expanded="true" signature="3681:3794" ph="UPDATE PROFILE... " />
-            <marker date="1512190534320" expanded="true" signature="3681:3809" ph="UPDATE PROFILE... " />
-            <marker date="1512190534320" expanded="true" signature="4867:4895" ph="SELECT COUNT... message" />
-            <marker date="1512190534320" expanded="true" signature="5018:5394" ph="INSERT INTO MESSAGE... " />
-            <marker date="1512190534320" expanded="true" signature="5854:5975" ph="SELECT fromI... " />
-            <marker date="1512190534320" expanded="true" signature="5854:5990" ph="SELECT fromI... " />
-            <marker date="1512190534320" expanded="true" signature="7103:7219" ph="SELECT gID, " />
-            <marker date="1512190534320" expanded="true" signature="8322:8477" ph="SELECT userI... " />
-            <marker date="1512190534320" expanded="true" signature="8322:8478" ph="SELECT userI... " />
-            <marker date="1512190534320" expanded="true" signature="8322:8493" ph="SELECT userI... " />
+            <element signature="e#2445#2446#0" expanded="true" />
+            <element signature="e#2471#2472#0" expanded="true" />
+            <element signature="e#2502#2503#0" expanded="true" />
+            <element signature="e#2529#2530#0" expanded="true" />
+            <marker date="1512869548881" expanded="true" signature="484:597" ph="SELECT gID, " />
+            <marker date="1512869548881" expanded="true" signature="484:598" ph="SELECT gID, " />
+            <marker date="1512869548881" expanded="true" signature="1117:1144" ph="SELECT COUNT... Groups" />
+            <marker date="1512869548881" expanded="true" signature="1598:1677" ph="INSERT INTO Groups... " />
+            <marker date="1512869548881" expanded="true" signature="1598:1684" ph="INSERT INTO Groups... " />
+            <marker date="1512869548881" expanded="true" signature="1598:1686" ph="INSERT INTO Groups... " />
+            <marker date="1512869548881" expanded="true" signature="1598:1687" ph="INSERT INTO Groups... " />
+            <marker date="1512869548881" expanded="true" signature="2043:2098" ph="INSERT INTO Pending_Groupmembers... " />
+            <marker date="1512869548881" expanded="true" signature="2043:2144" ph="INSERT INTO Pending_Groupmembers... " />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/Java/Tables/Message.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="168">
-          <caret line="8" column="0" lean-forward="false" selection-start-line="8" selection-start-column="0" selection-end-line="8" selection-end-column="0" />
-          <folding />
+        <state relative-caret-position="507">
+          <caret line="104" column="30" lean-forward="true" selection-start-line="104" selection-start-column="30" selection-end-line="104" selection-end-column="30" />
+          <folding>
+            <marker date="1512872207201" expanded="true" signature="446:557" ph="SELECT fromI... Message" />
+            <marker date="1512872207201" expanded="true" signature="2005:2034" ph="SELECT COUNT... Messages" />
+            <marker date="1512872207201" expanded="true" signature="2440:2570" ph="INSERT INTO Message... " />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Java/Tables/Friends.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1995">
+          <caret line="95" column="5" lean-forward="true" selection-start-line="95" selection-start-column="5" selection-end-line="95" selection-end-column="5" />
+          <folding>
+            <element signature="e#2521#2522#0" expanded="true" />
+            <element signature="e#2551#2552#0" expanded="true" />
+            <element signature="e#2588#2589#0" expanded="true" />
+            <element signature="e#2618#2619#0" expanded="true" />
+            <element signature="e#2650#2651#0" expanded="true" />
+            <element signature="e#2683#2684#0" expanded="true" />
+            <element signature="e#2713#2714#0" expanded="true" />
+            <element signature="e#2746#2747#0" expanded="true" />
+            <element signature="e#2780#2781#0" expanded="true" />
+            <element signature="e#2810#2811#0" expanded="true" />
+            <marker date="1512869668078" expanded="true" signature="1065:1152" ph="INSERT INTO Pending_Friends... " />
+            <marker date="1512869668078" expanded="true" signature="1065:1156" ph="INSERT INTO Pending_Friends... " />
+            <marker date="1512869668078" expanded="true" signature="1065:1159" ph="INSERT INTO Pending_Friends... " />
+            <marker date="1512869668078" expanded="true" signature="1065:1162" ph="INSERT INTO Pending_Friends... " />
+            <marker date="1512869668078" expanded="true" signature="1507:1853" ph="INSERT INTO Pending_Friends... " />
+            <marker date="1512869668078" expanded="true" signature="2078:2214" ph="DELETE FROM Pending_Friends... " />
+            <marker date="1512869668078" expanded="true" signature="2078:2215" ph="DELETE FROM Pending_Friends... " />
+            <marker date="1512869668078" expanded="true" signature="2078:2234" ph="DELETE FROM Pending_Friends... " />
+            <marker date="1512869668078" expanded="true" signature="2315:2334" ph="DELETE FROM Friends... " />
+            <marker date="1512869668078" expanded="true" signature="2315:2368" ph="DELETE FROM Friends... " />
+            <marker date="1512869668078" expanded="true" signature="2315:2435" ph="DELETE FROM Friends... " />
+            <marker date="1512869668078" expanded="true" signature="2315:2436" ph="DELETE FROM Friends... " />
+            <marker date="1512869668078" expanded="true" signature="2315:2455" ph="DELETE FROM Friends... " />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Java/Tables/Profile.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="3150">
+          <caret line="163" column="40" lean-forward="true" selection-start-line="163" selection-start-column="40" selection-end-line="163" selection-end-column="40" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="method#logout#0;class#Profile#0" expanded="false" />
+            <element signature="e#8512#8513#0" expanded="true" />
+            <element signature="e#8541#8542#0" expanded="true" />
+            <element signature="e#8572#8573#0" expanded="true" />
+            <element signature="e#8599#8600#0" expanded="true" />
+            <marker date="1512872200608" expanded="true" signature="542:688" ph="SELECT userI... PROFILE" />
+            <marker date="1512872200608" expanded="true" signature="1148:1246" ph="SELECT userI... PROFILE" />
+            <marker date="1512872200608" expanded="true" signature="1858:1886" ph="SELECT COUNT... Profile" />
+            <marker date="1512872200608" expanded="true" signature="2220:2295" ph="INSERT INTO Friends... " />
+            <marker date="1512872200608" expanded="true" signature="2220:2296" ph="INSERT INTO Friends... " />
+            <marker date="1512872200608" expanded="true" signature="2718:2763" ph="SELECT userI... PROFILE" />
+            <marker date="1512872200608" expanded="true" signature="2718:2780" ph="SELECT userI... PROFILE" />
+            <marker date="1512872200608" expanded="true" signature="2718:2781" ph="SELECT userI... PROFILE" />
+            <marker date="1512872200608" expanded="true" signature="4105:4227" ph="SELECT fromI... " />
+            <marker date="1512872200608" expanded="true" signature="5188:5306" ph="SELECT gID, Pending_Groupmembers" />
+            <marker date="1512872200608" expanded="true" signature="6237:6380" ph="SELECT userI... " />
+            <marker date="1512872200608" expanded="true" signature="7318:7325" ph="SELECT msgID... " />
+            <marker date="1512872200608" expanded="true" signature="7318:7332" ph="SELECT m.msg... " />
+            <marker date="1512872200608" expanded="true" signature="7318:7376" ph="SELECT m.msg... Message" />
+            <marker date="1512872200608" expanded="true" signature="7318:7436" ph="SELECT m.msg... Message" />
+            <marker date="1512872200608" expanded="true" signature="7318:7486" ph="SELECT m.msg... Message" />
+            <marker date="1512872200608" expanded="true" signature="7318:7533" ph="SELECT m.msg... Message" />
+            <marker date="1512872200608" expanded="true" signature="7318:7582" ph="SELECT m.msg... Message" />
+            <marker date="1512872200608" expanded="true" signature="7937:8220" ph="SELECT m.msg... Message" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/Java/FaceSpace.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="294">
-          <caret line="21" column="31" lean-forward="false" selection-start-line="21" selection-start-column="31" selection-end-line="21" selection-end-column="31" />
+        <state relative-caret-position="399">
+          <caret line="19" column="32" lean-forward="false" selection-start-line="19" selection-start-column="32" selection-end-line="19" selection-end-column="32" />
           <folding>
             <element signature="imports" expanded="true" />
-            <marker date="1512190625410" expanded="true" signature="3036:3051" ph="SELECT \&quot;pas... " />
-            <marker date="1512190625410" expanded="true" signature="3036:3063" ph="SELECT \&quot;pas... Profile" />
-            <marker date="1512190625410" expanded="true" signature="3036:3079" ph="SELECT passw... Profile" />
-            <marker date="1512190625410" expanded="true" signature="3036:3080" ph="SELECT Passw... Profile" />
+            <marker date="1512872421774" expanded="true" signature="3053:3098" ph="SELECT Passw... Profile" />
           </folding>
         </state>
       </provider>

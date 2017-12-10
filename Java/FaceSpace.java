@@ -17,8 +17,7 @@ public class FaceSpace {
         Connection conn = null;
         try {
             Class.forName("oracle.jdbc.driver.OracleDriver");
-            conn = DriverManager
-                    .getConnection("jdbc:oracle:thin:@class3.cs.pitt.edu:1521:dbclass");
+            conn = DriverManager.getConnection("jdbc:oracle:thin:@class3.cs.pitt.edu:1521:dbclass");
         } catch (ClassNotFoundException e) {
             e.printStackTrace();
             System.exit(0);
@@ -85,15 +84,20 @@ public class FaceSpace {
                     // Create profile
                     Profile newProfile;
                     try {
-                        newProfile = Profile.create(conn,
+                        newProfile = Profile.create(
+                                conn,
                                 get(sc, "your name"),
                                 get(sc, "your email"),
-                                getDate(sc, "date of birth"));
+                                getDate(sc, "date of birth")
+                        );
 
-                        Statement stmt = conn.createStatement();
-                        ResultSet rs = stmt.executeQuery("SELECT Password FROM Profile WHERE userID = " + newProfile.getUserID());
+                        PreparedStatement ps = conn.prepareStatement(
+                                "SELECT Password FROM Profile WHERE userID = ?"
+                        );
+                        ps.setString(1, newProfile.getUserID());
+                        ResultSet rs = ps.executeQuery();
+
                         rs.next();
-
                         System.out.println("UserID: " + newProfile.getUserID() +
                                 "\nPassword : " + rs.getString(1));
 
@@ -106,9 +110,8 @@ public class FaceSpace {
                 case 2:
 
                     // Login
-                    //will set loggedIn to appropriot profile iff there is exactly one match in profiles
+                    // Will set loggedIn to appropriate profile if successful
                     try {
-
                         loggedIn = Profile.login(conn, get(sc, "userID"), get(sc, "password"));
                         if (loggedIn != null) {
                             System.out.println("logged in as " + loggedIn.getName());
@@ -153,6 +156,8 @@ public class FaceSpace {
                     // TODO possible off by 1
                     assert pendingFriends != null && pendingGroups != null;
                     boolean[] confirmed = new boolean[pendingFriends.size() + pendingGroups.size()];
+
+                    // While user enters input
                     while (!(input = get(sc, "an index")).equals("\n")) {
                         try {
                             int select = Integer.parseInt(input);
@@ -208,6 +213,7 @@ public class FaceSpace {
 
                 case 6:
 
+                    // Create group
                     Group newGroup;
                     try {
                         newGroup = Group.create(
@@ -231,11 +237,14 @@ public class FaceSpace {
                 case 7:
 
                     // Add to group
+                    Profile other;
+                    Group group;
                     try {
-                        Profile other = Profile.get(conn, get(sc, "user's ID"), false);
-                        Group group = Group.get(conn, get(sc, "group's ID"));
+                        other = Profile.get(conn, get(sc, "ID of user"), false);
+                        group = Group.get(conn, get(sc, "ID of group"));
 
                         System.out.println(other);
+                        System.out.println(group);
 
                         group.initiateAddUser(other, get(sc, "message"));
 
@@ -247,39 +256,81 @@ public class FaceSpace {
 
                 case 8:
 
-                    Profile toProfile;
+                    // Send to user
                     try {
-                        toProfile = Profile.get(conn, get(sc, "id of user"), true);
+                        other = Profile.get(conn, get(sc, "id of user"), true);
+
+                        System.out.println(other);
 
                         assert loggedIn != null;
-                        loggedIn.sendMessageToUser(toProfile, get(sc, "message"), conn);
+                        loggedIn.sendMessageToUser(other, get(sc, "message"));
 
-                    } catch (Exception e) {
-
+                    } catch (SQLException e) {
+                        e.printStackTrace();
                     }
-                    //display name
-                    //enter message
 
+                    break;
 
                 case 9:
 
+                    // Send to group
+                    try {
+                        group = Group.get(conn, get(sc, "id of group"));
+
+                        System.out.println(group);
+
+                        assert loggedIn != null;
+                        loggedIn.sendMessageToGroup(group, get(sc, "message"));
+
+                    } catch (SQLException e) {
+                        e.printStackTrace();
+                    }
+
+                    break;
+
                 case 10:
+
+                    try {
+                        assert loggedIn != null;
+                        loggedIn.displayMessages();
+                    } catch (SQLException e) {
+                        e.printStackTrace();
+                    }
+
+                    break;
 
                 case 11:
 
+                    try {
+                        assert loggedIn != null;
+                        loggedIn.displayNewMessages();
+                    } catch (SQLException e) {
+                        e.printStackTrace();
+                    }
+
+                    break;
+
                 case 12:
+
+
+                    break;
 
                 case 13:
 
+
+                    break;
+
                 case 14:
 
+
+                    break;
+
                 case 16:
-                    assert loggedIn != null;
                     try {
                         loggedIn.logout();
-                    } catch (Exception e) {
+                    } catch (SQLException e) {
+                        e.printStackTrace();
                     }
-                    ;
 
             }
         }

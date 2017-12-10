@@ -247,6 +247,45 @@ public class Profile {
         return friends;
     }
 
+    public void displayMessages() throws SQLException {
+
+        PreparedStatement ps = conn.prepareStatement(
+                "SELECT m.msgID " +
+                        "FROM Message m " +
+                        "INNER JOIN Message_Recipient r " +
+                        "ON m.msgID = r.msgID " +
+                        "WHERE m.msgID = ? " +
+                        "ORDER BY m.datesent"
+        );
+        ps.setString(1, userID);
+
+        ResultSet rs = ps.executeQuery();
+
+        // Print
+        while (rs.next())
+            System.out.println(Message.get(conn, rs.getString(1)));
+    }
+
+    public void displayNewMessages() throws SQLException {
+
+        // Data
+        PreparedStatement ps = conn.prepareStatement(
+                "SELECT m.msgID " +
+                        "FROM Message m " +
+                        "INNER JOIN Message_Recipient r " +
+                        "ON m.msgID = r.msgID " +
+                        "WHERE m.msgID = ? AND m.datesent < ? " +
+                        "ORDER BY m.datesent"
+        );
+        ps.setString(1, userID);
+        ps.setDate(2, new Date(lastlogin.getTime()));
+
+        ResultSet rs = ps.executeQuery();
+
+        // Print
+        while (rs.next())
+            System.out.println(Message.get(conn, rs.getString(1)));
+    }
 
     public String getUserID() {
         return userID;
