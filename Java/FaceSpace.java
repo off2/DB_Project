@@ -3,6 +3,7 @@ import Tables.Group;
 import Tables.GroupMembership;
 import Tables.Profile;
 
+import java.io.*;
 import java.net.MalformedURLException;
 import java.net.URL;
 import java.net.URLClassLoader;
@@ -28,7 +29,28 @@ public class FaceSpace {
             DriverManager.registerDriver(driver);
             conn = DriverManager.getConnection(connection);
 
+            // Load files
+            StringBuilder sb = new StringBuilder();
+            Statement stmt = conn.createStatement();
+
+            // Load structure
+            BufferedReader in = new BufferedReader(new FileReader("../SQL/Structure.sql"));
+
+            String line;
+            while ((line = in.readLine()) != null)
+                sb.append(line);
+            stmt.execute(sb.toString());
+
+            // Load inserts
+            sb = new StringBuilder();
+            in = new BufferedReader(new FileReader("../SQL/InsertAll.sql"));
+
+            while ((line = in.readLine()) != null)
+                sb.append(line);
+            stmt.execute(sb.toString());
+
             success = true;
+
         } catch (SQLException e) {
             e.printStackTrace();
         } catch (Exception e) {
@@ -169,6 +191,7 @@ public class FaceSpace {
 
                     // While user enters input
                     while (!(input = get(sc, "an index")).equals("\n")) {
+                        // Confirm
                         try {
                             int select = Integer.parseInt(input);
                             if (select <= pendingFriends.size()) {
@@ -183,6 +206,7 @@ public class FaceSpace {
                         }
                     }
 
+                    // Delete all remaining
                     try {
                         for (int i = 0; i < confirmed.length; i++) {
                             if (i <= pendingFriends.size() && confirmed[i]) {
@@ -300,6 +324,7 @@ public class FaceSpace {
 
                 case 10:
 
+                    // Display messages
                     try {
                         assert loggedIn != null;
                         loggedIn.displayMessages();
@@ -311,6 +336,7 @@ public class FaceSpace {
 
                 case 11:
 
+                    // Display new messages
                     try {
                         assert loggedIn != null;
                         loggedIn.displayNewMessages();
@@ -336,12 +362,15 @@ public class FaceSpace {
                     break;
 
                 case 16:
+
+                    // Logout
                     try {
                         loggedIn.logout();
                     } catch (SQLException e) {
                         e.printStackTrace();
                     }
 
+                    break;
             }
         }
     }
