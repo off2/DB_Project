@@ -3,6 +3,9 @@ import Tables.Group;
 import Tables.GroupMembership;
 import Tables.Profile;
 
+import java.net.MalformedURLException;
+import java.net.URL;
+import java.net.URLClassLoader;
 import java.sql.*;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
@@ -14,17 +17,24 @@ public class FaceSpace {
     public static void main(String[] args) {
 
         // Establish connection
+        boolean success = false;
         Connection conn = null;
         try {
-            Class.forName("oracle.jdbc.driver.OracleDriver");
-            conn = DriverManager.getConnection("jdbc:oracle:thin:@class3.cs.pitt.edu:1521:dbclass");
-        } catch (ClassNotFoundException e) {
-            e.printStackTrace();
-            System.exit(0);
+            URL[] jar = new URL[]{new URL("ojdbc7.jar")};
+            String drname = "oracle.jdbc.driver.OracleDriver";
+            String connection = "jdbc:oracle:thin:@class3.cs.pitt.edu:1521:dbclass";
+
+            Driver driver = (Driver) Class.forName(drname, true, new URLClassLoader(jar)).newInstance();
+            DriverManager.registerDriver(driver);
+            conn = DriverManager.getConnection(connection);
+
+            success = true;
         } catch (SQLException e) {
             e.printStackTrace();
-            System.exit(0);
+        } catch (Exception e) {
+            e.printStackTrace();
         }
+        if (!success) System.exit(0);
 
         // Prompt
         Scanner sc = new Scanner(System.in);

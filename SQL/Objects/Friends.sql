@@ -11,6 +11,6 @@ AFTER INSERT ON FRIENDS
     DELETE FROM PENDING_FRIENDS
     WHERE (fromID = NEW.userID1 AND toID = NEW.userID2);
   END newFriend;
- 
+
 /
 
