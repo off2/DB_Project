@@ -89,8 +89,10 @@ public class FaceSpace {
                                 get(sc, "your name"),
                                 get(sc, "your email"),
                                 getDate(sc, "date of birth"));
-
-                        Statement stmt = conn.createStatement();
+						
+						
+						//HELP
+                        PreparedStatement stmt = conn.createStatement();
                         ResultSet rs = stmt.executeQuery("SELECT Password FROM Profile WHERE userID = " + newProfile.getUserID());
                         rs.next();
 

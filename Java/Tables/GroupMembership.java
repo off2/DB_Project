@@ -29,34 +29,46 @@ public class GroupMembership {
         if (!pending) return false;
 
         delete();
-        conn.createStatement().executeUpdate(
+		
+       
+		PreparedStatement stmt = conn.prepareStatement(
                 "INSERT INTO Group_Membership (gID, userID, message) " +
-                        "VALUES ('" +
-                        group.getgID() + "', '" +
-                        user.getUserID() + "', '" +
-                        message +
-                        "')"
+                        "VALUES (?, ?, ?)"
         );
+        stmt.setString(1, group.getgID());
+        stmt.setString(2, user.getUserID());
+        stmt.setString(3, message);
 
-        return pending = true;
+        stmt.executeUpdate();
+
+		pending = false;
+        return true;
     }
 
     public void delete() throws SQLException {
 
         PreparedStatement stmt = conn.createStatement();
         if (pending) {
-            stmt.executeUpdate(
+            stmt = conn.prepareStatement(
                     "DELETE FROM Pending_Groupmembers " +
-                            "WHERE gID = '" + group.getgID() +
-                            "' AND userID = '" + user.getUserID() + "'"
+                            "WHERE gID = ? AND userID = ?"
             );
+			
+			stmt.setString(1, group.getgID());
+			stmt.setString(2, user.getUserID());
+			
         } else {
-            stmt.executeUpdate(
+            stmt. conn.prepareStatement(
                     "DELETE FROM GROUP_MEMBERSHIP " +
-                            " WHERE gID = '" + group.getgID() +
-                            "' AND userID = '" + user.getUserID() + "'"
+                            " WHERE gID = ? AND userID = ?"
             );
+			
+			stmt.setString(1, group.getgID());
+			stmt.setString(2, user.getUserID());
         }
+		stmt.executeUpdate();
+		
+		
 
     }
 

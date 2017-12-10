@@ -50,6 +50,7 @@ public class Friends {
         ps.executeUpdate();
     }
 
+	//HELP
     public boolean confirm() throws SQLException {
 
         if (!pending) return false;
@@ -70,20 +71,25 @@ public class Friends {
 
     public void delete() throws SQLException {
 
-        Statement stmt = conn.createStatement();
+        Statement stmt;
         if (pending) {
-            stmt.executeUpdate(
-                    "DELETE FROM Pending_Friends " +
-                            "WHERE fromID = '" + friends[0] +
-                            "' AND toID = '" + friends[1] + "'"
-            );
+			stmt = conn.prepareStatement(
+				"DELETE FROM Pending_Friends " +
+                            "WHERE fromID = ? AND toID = ?"
+			);
+			stmt.setString(1, friends[0]);
+			stmt.setString(2, friends[1]);           
+		   
         } else {
-            stmt.executeUpdate(
-              "DELETE FROM Friends " +
-                      "WHERE userID1 = '" + friends[0] +
-                      "' AND userID2 = '" + friends[1] + "'"
-            );
+            stmt = conn.prepareStatement(
+				"DELETE FROM Pending_Friends " +
+                            "WHERE fromID = '?' AND toID = '?'"
+			);
+			stmt.setString(1, friends[0]);
+			stmt.setString(2, friends[1]); 
         }
+		
+		stmt.executeUpdate();
 
     }
 
