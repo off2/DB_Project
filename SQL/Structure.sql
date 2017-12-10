@@ -101,33 +101,35 @@ CREATE TABLE MESSAGE_RECIPIENT (
   CONSTRAINT MESSAGE_RECIPIENT_FK1 FOREIGN KEY (msgID) REFERENCES MESSAGE (msgID),
   CONSTRAINT MESSAGE_RECIPIENT_FK2 FOREIGN KEY (userID) REFERENCES PROFILE (userID)
 );
+/
 
-CREATE TRIGGER sendMessage
+/* CREATE OR REPLACE TRIGGER sendMessage
   BEFORE INSERT
   ON Message
+	
+	for each row 
 
   BEGIN
 
-    IF (new.toGroupID IS NULL)
+    IF (:new.toGroupID IS NULL)
     THEN
 
       INSERT INTO MESSAGE_RECIPIENT (msgID, userID)
-      VALUES (new.msgID, new.toUserID);
+      VALUES (:new.msgID, :new.toUserID);
 
-    ELSIF (new.toGroupID IS NULL)
+    ELSIF (:new.toGroupID IS NULL)
       THEN
 
         FOR groupMember IN (SELECT userID
                             FROM GROUP_MEMBERSHIP
-                            WHERE gID = new.toGroupID)
+                            WHERE gID = :new.toGroupID)
         LOOP
 
           INSERT INTO MESSAGE_RECIPIENT (msgID, userID)
-          VALUES (new.msgID, groupMember.userID);
+          VALUES (:new.msgID, groupMember.userID);
 
         END LOOP;
 
     END IF;
 
-  END sendMessage;
-/
+  END sendMessage; */
