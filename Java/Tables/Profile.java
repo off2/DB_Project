@@ -85,7 +85,6 @@ public class Profile {
         return created;
     }
 
-    // TODO fix
     public static Profile login(Connection conn, String userID, String password)
             throws SQLException {
 
@@ -117,54 +116,16 @@ public class Profile {
         ps.executeUpdate();
     }
 
-    public void sendMessageToUser(Profile to, String message, Connection conn)
+    public Message sendMessageToUser(Profile to, String message)
             throws SQLException {
 
-        // TODO Create new Message
-
-        Statement stmt = conn.createStatement();
-        ResultSet rs = stmt.executeQuery("SELECT COUNT(*) FROM message");
-        rs.next();
-        String mID = String.format("%d", rs.getInt(1) + 1);
-
-        if (stmt.execute("INSERT INTO MESSAGE (msgID, fromID, message, toUserID, dateSent) " +
-                "VALUES ('" +
-                mID + "','" +
-                userID + "','" +
-                message + "','" +
-                userID + "', NULL,'" +
-                new Date(System.currentTimeMillis()) +
-                "')"
-
-
-        )) {
-            System.out.println("Message sent");
-        }
-
-
+        return Message.send(conn, this, message, to);
     }
 
-    public void sendMessageToGroup(String groupID, String message, Connection conn)
+    public Message sendMessageToGroup(Group group, String message)
             throws SQLException {
 
-        // TODO Create new Message
-
-        Statement stmt = conn.createStatement();
-        ResultSet rs = stmt.executeQuery("SELECT COUNT(*) FROM message");
-        rs.next();
-        String mID = String.format("%d", rs.getInt(1) + 1);
-
-        stmt.execute(
-                "INSERT INTO MESSAGE (msgID, fromID, message, toUserID, toGroupID, dateSent) " +
-                        "VALUES ('" +
-                        mID + "','" +
-                        userID + "','" +
-                        message + "',NULL,'" +
-                        groupID + "','" +
-                        new Date(System.currentTimeMillis()) +
-                        "')"
-        );
-
+        return Message.send(conn, this, message, group);
     }
 
     public void initiateFriendship(Profile other, String message)
@@ -173,15 +134,14 @@ public class Profile {
         Friends.addPending(conn, this, other, message);
     }
 
-    // TODO Queries pending friends, mapping by ID? Name?
     public ArrayList<Friends> displayPendingFriends()
             throws SQLException {
 
         // Get list
         PreparedStatement ps = conn.prepareStatement(
                 "SELECT fromID, toID, message " +
-                "FROM Pending_Friends " +
-                "WHERE toID = ?"
+                        "FROM Pending_Friends " +
+                        "WHERE toID = ?"
         );
         ps.setString(1, userID);
 

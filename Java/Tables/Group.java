@@ -16,37 +16,23 @@ public class Group {
     private ArrayList<Profile> members;
     private Integer memberLimit;
 
-    public Group() {
-
-    }
-
-    public Group(Connection conn, String gID, String name, String description) {
-        this.conn = conn;
-        this.gID = gID;
-        this.name = name;
-        this.description = description;
-
-        // TODO get members?
-        // TODO get admin
-        // TODO get memberlimit
-    }
-
     public static Group get(Connection conn, String gID)
             throws SQLException {
 
-        Statement stmt = conn.createStatement();
-        ResultSet rs = stmt.executeQuery(
-                "SELECT gID, name, description" +
-                        "FROM Groups" +
-                        "WHERE gID = '" + gID + "'"
+        // Get data
+        PreparedStatement ps = conn.prepareStatement(
+                "SELECT gID, name, description " +
+                        "FROM Groups " +
+                        "WHERE gID = ?"
         );
+        ps.setString(1, gID);
+        ResultSet rs = ps.executeQuery();
 
+        // Create object
         Group temp = new Group();
         temp.gID = rs.getString(1);
         temp.name = rs.getString(2);
         temp.description = rs.getString(3);
-
-        // TODO get admin;
 
         return temp;
     }
@@ -54,28 +40,31 @@ public class Group {
     public static Group create(Connection conn, Profile admin, String name, String description, int memberLimit)
             throws SQLException {
 
+        // For ID purposes
+        PreparedStatement ps = conn.prepareStatement("SELECT COUNT(*) FROM Groups");
+        ResultSet rs = ps.executeQuery();
+        rs.next();
+
+        // Create new group
         Group created = new Group();
 
-        Statement stmt = conn.createStatement();
-        ResultSet rs = stmt.executeQuery("SELECT COUNT(*) FROM Groups");
-        rs.next();
         created.gID = String.format("%d", rs.getInt(1) + 1);
-
         created.conn = conn;
         created.name = name;
         created.description = description;
 
         created.admin = admin;
-
         created.memberLimit = memberLimit;
 
-        stmt.execute("INSERT INTO Groups (GID, NAME, DESCRIPTION) " +
-                "VALUES ('" +
-                created.gID + "'', '" +
-                created.name + "', '" +
-                created.description +
-                "'')"
+        // Persist to database
+        ps = conn.prepareStatement(
+                "INSERT INTO Groups (GID, NAME, DESCRIPTION) " +
+                        "VALUES (?, ?, ?)"
         );
+        ps.setString(1, created.gID);
+        ps.setString(2, created.name);
+        ps.setString(3, created.description);
+        ps.execute();
 
         return created;
     }
@@ -83,14 +72,23 @@ public class Group {
     public void initiateAddUser(Profile to, String message)
             throws SQLException {
 
-        Statement stmt = conn.createStatement();
-        stmt.execute("INSERT INTO Pending_Groupmembers (gID, userID, message)" +
-                "VALUES ('" +
-                gID + "', '" +
-                to.getUserID() + "', '" +
-                message +
-                "')"
+        PreparedStatement ps = conn.prepareStatement(
+                "INSERT INTO Pending_Groupmembers (gID, userID, message) " +
+                        "VALUES (?, ?, ?)"
         );
+        ps.setString(1, gID);
+        ps.setString(2, to.getUserID());
+        ps.setString(3, message);
+
+        ps.execute();
+    }
+
+    public void getMembers() {
+        // TODO implement
+    }
+
+    public void getAdmin() {
+        // TODO implement
     }
 
     public String getgID() {
