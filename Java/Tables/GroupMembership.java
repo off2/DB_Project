@@ -29,9 +29,9 @@ public class GroupMembership {
         if (!pending) return false;
 
         delete();
-		
-       
-		PreparedStatement stmt = conn.prepareStatement(
+
+
+        PreparedStatement stmt = conn.prepareStatement(
                 "INSERT INTO Group_Membership (gID, userID, message) " +
                         "VALUES (?, ?, ?)"
         );
@@ -41,35 +41,34 @@ public class GroupMembership {
 
         stmt.executeUpdate();
 
-		pending = false;
+        pending = false;
         return true;
     }
 
     public void delete() throws SQLException {
 
-        PreparedStatement stmt = conn.createStatement();
+        PreparedStatement ps;
+
         if (pending) {
-            stmt = conn.prepareStatement(
+            ps = conn.prepareStatement(
                     "DELETE FROM Pending_Groupmembers " +
                             "WHERE gID = ? AND userID = ?"
             );
-			
-			stmt.setString(1, group.getgID());
-			stmt.setString(2, user.getUserID());
-			
+
+            ps.setString(1, group.getgID());
+            ps.setString(2, user.getUserID());
+
         } else {
-            stmt. conn.prepareStatement(
+            ps = conn.prepareStatement(
                     "DELETE FROM GROUP_MEMBERSHIP " +
                             " WHERE gID = ? AND userID = ?"
             );
-			
-			stmt.setString(1, group.getgID());
-			stmt.setString(2, user.getUserID());
-        }
-		stmt.executeUpdate();
-		
-		
 
+            ps.setString(1, group.getgID());
+            ps.setString(2, user.getUserID());
+        }
+
+        ps.executeUpdate();
     }
 
     public Group getGroup() {
