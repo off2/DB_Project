@@ -108,22 +108,22 @@ CREATE TRIGGER sendMessage
 
   BEGIN
 
-    IF (new.toGroupID IS NULL)
+    IF (:new.toGroupID IS NULL)
     THEN
 
       INSERT INTO MESSAGE_RECIPIENT (msgID, userID)
       VALUES (new.msgID, new.toUserID);
 
-    ELSEIF (new.toGroupID IS NULL)
+    ELSIF (:new.toGroupID IS NULL)
       THEN
 
         FOR groupMember IN (SELECT userID
                             FROM GROUP_MEMBERSHIP
-                            WHERE gID = new.toGroupID)
+                            WHERE gID = :new.toGroupID)
         LOOP
 
           INSERT INTO MESSAGE_RECIPIENT (msgID, userID)
-          VALUES (new.msgID, groupMember.userID);
+          VALUES (:new.msgID, groupMember.userID);
 
         END LOOP;
 
