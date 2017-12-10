@@ -114,7 +114,7 @@ CREATE TRIGGER sendMessage
       INSERT INTO MESSAGE_RECIPIENT (msgID, userID)
       VALUES (new.msgID, new.toUserID);
 
-    ELSIF (new.toGroupID IS NULL)
+    ELSEIF (new.toGroupID IS NULL)
       THEN
 
         FOR groupMember IN (SELECT userID
