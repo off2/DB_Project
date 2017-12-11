@@ -330,6 +330,8 @@ public class FaceSpace {
 
                             );
                             userSearch.setString(1, queryStrings[i]);
+                            userSearch.setString(2, queryStrings[i]);
+                            userSearch.setString(3, queryStrings[i]);
 
                             ResultSet rs = userSearch.executeQuery();
                             System.out.println("Results for " + queryStrings[i] + ":");

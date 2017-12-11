@@ -328,12 +328,14 @@ public class FaceSpaceDriven {
                 case 11:
 
                     // Display new messages
-                    try {
+				/*
+				   try {
                         assert loggedIn != null;
                         loggedIn.displayNewMessages();
                     } catch (SQLException e) {
                         e.printStackTrace();
                     }
+					*/
 
                     break;
 
@@ -350,6 +352,8 @@ public class FaceSpaceDriven {
                                     "SELECT * FROM PROFILE WHERE userID = ? OR name = ? OR email = ?"
                             );
                             userSearch.setString(1, queryStrings[i]);
+                            userSearch.setString(2, queryStrings[i]);
+                            userSearch.setString(3, queryStrings[i]);
 
                             ResultSet rs = userSearch.executeQuery();
                             System.out.println("Results for " + queryStrings[i] + ":");
