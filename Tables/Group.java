@@ -30,6 +30,7 @@ public class Group {
 
         // Create object
         Group temp = new Group();
+        temp.conn = conn;
         temp.gID = rs.getString(1);
         temp.name = rs.getString(2);
         temp.description = rs.getString(3);

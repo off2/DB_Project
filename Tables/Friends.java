@@ -21,6 +21,7 @@ public class Friends {
      */
     Friends(Connection conn, boolean pending, Profile friend1, Profile friend2, String message) {
 
+        this.conn = conn;
         this.pending = pending;
         this.friends = new Profile[]{friend1, friend2};
         this.message = message;

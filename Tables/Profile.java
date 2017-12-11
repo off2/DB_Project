@@ -29,6 +29,7 @@ public class Profile {
             ResultSet rs = ps.executeQuery();
 
             rs.next();
+            temp.conn = conn;
             temp.userID = rs.getString(1);
             temp.name = rs.getString(2);
             temp.email = rs.getString(3);
