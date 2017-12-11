@@ -94,6 +94,7 @@ public class FaceSpace {
                                 conn,
                                 get(sc, "your name"),
                                 get(sc, "your email"),
+                                get(sc, "your new password"),
                                 getDate(sc, "date of birth")
                         );
 
@@ -154,7 +155,7 @@ public class FaceSpace {
                     try {
                         assert loggedIn != null;
                         pendingFriends = loggedIn.displayPendingFriends();
-                        pendingGroups = loggedIn.displayPendingGroups(pendingFriends.size());
+                        pendingGroups = loggedIn.displayPendingGroups();
                     } catch (SQLException e) {
                         e.printStackTrace();
                     }

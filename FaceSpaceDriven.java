@@ -105,6 +105,7 @@ public class FaceSpaceDriven {
                                 conn,
                                 "Roy Gustafson",
                                 "rag94@pitt.edu",
+                                "password",
                                 new Date(sdf.parse("31/05/1996").getTime())
                         );
 
@@ -156,6 +157,7 @@ public class FaceSpaceDriven {
 
                         System.out.println(other);
 
+                        assert loggedIn != null;
                         loggedIn.initiateFriendship(other, "Ay boo boo");
 
                     } catch (SQLException e) {
@@ -172,7 +174,7 @@ public class FaceSpaceDriven {
                     try {
                         assert loggedIn != null;
                         pendingFriends = loggedIn.displayPendingFriends();
-                        pendingGroups = loggedIn.displayPendingGroups(pendingFriends.size());
+                        pendingGroups = loggedIn.displayPendingGroups();
                     } catch (SQLException e) {
                         e.printStackTrace();
                     }

@@ -53,7 +53,7 @@ public class Profile {
 
     }
 
-    public static Profile create(Connection conn, String email, String name, Date date_of_birth)
+    public static Profile create(Connection conn, String email, String name, String pw, Date date_of_birth)
             throws SQLException {
 
         Profile created = new Profile();
@@ -75,12 +75,13 @@ public class Profile {
         created.date_of_birth = date_of_birth;
 
         ps = conn.prepareStatement(
-                "INSERT INTO Friends (userID, name, email, date_of_birth) VALUES (?, ?, ?, ?)"
+                "INSERT INTO Profile (userID, name, email, password, date_of_birth) VALUES (?, ?, ?, ?, ?)"
         );
         ps.setString(1, created.userID);
         ps.setString(2, created.userID);
         ps.setString(3, created.email);
-        ps.setDate(4, created.date_of_birth);
+        ps.setString(4, pw);
+        ps.setDate(5, created.date_of_birth);
         ps.execute();
 
         return created;
@@ -172,7 +173,7 @@ public class Profile {
         return pending;
     }
 
-    public ArrayList<GroupMembership> displayPendingGroups(int startFrom)
+    public ArrayList<GroupMembership> displayPendingGroups()
             throws SQLException {
 
         // Get list
