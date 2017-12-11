@@ -346,8 +346,35 @@ public class FaceSpace {
 
                     break;
 
+					
                 case 12:
+					//search for all keys
+					
+					System.out.println("Enter userID, full name or email of all users to be found:\n>");
+					String queryString = sc.nextLine();
+					queryString = queryString.trim();
+					String[] qArray = queryString.split("\\s+");
+					
+					
+					
+					PreparedStatement userSearch;
+					for(int i = 0; i < qArray.length; i++){
+						userSearch = conn.prepareStatement(
+								"Select * from PROFILE where userID = ? OR name = ? OR email = ?"
+								
+							
+						);
+						userSearch.setString(1, qArray[i]);
+						
+						ResultSet rs = userSearch.executeQuery();
+						System.out.println("Results for "+ qArray[i] + ":");
+						while(rs.next()){
+							System.out.println(rs.getString(1) + ", " + rs.getString(2) + ", " + rs.getString(3));
+						}
+					}
+					
 
+					
 
                     break;
 
