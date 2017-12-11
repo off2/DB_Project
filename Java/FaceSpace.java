@@ -15,7 +15,7 @@ import java.util.Scanner;
 
 public class FaceSpace {
 
-    public static void main(String[] args) {
+    public static void main(String[] args) throws SQLException{
 
         // Establish connection
         boolean success = false;
@@ -379,6 +379,16 @@ public class FaceSpace {
                     break;
 
                 case 13:
+				
+					//threeDegrees
+					System.out.println("Enter userID, full name or email of all users to be found:\n>");
+					String userString = sc.nextLine();
+					userString = userString.trim();
+					
+					String[] twoUsers = userString.split("\\s+");
+					
+					
+					
 
 
                     break;
@@ -422,4 +432,6 @@ public class FaceSpace {
 
         return date_of_birth;
     }
+	
+	
 }
