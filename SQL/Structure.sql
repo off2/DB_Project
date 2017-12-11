@@ -107,6 +107,7 @@ CREATE OR REPLACE TRIGGER dropUser
   BEFORE DELETE
   ON PROFILE
 
+  FOR EACH ROW
   BEGIN
 
     -- Delete from friends
@@ -156,6 +157,7 @@ CREATE OR REPLACE TRIGGER sendMessage
   BEFORE INSERT
   ON Message
 
+  FOR EACH ROW
   BEGIN
 
     IF (:new.toGroupID IS NULL)

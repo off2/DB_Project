@@ -11,6 +11,7 @@ import java.sql.*;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Calendar;
 import java.util.Scanner;
 
 public class FaceSpace {
@@ -114,9 +115,8 @@ public class FaceSpace {
                 case 1:
 
                     // Create profile
-                    Profile newProfile;
                     try {
-                        newProfile = Profile.create(
+                        Profile newProfile = Profile.create(
                                 conn,
                                 get(sc, "your name"),
                                 get(sc, "your email"),
@@ -224,14 +224,7 @@ public class FaceSpace {
                 case 5:
 
                     // Get friends
-                    ArrayList<Profile> friends;
-                    try {
-                        assert loggedIn != null;
-                        friends = loggedIn.displayFriends();
-                    } catch (SQLException e) {
-                        e.printStackTrace();
-                    }
-
+                    assert loggedIn != null;
                     // Get profiles, print more info
                     while (!(input = get(sc, "a userID to view profile")).equals("\n")) {
                         try {
@@ -248,9 +241,8 @@ public class FaceSpace {
                 case 6:
 
                     // Create group
-                    Group newGroup;
                     try {
-                        newGroup = Group.create(
+                        Group newGroup = Group.create(
                                 conn,
                                 loggedIn,
                                 get(sc, "name"),
@@ -271,11 +263,9 @@ public class FaceSpace {
                 case 7:
 
                     // Add to group
-                    Profile other;
-                    Group group;
                     try {
-                        other = Profile.get(conn, get(sc, "ID of user"), false);
-                        group = Group.get(conn, get(sc, "ID of group"));
+                        Profile other = Profile.get(conn, get(sc, "ID of user"), false);
+                        Group group = Group.get(conn, get(sc, "ID of group"));
 
                         System.out.println(other);
                         System.out.println(group);
@@ -292,7 +282,7 @@ public class FaceSpace {
 
                     // Send to user
                     try {
-                        other = Profile.get(conn, get(sc, "id of user"), true);
+                        Profile other = Profile.get(conn, get(sc, "id of user"), true);
 
                         System.out.println(other);
 
@@ -309,7 +299,7 @@ public class FaceSpace {
 
                     // Send to group
                     try {
-                        group = Group.get(conn, get(sc, "id of group"));
+                        Group group = Group.get(conn, get(sc, "id of group"));
 
                         System.out.println(group);
 
@@ -366,8 +356,8 @@ public class FaceSpace {
                         // Check if friendship exists (0 degrees)
                         // Check if shared friend (1 degree)
 
-                        PreparedStatement ps = conn.prepareStatement();
-                        // 
+
+                        //
 
                     } catch (SQLException e) {
                         e.printStackTrace();
@@ -382,33 +372,63 @@ public class FaceSpace {
                     break;
 
                 case 14:
-                    /*
-                    topMessages
-                    Display top K who have sent or received the highest number of messages during for the past x
-                    months. x and K are input parameters to this function
-                     */
+
+                    // Top messages
                     try {
+                        // Get input
                         int k = Integer.parseInt(get(sc, "top x users:"));
                         int x = Integer.parseInt(get(sc, "months to consider"));
 
-                        // For each user, count Messages where from = msgID
-                        //
+                        // Date math
+                        Calendar cal = Calendar.getInstance();
+                        cal.setTimeInMillis(System.currentTimeMillis());
+                        cal.add(Calendar.MONTH, -x);
+
+                        // Query
+                        PreparedStatement ps = conn.prepareStatement(
+                                "SELECT p.userID, p.name, " +
+                                        "COUNT(m.msgID) AS sentCount, " +
+                                        "COUNT(r.msgID) AS recCount " +
+                                        "FROM Profile p " +
+                                        "JOIN Message M ON m.fromID = p.userID " +
+                                        "JOIN Message_Recpient R ON m.userID = p.userID " +
+                                        "WHERE m.datesent > ? " +
+                                        "ORDER BY sentCount + recCount DESC"
+                        );
+                        ps.setDate(1, new Date(cal.getTimeInMillis()));
+                        ResultSet rs = ps.executeQuery();
+
+                        while (rs.next() || k != 0) {
+                            System.out.format(
+                                    "%s (%s)\n%d messages sent, %d messages received\n\n",
+                                    rs.getString(2),
+                                    rs.getString(1),
+                                    rs.getInt(3),
+                                    rs.getInt(4)
+                            );
+                            k--;
+                        }
+
 
                     } catch (NumberFormatException e) {
+                        e.printStackTrace();
+                    } catch (SQLException e) {
                         e.printStackTrace();
                     }
 
                     break;
 
                 case 15:
-                    /*
-                    dropUser
-                    Remove a user and all of their information from the system. When a user is removed, the system
-                    should delete the user from the groups he or she was a member of using a trigger. Note:
-                    messages require special handling because they are owned by both sender and receiver. Therefore,
-                    a message is deleted only when both he sender and all receivers are deleted. Attention
-                    should be paid handling integrity constraints.
-                     */
+
+                    // Drop user
+                    try {
+                        Profile other = Profile.get(conn, get(sc, "id of user"), true);
+                        PreparedStatement ps = conn.prepareStatement("DELETE FROM Profile WHERE userID = ?");
+                        ps.setString(1, other.getUserID());
+                        ps.executeUpdate();
+                    } catch (SQLException e) {
+                        e.printStackTrace();
+                    }
 
                     break;
 
