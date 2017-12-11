@@ -3,7 +3,8 @@ import Tables.Group;
 import Tables.GroupMembership;
 import Tables.Profile;
 
-import java.io.*;
+import java.io.BufferedReader;
+import java.io.FileReader;
 import java.sql.*;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
@@ -11,19 +12,19 @@ import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.Scanner;
 
-public class FaceSpace {
+public class FaceSpaceDriven {
 
     public static void main(String[] args) {
 
         // Establish connection
         boolean success = false;
         Connection conn = null;
-		
-		String username = "off2";
-		String password = "3960426";
-		
+
+        String username = "off2";
+        String password = "3960426";
+
         try {
-			conn = DriverManager.getConnection("jdbc:oracle:thin:@class3.cs.pitt.edu:1521:dbclass", username,password);
+            conn = DriverManager.getConnection("jdbc:oracle:thin:@class3.cs.pitt.edu:1521:dbclass", username, password);
 
             // Load files
             StringBuilder sb = new StringBuilder();
@@ -58,6 +59,11 @@ public class FaceSpace {
         Scanner sc = new Scanner(System.in);
         Profile loggedIn = null;
 
+        int counter = 0;
+        String[] inputs = new String[]{
+                "1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12", "13", "14", "16", "15", "q"
+        };
+
         while (true) {
             // Get input
             System.out.println("Enter a command\n" +
@@ -80,7 +86,7 @@ public class FaceSpace {
                     "Q to quit" +
                     "Selection:");
 
-            String input = sc.nextLine();
+            String input = inputs[counter++];
             Integer selection;
 
             // Check quit
@@ -111,11 +117,13 @@ public class FaceSpace {
 
                     // Create profile
                     try {
+
+                        SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy");
                         Profile newProfile = Profile.create(
                                 conn,
-                                get(sc, "your name"),
-                                get(sc, "your email"),
-                                getDate(sc, "date of birth")
+                                "Roy Gustafson",
+                                "rag94@pitt.edu",
+                                new Date(sdf.parse("31/05/1996").getTime())
                         );
 
                         PreparedStatement ps = conn.prepareStatement(
@@ -128,7 +136,11 @@ public class FaceSpace {
                         System.out.println("UserID: " + newProfile.getUserID() +
                                 "\nPassword : " + rs.getString(1));
 
+                        System.out.println(newProfile);
+
                     } catch (SQLException e) {
+                        e.printStackTrace();
+                    } catch (ParseException e) {
                         e.printStackTrace();
                     }
 
@@ -139,12 +151,15 @@ public class FaceSpace {
                     // Login
                     // Will set loggedIn to appropriate profile if successful
                     try {
-                        loggedIn = Profile.login(conn, get(sc, "userID"), get(sc, "password"));
+                        loggedIn = Profile.login(conn, "jy21", "password");
                         if (loggedIn != null) {
                             System.out.println("logged in as " + loggedIn.getName());
                         } else {
                             System.out.println("Invalid login");
                         }
+
+                        System.out.println(loggedIn);
+
                     } catch (SQLException e) {
                         e.printStackTrace();
                     }
@@ -155,11 +170,11 @@ public class FaceSpace {
 
                     // Initiate friendship
                     try {
-                        Profile other = Profile.get(conn, get(sc, "user's ID"), false);
+                        Profile other = Profile.get(conn, "ba22", false);
 
                         System.out.println(other);
 
-                        loggedIn.initiateFriendship(other, get(sc, "message"));
+                        loggedIn.initiateFriendship(other, "Ay boo boo");
 
                     } catch (SQLException e) {
                         e.printStackTrace();
@@ -185,10 +200,13 @@ public class FaceSpace {
                     boolean[] confirmed = new boolean[pendingFriends.size() + pendingGroups.size()];
 
                     // While user enters input
-                    while (!(input = get(sc, "an index")).equals("\n")) {
+
+                    int[] indices = new int[]{0, 1, 2};
+
+                    for (int i = 0; i < indices.length; i++) {
                         // Confirm
                         try {
-                            int select = Integer.parseInt(input);
+                            int select = indices[i];
                             if (select <= pendingFriends.size()) {
                                 pendingFriends.get(select - 1).confirm();
                                 confirmed[select - 1] = true;
@@ -223,7 +241,10 @@ public class FaceSpace {
                     // Get friends
                     assert loggedIn != null;
                     // Get profiles, print more info
-                    while (!(input = get(sc, "a userID to view profile")).equals("\n")) {
+
+                    String[] ids = new String[]{"nnk28", "kr29", "ccg31"};
+
+                    for (int i = 0; i < ids.length; i++) {
                         try {
                             System.out.println(Profile.get(conn, input, true));
                         } catch (NumberFormatException e) {
@@ -242,9 +263,9 @@ public class FaceSpace {
                         Group newGroup = Group.create(
                                 conn,
                                 loggedIn,
-                                get(sc, "name"),
-                                get(sc, "description"),
-                                Integer.parseInt(get(sc, "maximum number of members"))
+                                "New Group",
+                                "Catchy description",
+                                15
                         );
 
                         System.out.println(newGroup);
@@ -261,13 +282,13 @@ public class FaceSpace {
 
                     // Add to group
                     try {
-                        Profile other = Profile.get(conn, get(sc, "ID of user"), false);
-                        Group group = Group.get(conn, get(sc, "ID of group"));
+                        Profile other = Profile.get(conn, "sst32", false);
+                        Group group = Group.get(conn, "2");
 
                         System.out.println(other);
                         System.out.println(group);
 
-                        group.initiateAddUser(other, get(sc, "message"));
+                        group.initiateAddUser(other, "Ay boo boo");
 
                     } catch (SQLException e) {
                         e.printStackTrace();
@@ -279,12 +300,12 @@ public class FaceSpace {
 
                     // Send to user
                     try {
-                        Profile other = Profile.get(conn, get(sc, "id of user"), true);
+                        Profile other = Profile.get(conn, "hhl61", true);
 
                         System.out.println(other);
 
                         assert loggedIn != null;
-                        loggedIn.sendMessageToUser(other, get(sc, "message"));
+                        loggedIn.sendMessageToUser(other, "Ay boo boo");
 
                     } catch (SQLException e) {
                         e.printStackTrace();
@@ -296,12 +317,12 @@ public class FaceSpace {
 
                     // Send to group
                     try {
-                        Group group = Group.get(conn, get(sc, "id of group"));
+                        Group group = Group.get(conn, "2");
 
                         System.out.println(group);
 
                         assert loggedIn != null;
-                        loggedIn.sendMessageToGroup(group, get(sc, "message"));
+                        loggedIn.sendMessageToGroup(group, "Ay boo boos");
 
                     } catch (SQLException e) {
                         e.printStackTrace();
@@ -338,14 +359,12 @@ public class FaceSpace {
 
                     // Search for all keys
                     try {
-                        String[] queryStrings = get(sc, "userID, full name, or email").split("\\s+");
+                        String[] queryStrings = new String[]{"Nathalia", "dd14@pitt.edu", "Bessy"};
                         PreparedStatement userSearch;
 
                         for (int i = 0; i < queryStrings.length; i++) {
                             userSearch = conn.prepareStatement(
                                     "SELECT * FROM PROFILE WHERE userID = ? OR name = ? OR email = ?"
-
-
                             );
                             userSearch.setString(1, queryStrings[i]);
 
@@ -398,8 +417,8 @@ public class FaceSpace {
                     // Top messages
                     try {
                         // Get input
-                        int k = Integer.parseInt(get(sc, "top x users:"));
-                        int x = Integer.parseInt(get(sc, "months to consider"));
+                        int k = 4;
+                        int x = 1;
 
                         // Date math
                         Calendar cal = Calendar.getInstance();
@@ -444,7 +463,8 @@ public class FaceSpace {
 
                     // Drop user
                     try {
-                        Profile other = Profile.get(conn, get(sc, "id of user"), true);
+                        assert loggedIn != null;
+                        Profile other = Profile.get(conn, loggedIn.getUserID(), true);
                         PreparedStatement ps = conn.prepareStatement("DELETE FROM Profile WHERE userID = ?");
                         ps.setString(1, other.getUserID());
                         ps.executeUpdate();
@@ -468,24 +488,4 @@ public class FaceSpace {
         }
     }
 
-
-    private static String get(Scanner sc, String var) {
-
-        System.out.format("Enter %s:\n", var);
-
-        return sc.nextLine();
-    }
-
-    private static Date getDate(Scanner sc, String var) {
-        SimpleDateFormat dateFormat = new SimpleDateFormat("MM/dd/yyyy");
-        Date date_of_birth = null;
-
-        try {
-            date_of_birth = (Date) dateFormat.parse(get(sc, "your " + var + " (MM/dd/yyyy):"));
-        } catch (ParseException e) {
-            e.printStackTrace();
-        }
-
-        return date_of_birth;
-    }
 }
