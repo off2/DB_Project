@@ -383,32 +383,62 @@ public class FaceSpaceDriven {
                 case 13:
 
                     //threeDegrees
-                    System.out.println("Enter userID, full name or email of all users to be found:\n>");
-                    String userString = sc.nextLine();
-                    userString = userString.trim();
-
-                    String[] twoUsers = userString.split("\\s+");
-
 
                     try {
-                        Profile A = Profile.get(conn, get(sc, "user A"), true);
-                        Profile B = Profile.get(conn, get(sc, "user B"), true);
+                        Profile A = Profile.get(conn, "bbs17", true);
+                        Profile B = Profile.get(conn, "ddb49", true);
 
                         // Check if friendship exists (0 degrees)
                         // Check if shared friend (1 degree)
 
+                        ArrayList<Profile> aFriends = A.displayFriends();
+                        ArrayList<Profile> bFriends = B.displayFriends();
+                        ArrayList<Profile> aFriendFriends;
+                        boolean found = false;
 
+                        for (Profile aFriend : aFriends) {
+                            if (aFriend.getUserID().equals(B.getUserID())) {
+                                System.out.println(A.getUserID() + " and " + B.getUserID() + " are friends");
+                                found = true;
+                            }
+                        }
+
+                        if (!found) {
+                            for (Profile aFriend : aFriends) {
+                                aFriendFriends = aFriend.displayFriends();
+                                for (Profile aFriendFriend : aFriendFriends) {
+                                    if (aFriendFriend.getUserID().equals(B.getUserID())) {
+                                        System.out.println(A.getUserID() + " is friends with " + aFriend.getUserID() + " who is friends with " + B.getUserID());
+                                        found = true;
+                                    }
+
+                                }
+                            }
+
+                        }
+
+                        if (!found) {
+                            for (Profile aFriend : aFriends) {
+                                aFriendFriends = aFriend.displayFriends();
+                                for (Profile aFriendFriend : aFriendFriends) {
+                                    for (Profile bFriend : bFriends) {
+                                        if (aFriendFriend.getUserID().equals(bFriend.getUserID())) {
+                                            System.out.println(A.getUserID() + " is friends with " + aFriend.getUserID() + " who is frinds with " + aFriendFriend.getUserID() + " who is friends with " + B.getUserID());
+                                            found = true;
+                                        }
+                                    }
+
+                                }
+                            }
+
+                        }
+
+                        if (!found) System.out.println("not linked within three friends");
                         //
 
                     } catch (SQLException e) {
                         e.printStackTrace();
                     }
-                    /*
-                    threeDegress
-                    Given two users (A and B), find a path, if one exists, between A and B with at most 3 hop
-                    between them. A hop is defined as a friendship between any two users.
-                     */
-
 
                     break;
 
