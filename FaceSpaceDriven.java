@@ -185,7 +185,12 @@ public class FaceSpaceDriven {
 
                     // While user enters input
 
-                    int[] indices = new int[]{0, 1, 2};
+                    int[] indices = new int[]{1, 2, 3};
+
+                    if (pendingFriends.size() == 0 || pendingGroups.size() == 0) {
+                        System.out.println("No pending friends");
+                        break;
+                    }
 
                     for (int i = 0; i < indices.length; i++) {
                         // Confirm
@@ -194,7 +199,7 @@ public class FaceSpaceDriven {
                             if (select <= pendingFriends.size()) {
                                 pendingFriends.get(select - 1).confirm();
                                 confirmed[select - 1] = true;
-                            } else {
+                            } else if(select - pendingFriends.size() <= pendingGroups.size()) {
                                 pendingGroups.get(select - (pendingFriends.size() + 1)).confirm();
                                 confirmed[select - 1] = true;
                             }
