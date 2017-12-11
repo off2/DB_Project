@@ -4,7 +4,6 @@ import Tables.GroupMembership;
 import Tables.Profile;
 
 import java.io.*;
-import java.net.MalformedURLException;
 import java.net.URL;
 import java.net.URLClassLoader;
 import java.sql.*;
@@ -196,8 +195,10 @@ public class FaceSpace {
                             int select = Integer.parseInt(input);
                             if (select <= pendingFriends.size()) {
                                 pendingFriends.get(select - 1).confirm();
+                                confirmed[select - 1] = true;
                             } else {
                                 pendingGroups.get(select - (pendingFriends.size() + 1)).confirm();
+                                confirmed[select - 1] = true;
                             }
                         } catch (NumberFormatException e) {
                             System.out.println("Invalid input, strike return to exit");
@@ -338,46 +339,40 @@ public class FaceSpace {
 
 
                 case 12:
-					//search for all keys
 
-					System.out.println("Enter userID, full name or email of all users to be found:\n>");
-					String queryString = sc.nextLine();
-					queryString = queryString.trim();
-					String[] qArray = queryString.split("\\s+");
+                    // Search for all keys
+                    try {
+                        String[] queryStrings = get(sc, "userID, full name, or email").split("\\s+");
+                        PreparedStatement userSearch;
 
-
-
-					PreparedStatement userSearch;
-					for(int i = 0; i < qArray.length; i++){
-						userSearch = conn.prepareStatement(
-								"Select * from PROFILE where userID = ? OR name = ? OR email = ?"
+                        for (int i = 0; i < queryStrings.length; i++) {
+                            userSearch = conn.prepareStatement(
+                                    "SELECT * FROM PROFILE WHERE userID = ? OR name = ? OR email = ?"
 
 
-						);
-						userSearch.setString(1, qArray[i]);
+                            );
+                            userSearch.setString(1, queryStrings[i]);
 
-						ResultSet rs = userSearch.executeQuery();
-						System.out.println("Results for "+ qArray[i] + ":");
-						while(rs.next()){
-							System.out.println(rs.getString(1) + ", " + rs.getString(2) + ", " + rs.getString(3));
-						}
-					}
-
-
-
+                            ResultSet rs = userSearch.executeQuery();
+                            System.out.println("Results for " + queryStrings[i] + ":");
+                            while (rs.next()) {
+                                System.out.println(rs.getString(1) + ", " + rs.getString(2) + ", " + rs.getString(3));
+                            }
+                        }
+                    } catch (SQLException e) {
+                        e.printStackTrace();
+                    }
 
                     break;
 
                 case 13:
 
-					//threeDegrees
-					System.out.println("Enter userID, full name or email of all users to be found:\n>");
-					String userString = sc.nextLine();
-					userString = userString.trim();
+                    //threeDegrees
+                    System.out.println("Enter userID, full name or email of all users to be found:\n>");
+                    String userString = sc.nextLine();
+                    userString = userString.trim();
 
-					String[] twoUsers = userString.split("\\s+");
-
-
+                    String[] twoUsers = userString.split("\\s+");
 
 
                     try {
