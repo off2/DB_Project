@@ -77,8 +77,7 @@ public class FaceSpace {
             }
 
             // Check permissions
-            if ((selection >= 3
-                    || selection <= 12
+            if ((selection >= 3 && selection <= 12
                     || selection == 16)
                     && loggedIn == null) {
                 System.out.println("Log in first");
