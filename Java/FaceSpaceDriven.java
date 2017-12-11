@@ -31,11 +31,16 @@ public class FaceSpaceDriven {
             Statement stmt = conn.createStatement();
 
             // Load structure
+
+            /*
             BufferedReader in = new BufferedReader(new FileReader("../SQL/Structure.sql"));
 
             String line;
             while ((line = in.readLine()) != null)
-                sb.append(line);
+                sb.append(line).append('\n');
+
+            System.out.println(sb);
+
             stmt.execute(sb.toString());
 
             // Load inserts
@@ -45,6 +50,8 @@ public class FaceSpaceDriven {
             while ((line = in.readLine()) != null)
                 sb.append(line);
             stmt.execute(sb.toString());
+
+            */
 
             success = true;
 
