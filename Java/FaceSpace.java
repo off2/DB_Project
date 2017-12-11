@@ -25,26 +25,6 @@ public class FaceSpace {
         try {
             conn = DriverManager.getConnection("jdbc:oracle:thin:@class3.cs.pitt.edu:1521:dbclass", username, password);
 
-            // Load files
-            StringBuilder sb = new StringBuilder();
-            Statement stmt = conn.createStatement();
-
-            // Load structure
-            BufferedReader in = new BufferedReader(new FileReader("../SQL/Structure.sql"));
-
-            String line;
-            while ((line = in.readLine()) != null)
-                sb.append(line);
-            stmt.execute(sb.toString());
-
-            // Load inserts
-            sb = new StringBuilder();
-            in = new BufferedReader(new FileReader("../SQL/InsertAll.sql"));
-
-            while ((line = in.readLine()) != null)
-                sb.append(line);
-            stmt.execute(sb.toString());
-
             success = true;
 
         } catch (SQLException e) {
@@ -77,7 +57,7 @@ public class FaceSpace {
                     "14. Top messages\n" +
                     "15. Drop user\n" +
                     "16. Log out\n" +
-                    "Q to quit" +
+                    "Q to quit\n" +
                     "Selection:");
 
             String input = sc.nextLine();

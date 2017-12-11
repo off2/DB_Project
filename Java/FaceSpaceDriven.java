@@ -3,8 +3,6 @@ import Tables.Group;
 import Tables.GroupMembership;
 import Tables.Profile;
 
-import java.io.BufferedReader;
-import java.io.FileReader;
 import java.sql.*;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
@@ -26,33 +24,6 @@ public class FaceSpaceDriven {
         try {
             conn = DriverManager.getConnection("jdbc:oracle:thin:@class3.cs.pitt.edu:1521:dbclass", username, password);
 
-            // Load files
-            StringBuilder sb = new StringBuilder();
-            Statement stmt = conn.createStatement();
-
-            // Load structure
-
-            /*
-            BufferedReader in = new BufferedReader(new FileReader("../SQL/Structure.sql"));
-
-            String line;
-            while ((line = in.readLine()) != null)
-                sb.append(line).append('\n');
-
-            System.out.println(sb);
-
-            stmt.execute(sb.toString());
-
-            // Load inserts
-            sb = new StringBuilder();
-            in = new BufferedReader(new FileReader("../SQL/InsertAll.sql"));
-
-            while ((line = in.readLine()) != null)
-                sb.append(line);
-            stmt.execute(sb.toString());
-
-            */
-
             success = true;
 
         } catch (SQLException e) {
@@ -71,29 +42,34 @@ public class FaceSpaceDriven {
                 "1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12", "13", "14", "16", "15", "q"
         };
 
+        System.out.println("Enter a command\n" +
+                "1. Create User\n" +
+                "2. Log in\n" +
+                "3. Initiate friendship\n" +
+                "4. Confirm friendship\n" +
+                "5. Display friends\n" +
+                "6. Create group\n" +
+                "7. Initiate adding Group\n" +
+                "8. Send message to user\n" +
+                "9. Send message to group\n" +
+                "10. Display messages\n" +
+                "11. Display New Messages\n" +
+                "12. Search for user\n" +
+                "13. Three degrees\n" +
+                "14. Top messages\n" +
+                "15. Drop user\n" +
+                "16. Log out\n" +
+                "Q to quit\n" +
+                "Selection:");
+
         while (true) {
             // Get input
-            System.out.println("Enter a command\n" +
-                    "1. Create User\n" +
-                    "2. Log in\n" +
-                    "3. Initiate friendship\n" +
-                    "4. Confirm friendship\n" +
-                    "5. Display friends\n" +
-                    "6. Create group\n" +
-                    "7. Initiate adding Group\n" +
-                    "8. Send message to user\n" +
-                    "9. Send message to group\n" +
-                    "10. Display messages\n" +
-                    "11. Display New Messages\n" +
-                    "12. Search for user\n" +
-                    "13. Three degrees\n" +
-                    "14. Top messages\n" +
-                    "15. Drop user\n" +
-                    "16. Log out\n" +
-                    "Q to quit" +
-                    "Selection:");
+
 
             String input = inputs[counter++];
+
+            System.out.println("Simulated input: " + input);
+
             Integer selection;
 
             // Check quit
