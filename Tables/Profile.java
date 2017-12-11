@@ -98,6 +98,7 @@ public class Profile {
 
         ResultSet rs = ps.executeQuery();
         rs.next();
+
         if (rs.getInt(1) != 1) return null;
 
         return Profile.get(conn, userID, true);
@@ -180,7 +181,7 @@ public class Profile {
         PreparedStatement ps = conn.prepareStatement(
                 "SELECT gID, message " +
                         "FROM Pending_Groupmembers " +
-                        "WHERE toID = ?"
+                        "WHERE userID = ?"
         );
         ps.setString(1, userID);
 

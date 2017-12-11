@@ -441,13 +441,13 @@ public class FaceSpaceDriven {
 
                         // Query
                         PreparedStatement ps = conn.prepareStatement(
-                                "SELECT p.userID, p.name, " +
-                                        "COUNT(m.msgID) AS sentCount, " +
-                                        "COUNT(r.msgID) AS recCount " +
-                                        "FROM Profile p " +
-                                        "JOIN Message M ON m.fromID = p.userID " +
-                                        "JOIN Message_Recipient R ON m.userID = p.userID " +
-                                        "WHERE m.datesent > ? " +
+                                "SELECT profile.userID, profile.name, " +
+                                        "COUNT(message.msgID) AS sentCount, " +
+                                        "COUNT(message_recipient.msgID) AS recCount " +
+                                        "FROM Profile " +
+                                        "JOIN Message ON message.fromID = profile.userID " +
+                                        "JOIN Message_Recipient ON message_recipient.userID = profile.userID " +
+                                        "WHERE datesent > ? " +
                                         "ORDER BY sentCount + recCount DESC"
                         );
                         ps.setDate(1, new Date(cal.getTimeInMillis()));
