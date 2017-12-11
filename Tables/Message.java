@@ -72,7 +72,7 @@ public class Message {
             throws SQLException {
 
         // For ID purposes
-        PreparedStatement ps = conn.prepareStatement("SELECT COUNT(*) FROM Messages");
+        PreparedStatement ps = conn.prepareStatement("SELECT COUNT(*) FROM Message");
         ResultSet rs = ps.executeQuery();
         rs.next();
 
@@ -90,6 +90,10 @@ public class Message {
                         "VALUES (?, ?, ?, ?, ?, ?)"
         );
 
+        ps.setString(1, msgID);
+        ps.setString(2, from.getUserID());
+        ps.setString(3, message);
+
         if (toGroup == null) {
             ps.setString(4, toProfile.getUserID());
             ps.setString(5, "NULL");
@@ -97,6 +101,8 @@ public class Message {
             ps.setString(4, "NULL");
             ps.setString(5, toGroup.getgID());
         }
+
+        ps.setDate(6, datesent);
 
         ps.execute();
     }

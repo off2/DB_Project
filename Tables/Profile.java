@@ -28,10 +28,7 @@ public class Profile {
             ps.setString(1, userID);
             ResultSet rs = ps.executeQuery();
 
-            if (rs == null)
-                return null;
-
-            rs.next();
+            if (rs.next() == false) return null;
 
             temp.conn = conn;
             temp.userID = rs.getString(1);
@@ -102,19 +99,14 @@ public class Profile {
             throws SQLException {
 
         PreparedStatement ps = conn.prepareStatement(
-                "SELECT COUNT(*) FROM PROFILE WHERE userID = ? AND password = ?"
+                "SELECT * FROM PROFILE WHERE userID = ? AND password = ?"
         );
         ps.setString(1, userID);
         ps.setString(2, password);
 
         ResultSet rs = ps.executeQuery();
 
-        if (rs == null)
-            return null;
-
-        rs.next();
-
-        if (rs.getInt(1) != 1) return null;
+        if (rs == null || !rs.next()) return null;
 
         return Profile.get(conn, userID, true);
     }
@@ -252,7 +244,6 @@ public class Profile {
 
         // Populate our list
         ArrayList<Profile> friends = new ArrayList<Profile>();
-        if (rs == null) return null;
 
         while (rs.next()) {
 

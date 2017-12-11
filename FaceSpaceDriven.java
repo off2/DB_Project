@@ -68,7 +68,7 @@ public class FaceSpaceDriven {
 
             String input = inputs[counter++];
 
-            System.out.println("Simulated input: " + input);
+            System.out.println("\n\nSimulated input: " + input);
 
             Integer selection;
 
@@ -380,6 +380,7 @@ public class FaceSpaceDriven {
                         // Check if friendship exists (0 degrees)
                         // Check if shared friend (1 degree)
 
+                        assert A != null && B != null;
                         ArrayList<Profile> aFriends = A.displayFriends();
                         ArrayList<Profile> bFriends = B.displayFriends();
                         ArrayList<Profile> aFriendFriends;
