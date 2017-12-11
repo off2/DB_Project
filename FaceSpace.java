@@ -90,6 +90,8 @@ public class FaceSpace {
 
                     // Create profile
                     try {
+						
+                        SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy");
                         Profile newProfile = Profile.create(
                                 conn,
                                 get(sc, "your name"),
@@ -491,7 +493,8 @@ public class FaceSpace {
         Date date_of_birth = null;
 
         try {
-            date_of_birth = (Date) dateFormat.parse(get(sc, "your " + var + " (MM/dd/yyyy):"));
+            //date_of_birth = (Date) dateFormat.parse(get(sc, "your " + var + " (MM/dd/yyyy):"));
+            date_of_birth = new Date(dateFormat.parse(get(sc, "your " + var + " (MM/dd/yyyy):")).getTime());
         } catch (ParseException e) {
             e.printStackTrace();
         }
