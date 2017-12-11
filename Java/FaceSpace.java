@@ -358,6 +358,20 @@ public class FaceSpace {
                     break;
 
                 case 13:
+
+                    try {
+                        Profile A = Profile.get(conn, get(sc, "user A"), true);
+                        Profile B = Profile.get(conn, get(sc, "user B"), true);
+
+                        // Check if friendship exists (0 degrees)
+                        // Check if shared friend (1 degree)
+
+                        PreparedStatement ps = conn.prepareStatement();
+                        // 
+
+                    } catch (SQLException e) {
+                        e.printStackTrace();
+                    }
                     /*
                     threeDegress
                     Given two users (A and B), find a path, if one exists, between A and B with at most 3 hop
@@ -373,6 +387,16 @@ public class FaceSpace {
                     Display top K who have sent or received the highest number of messages during for the past x
                     months. x and K are input parameters to this function
                      */
+                    try {
+                        int k = Integer.parseInt(get(sc, "top x users:"));
+                        int x = Integer.parseInt(get(sc, "months to consider"));
+
+                        // For each user, count Messages where from = msgID
+                        //
+
+                    } catch (NumberFormatException e) {
+                        e.printStackTrace();
+                    }
 
                     break;
 

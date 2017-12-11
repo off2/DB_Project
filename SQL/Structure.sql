@@ -102,7 +102,57 @@ CREATE TABLE MESSAGE_RECIPIENT (
   CONSTRAINT MESSAGE_RECIPIENT_FK2 FOREIGN KEY (userID) REFERENCES PROFILE (userID)
 );
 
-CREATE TRIGGER sendMessage
+-- Drop user
+CREATE OR REPLACE TRIGGER dropUser
+  BEFORE DELETE
+  ON PROFILE
+
+  BEGIN
+
+    -- Delete from friends
+    DELETE FROM FRIENDS
+    WHERE userID1 = :new.userID
+          OR userID2 = :new.userID;
+
+    -- Delete from pending_friends
+    DELETE FROM PENDING_FRIENDS
+    WHERE toID = :new.userID;
+
+    -- Delete from group_membership
+    DELETE FROM GROUP_MEMBERSHIP
+    WHERE userID = :new.userID;
+
+    -- Delete from pending_groupmembers
+    DELETE FROM PENDING_GROUPMEMBERS
+    WHERE userID = :new.userID;
+
+    -- If message should be deleted
+    FOR msg IN (SELECT *
+                FROM Message
+                WHERE fromID = :new.userID
+                      OR toUserID = :new.userID)
+    LOOP
+      IF (SELECT COUNT(*)
+          FROM Profile
+          WHERE userID = msg.fromID) = 0
+         OR ((SELECT COUNT(*)
+              FROM Profile
+              WHERE userID = msg.toUserID) = 0
+             AND msg.toUserID IS NOT NULL)
+      THEN
+        DELETE FROM Message
+        WHERE CURRENT OF msg;
+      END IF;
+    END LOOP;
+
+    -- Message recipient
+    DELETE FROM MESSAGE_RECIPIENT
+    WHERE userID = :new.userID;
+
+  END;
+
+-- 8 and 9
+CREATE OR REPLACE TRIGGER sendMessage
   BEFORE INSERT
   ON Message
 
@@ -112,7 +162,7 @@ CREATE TRIGGER sendMessage
     THEN
 
       INSERT INTO MESSAGE_RECIPIENT (msgID, userID)
-      VALUES (new.msgID, new.toUserID);
+      VALUES (:new.msgID, :new.toUserID);
 
     ELSIF (:new.toGroupID IS NULL)
       THEN
