@@ -28,7 +28,7 @@ public class Profile {
             ps.setString(1, userID);
             ResultSet rs = ps.executeQuery();
 
-            if (rs.next() == false) return null;
+            if (!rs.next()) return null;
 
             temp.conn = conn;
             temp.userID = rs.getString(1);
@@ -99,16 +99,16 @@ public class Profile {
             throws SQLException {
 
         PreparedStatement ps = conn.prepareStatement(
-                "SELECT * FROM PROFILE WHERE userID = ? AND password = ?"
+                "SELECT userID FROM Profile WHERE userID = ? AND password = ?"
         );
         ps.setString(1, userID);
         ps.setString(2, password);
 
         ResultSet rs = ps.executeQuery();
 
-        if (rs == null || !rs.next()) return null;
+        if (!rs.next()) return null;
 
-        return Profile.get(conn, userID, true);
+        return Profile.get(conn, rs.getString(1), true);
     }
 
     public void logout() throws SQLException {
@@ -117,8 +117,8 @@ public class Profile {
 
         PreparedStatement ps = conn.prepareStatement(
                 "UPDATE PROFILE " +
-                        "SET lastlogin = ?" +
-                        " WHERE userID = ?"
+                        "SET lastlogin = ? " +
+                        "WHERE userID = ?"
         );
         ps.setTimestamp(1, lastlogin);
         ps.setString(2, userID);

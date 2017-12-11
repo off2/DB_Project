@@ -109,15 +109,9 @@ public class FaceSpaceDriven {
                                 new Date(sdf.parse("31/05/1996").getTime())
                         );
 
-                        PreparedStatement ps = conn.prepareStatement(
-                                "SELECT Password FROM Profile WHERE userID = ?"
-                        );
-                        ps.setString(1, newProfile.getUserID());
-                        ResultSet rs = ps.executeQuery();
-
-                        rs.next();
+                        assert newProfile != null;
                         System.out.println("UserID: " + newProfile.getUserID() +
-                                "\nPassword : " + rs.getString(1));
+                                "\nPassword : " + "password");
 
                         System.out.println(newProfile);
 
@@ -499,6 +493,7 @@ public class FaceSpaceDriven {
                     // Logout
                     try {
                         loggedIn.logout();
+                        System.out.println(loggedIn);
                     } catch (SQLException e) {
                         e.printStackTrace();
                     }
