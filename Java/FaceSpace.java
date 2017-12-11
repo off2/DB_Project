@@ -336,18 +336,49 @@ public class FaceSpace {
 
                     break;
 
+
                 case 12:
-                    /*
-                    searchForUser
-                    Given a string on which to match any user in the system, any item in this string must be
-                    matched against any significant field of a user’s profile. That is if the user searches for “xyz
-                    abc”, the results should be the set of all profiles that match “xyz” union the set of all profiles
-                    that matches “abc”
-                    */
+					//search for all keys
+
+					System.out.println("Enter userID, full name or email of all users to be found:\n>");
+					String queryString = sc.nextLine();
+					queryString = queryString.trim();
+					String[] qArray = queryString.split("\\s+");
+
+
+
+					PreparedStatement userSearch;
+					for(int i = 0; i < qArray.length; i++){
+						userSearch = conn.prepareStatement(
+								"Select * from PROFILE where userID = ? OR name = ? OR email = ?"
+
+
+						);
+						userSearch.setString(1, qArray[i]);
+
+						ResultSet rs = userSearch.executeQuery();
+						System.out.println("Results for "+ qArray[i] + ":");
+						while(rs.next()){
+							System.out.println(rs.getString(1) + ", " + rs.getString(2) + ", " + rs.getString(3));
+						}
+					}
+
+
+
 
                     break;
 
                 case 13:
+
+					//threeDegrees
+					System.out.println("Enter userID, full name or email of all users to be found:\n>");
+					String userString = sc.nextLine();
+					userString = userString.trim();
+
+					String[] twoUsers = userString.split("\\s+");
+
+
+
 
                     try {
                         Profile A = Profile.get(conn, get(sc, "user A"), true);
