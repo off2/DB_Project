@@ -27,7 +27,7 @@ public class Group {
         );
         ps.setString(1, gID);
         ResultSet rs = ps.executeQuery();
-
+		rs.next();
         // Create object
         Group temp = new Group();
         temp.conn = conn;
