@@ -20,14 +20,26 @@ public class FaceSpace {
         // Establish connection
         boolean success = false;
         Connection conn = null;
+		
+		String username = "off2";
+		String password = "3960426";
+		
         try {
             URL[] jar = new URL[]{new URL("ojdbc7.jar")};
             String drname = "oracle.jdbc.driver.OracleDriver";
             String connection = "jdbc:oracle:thin:@class3.cs.pitt.edu:1521:dbclass";
 
             Driver driver = (Driver) Class.forName(drname, true, new URLClassLoader(jar)).newInstance();
-            DriverManager.registerDriver(driver);
-            conn = DriverManager.getConnection(connection);
+            
+			
+			String url = "jdbc:oracle:thin:@class3.cs.pitt.edu:1521:dbclass"; 
+			//String url = "jdbc:oracle:thin:@unixs.cis.pitt.edu:1521:dbclass"; 
+			
+			
+			//DriverManager.registerDriver (new oracle.jdbc.driver.OracleDriver());
+			//conn = DriverManager.getConnection(url, username, password);
+			DriverManager.registerDriver(driver);
+			conn = DriverManager.getConnection(connection, username,password);
 
             // Load files
             StringBuilder sb = new StringBuilder();
