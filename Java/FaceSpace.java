@@ -364,12 +364,12 @@ public class FaceSpace {
                 case 13:
 
                     //threeDegrees
-                    System.out.println("Enter userID, full name or email of all users to be found:\n>");
+                    /*System.out.println("Enter userID, full name or email of all users to be found:\n>");
                     String userString = sc.nextLine();
                     userString = userString.trim();
 
                     String[] twoUsers = userString.split("\\s+");
-
+					*/
 
                     try {
                         Profile A = Profile.get(conn, get(sc, "user A"), true);
@@ -378,7 +378,51 @@ public class FaceSpace {
                         // Check if friendship exists (0 degrees)
                         // Check if shared friend (1 degree)
 
+						ArrayList<Profile> aFriends = A.displayFriends();
+						ArrayList<Profile> bFriends = B.displayFriends();
+						ArrayList<Profile> aFriendFriends;
+						boolean found = false;
 
+						for(Profile aFriend: aFriends){
+							if(aFriend.userID.equals(B.userID)){
+								System.out.println(A.userID + " and " + B.userID + " are friends");
+								found = true;
+							}
+						}
+
+						if(!found){
+							for(Profile aFriend: aFriends){
+								aFriendFriends = aFriend.displayFriends();
+								for(Profile aFriendFriend: aFriendFriends){
+									if(aFriendFriend.userID.equals(B.userID)){
+										System.out.println(A.userID + " is friends with " + aFriend.userID +  " who is friends with " B.userID);
+										found = true;
+									}
+
+								}
+							}
+
+						}
+
+						if(!found){
+							for(Profile aFriend: aFriends){
+								aFriendFriends = aFriend.displayFriends();
+								for(Profile aFriendFriend: aFriendFriends){
+									for(bFriend: bFriends){
+										if(aFriendFriend.userID.equals(bFriend.userID)){
+											System.out.println(A.userID + " is friends with " + aFriend.userID + " who is frinds with " + aFriendFriend.userID + " who is friends with " B.userID);
+											found = true;
+										}
+									}
+
+								}
+							}
+
+						}
+
+						if(!found){
+							System.out.println("not linked within three friends");
+						}
                         //
 
                     } catch (SQLException e) {
