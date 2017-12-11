@@ -55,7 +55,6 @@ public class Profile {
         }
 
         return temp;
-
     }
 
     public static Profile create(Connection conn, String email, String name, String pw, Date date_of_birth)
@@ -99,7 +98,7 @@ public class Profile {
             throws SQLException {
 
         PreparedStatement ps = conn.prepareStatement(
-                "SELECT userID FROM Profile WHERE userID = ? AND password = ?"
+                "SELECT userID FROM Profile WHERE userID = ? AND 'password' = ?"
         );
         ps.setString(1, userID);
         ps.setString(2, password);
