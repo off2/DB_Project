@@ -446,7 +446,7 @@ public class FaceSpaceDriven {
                                         "COUNT(r.msgID) AS recCount " +
                                         "FROM Profile p " +
                                         "JOIN Message M ON m.fromID = p.userID " +
-                                        "JOIN Message_Recpient R ON m.userID = p.userID " +
+                                        "JOIN Message_Recipient R ON m.userID = p.userID " +
                                         "WHERE m.datesent > ? " +
                                         "ORDER BY sentCount + recCount DESC"
                         );
