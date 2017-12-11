@@ -28,7 +28,11 @@ public class Profile {
             ps.setString(1, userID);
             ResultSet rs = ps.executeQuery();
 
+            if (rs == null)
+                return null;
+
             rs.next();
+
             temp.conn = conn;
             temp.userID = rs.getString(1);
             temp.name = rs.getString(2);
@@ -44,7 +48,11 @@ public class Profile {
             ps.setString(1, userID);
             ResultSet rs = ps.executeQuery();
 
+            if (rs == null)
+                return null;
+
             rs.next();
+
             temp.userID = rs.getString(1);
             temp.name = rs.getString(2);
         }
@@ -64,6 +72,9 @@ public class Profile {
 
         PreparedStatement ps = conn.prepareStatement("SELECT COUNT(*) FROM Profile");
         ResultSet rs = ps.executeQuery();
+
+        if (rs == null)
+            return null;
 
         rs.next();
         ID.append(rs.getInt(1) + 1);
@@ -97,6 +108,10 @@ public class Profile {
         ps.setString(2, password);
 
         ResultSet rs = ps.executeQuery();
+
+        if (rs == null)
+            return null;
+
         rs.next();
 
         if (rs.getInt(1) != 1) return null;
@@ -150,6 +165,9 @@ public class Profile {
 
         ResultSet rs = ps.executeQuery();
 
+        if (rs == null)
+            return null;
+
         // Populate our list
         ArrayList<Friends> pending = new ArrayList<Friends>();
         while (rs.next()) {
@@ -186,6 +204,9 @@ public class Profile {
         ps.setString(1, userID);
 
         ResultSet rs = ps.executeQuery();
+
+        if (rs == null)
+            return null;
 
         // Populate our list
         ArrayList<GroupMembership> pending = new ArrayList<GroupMembership>();
@@ -226,15 +247,22 @@ public class Profile {
 
         ResultSet rs = ps.executeQuery();
 
+        if (rs == null)
+            return null;
+
         // Populate our list
         ArrayList<Profile> friends = new ArrayList<Profile>();
+        if (rs == null) return null;
+
         while (rs.next()) {
 
+            String one = rs.getString(1), two = rs.getString(2);
+
             Profile temp;
-            if (rs.getString(1).equals(userID)) {
-                temp = get(conn, rs.getString(2), false);
-            } else if (rs.getString(2).equals(userID)) {
-                temp = get(conn, rs.getString(1), false);
+            if (one.equals(userID)) {
+                temp = get(conn, two, false);
+            } else if (two.equals(userID)) {
+                temp = get(conn, one, false);
             } else {
                 throw new SQLException("Unknown error when retrieving friends list");
             }
@@ -264,6 +292,9 @@ public class Profile {
 
         ResultSet rs = ps.executeQuery();
 
+        if (rs == null)
+            return;
+
         // Print
         while (rs.next())
             System.out.println(Message.get(conn, rs.getString(1)));
@@ -284,6 +315,9 @@ public class Profile {
         ps.setDate(2, new Date(lastlogin.getTime()));
 
         ResultSet rs = ps.executeQuery();
+
+        if (rs == null)
+            return;
 
         // Print
         while (rs.next())
