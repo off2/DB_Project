@@ -102,6 +102,8 @@ CREATE TABLE MESSAGE_RECIPIENT (
   CONSTRAINT MESSAGE_RECIPIENT_FK2 FOREIGN KEY (userID) REFERENCES PROFILE (userID)
 );
 
+
+--Does not work and causes issues with message functions
 CREATE OR REPLACE TRIGGER sendMessage
   BEFORE INSERT
   ON Message
